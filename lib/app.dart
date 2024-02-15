@@ -1,4 +1,4 @@
-import 'package:ebazaar/features/screens/onboarding.dart';
+import 'package:ebazaar/features/screens/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/theme/theme.dart';
 import 'package:get/get.dart';

@@ -4,9 +4,9 @@ class CustomImages {
   // App logos
 
   static const String darkAppLogo =
-      "assets/logos/e-bazaar-splash-logo-black.png";
+      "assets/logos/e-bazaar-logo-black.png";
   static const String lightAppLogo =
-      "assets/logos/e-bazaar-splash-logo-white.png";
+      "assets/logos/e-bazaar-logo-white.png";
 
   // Social logos
 
