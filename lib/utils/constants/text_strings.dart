@@ -39,12 +39,13 @@ class CustomTexts {
   static const String createAccount = "Hisob yaratish";
   static const String orSignInWith = "bilan kirish";
   static const String orSignUpWith = "orqali ro'yxatdan o'tish";
-  static const String iAgreeTo = "Men roziman";
+  static const String iAgreeTo = " ga roziman";
   static const String privacyPolicy = "Maxfiylik Siyosati";
   static const String termsOfUse = "Foydalanish yo'riqnomasi";
   static const String verificationCode = "Tasdiqlash kodi";
   static const String resendEmail = "Emailni boshqattan jo'natish";
   static const String resendEmailIn = "Emailni boshqattad jo'natish ...";
+  static const String and = " va";
 
   // -- Authentication Heading Text
 
