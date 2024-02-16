@@ -12,9 +12,20 @@ class OnBoardingScreen extends StatelessWidget {
     return const Scaffold(
       body: Stack(
         children: [
+          /// Page View
+
           OnBoardingPageView(),
+
+          /// Skip Button
+
           OnBoardingSkip(),
+
+          /// Dot Navtigation
+
           OnBoardingDotNavigation(),
+
+          /// Next Button
+
           OnBoardingNextButton(),
         ],
       ),

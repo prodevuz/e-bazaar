@@ -3,8 +3,8 @@ import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-class LoginFooter extends StatelessWidget {
-  const LoginFooter({super.key});
+class SocialButtons extends StatelessWidget {
+  const SocialButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

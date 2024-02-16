@@ -1,11 +1,11 @@
 import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/text_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class LoginDivider extends StatelessWidget {
-  const LoginDivider({super.key});
+class FormDivider extends StatelessWidget {
+  const FormDivider({super.key, required this.dividerText});
+
+  final String dividerText;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LoginDivider extends StatelessWidget {
           ),
         ),
         Text(
-          CustomTexts.orSignInWith.capitalize!,
+          dividerText,
           style: Theme.of(context).textTheme.labelMedium,
         ),
         Flexible(
