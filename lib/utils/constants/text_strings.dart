@@ -43,7 +43,7 @@ class CustomTexts {
   static const String privacyPolicy = "Maxfiylik Siyosati";
   static const String termsOfUse = "Foydalanish yo'riqnomasi";
   static const String verificationCode = "Tasdiqlash kodi";
-  static const String resendEmail = "Emailni boshqattan jo'natish";
+  static const String resendEmail = "Qayta Jo'natish";
   static const String resendEmailIn = "Emailni boshqattad jo'natish ...";
   static const String and = " va";
 
@@ -62,7 +62,7 @@ class CustomTexts {
       "Sizni Hisobingiz Xavfsizligi bizni Ustuvorligimiz! Biz sizga Parolingizni o'zgartirish uchun havola jo'natdik va Hisobingiz ximoyalandi.";
   static const String confirmEmail = "Elektron po'chtangizni tasdiqlang!";
   static const String confirmEmailSubTitle =
-      "Tabriklaymiz!, Hisobingiz Kutyapti: Xaridni boshlash va Maxsus Takliflarni qabul qilish uchun elektron po'chtangizni tasdiqlang.";
+      "Tabriklaymiz!, Hisobingiz Sizni Kutyapti: Xaridni Boshlash va Maxsus Takliflarni Qabul Qilish Uchun Elektron Po'chtangizni Tasdiqlang.";
   static const String emailNotReceivedMessage =
       "Emailni olmadingizmi? Spam jildini tekshiring yoki emailni qayta jo'nating.";
   static const String yourAccountCreatedTitle =
