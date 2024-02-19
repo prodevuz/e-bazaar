@@ -23,7 +23,7 @@ class CustomTexts {
   // -- Home
 
   static const String homeAppbarTitle = "Xarid uchun ajoyib kun";
-  static const String homeAppbarSubTitle = "Abdurrohman Davron";
+  static const String homeAppbarSubTitle = "AbdurRohman Davron";
 
   // -- Authentication Form Text
 
