@@ -2,9 +2,10 @@ class CustomTexts {
   CustomTexts._();
 
   // -- Global texts
-  static const String submit = "O'tish";
+  static const String submit = "Jo'natish";
   static const String appName = "E-Bazaar";
   static const String cContinue = "Davom etish";
+  static const String done = "Tayyor";
 
   // -- OnBoarding texts
 
@@ -43,7 +44,7 @@ class CustomTexts {
   static const String privacyPolicy = "Maxfiylik Siyosati";
   static const String termsOfUse = "Foydalanish yo'riqnomasi";
   static const String verificationCode = "Tasdiqlash kodi";
-  static const String resendEmail = "Qayta Jo'natish";
+  static const String resendEmail = "Qayta jo'natish";
   static const String resendEmailIn = "Emailni boshqattad jo'natish ...";
   static const String and = " va";
 
@@ -59,7 +60,7 @@ class CustomTexts {
   static const String changeYourPasswordTitle =
       "Parolni tiklash emaili jo'natildi";
   static const String changeYourPasswordSubTitle =
-      "Sizni Hisobingiz Xavfsizligi bizni Ustuvorligimiz! Biz sizga Parolingizni o'zgartirish uchun havola jo'natdik va Hisobingiz ximoyalandi.";
+      "Hisobingiz xavfsizligi bizni Ustuvorligimiz! Biz sizga parolingizni o'zgartirish uchun havola jo'natdik va hisobingiz ximoyalandi.";
   static const String confirmEmail = "Elektron po'chtangizni tasdiqlang!";
   static const String confirmEmailSubTitle =
       "Tabriklaymiz!, Hisobingiz Sizni Kutyapti: Xaridni Boshlash va Maxsus Takliflarni Qabul Qilish Uchun Elektron Po'chtangizni Tasdiqlang.";
