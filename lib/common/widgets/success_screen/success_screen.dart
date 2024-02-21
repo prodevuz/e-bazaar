@@ -20,32 +20,20 @@ class SuccessScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: CustomSpacingStyles.paddingWithAppBarHeight * 2,
+          padding: ADSpacingStyles.paddingWithAppBarHeight * 2,
           child: Column(children: [
             /// Image
-            Image(
-                image: AssetImage(image),
-                width: HelperFunctions.screenWidth() * 0.6),
-            const SizedBox(height: CustomSizes.spaceBtwSections),
+            Image(image: AssetImage(image), width: HelperFunctions.screenWidth() * 0.6),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
             /// Title & SubTitle
-            Text(title,
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center),
-            const SizedBox(height: CustomSizes.spaceBtwItems),
-            Text(subTitle,
-                style: Theme.of(context).textTheme.labelMedium,
-                textAlign: TextAlign.center),
-            const SizedBox(height: CustomSizes.spaceBtwSections),
+            Text(title, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            Text(subTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
             /// Buttons
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: onPressed,
-                child: const Text(CustomTexts.cContinue),
-              ),
-            ),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: onPressed, child: const Text(ADTexts.cContinue))),
           ]),
         ),
       ),

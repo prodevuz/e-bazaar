@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
+class ADAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const ADAppBar({
     super.key,
     this.title,
     this.actions,
@@ -23,7 +23,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: CustomSizes.md),
+      padding: const EdgeInsets.symmetric(horizontal: ADSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
@@ -43,6 +43,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(CustomDeviceUtils.getAppBarHeight());
+  Size get preferredSize => Size.fromHeight(ADDeviceUtils.getAppBarHeight());
 }

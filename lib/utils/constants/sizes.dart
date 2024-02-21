@@ -1,5 +1,5 @@
-class CustomSizes {
-  CustomSizes._();
+class ADSizes {
+  ADSizes._();
 
   // Padding and margin sizes
 

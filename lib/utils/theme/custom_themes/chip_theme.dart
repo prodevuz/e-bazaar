@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomChipTheme {
-  CustomChipTheme._();
+class ADChipTheme {
+  ADChipTheme._();
   static ChipThemeData lightChipTheme = ChipThemeData(
     disabledColor: Colors.grey.withOpacity(0.4),
     labelStyle: const TextStyle(color: Colors.black),

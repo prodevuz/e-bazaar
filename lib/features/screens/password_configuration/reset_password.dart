@@ -16,49 +16,27 @@ class ResetPassword extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            onPressed: () => Get.back(),
-            icon: const Icon(CupertinoIcons.clear),
-          ),
+          IconButton(onPressed: () => Get.back(), icon: const Icon(CupertinoIcons.clear)),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+        padding: const EdgeInsets.all(ADSizes.defaultSpace),
         child: Column(
           children: [
             /// Image with 60% of screen width
-            Image(
-                image:
-                    const AssetImage(CustomImages.deliveredEmailIllustration),
-                width: HelperFunctions.screenWidth() * 0.6),
-            const SizedBox(height: CustomSizes.spaceBtwSections),
+            Image(image: const AssetImage(ADImages.deliveredEmailIllustration), width: HelperFunctions.screenWidth() * 0.6),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
             /// Title & SubTitle
-            Text(CustomTexts.changeYourPasswordTitle,
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center),
-            const SizedBox(height: CustomSizes.spaceBtwItems),
-            Text(CustomTexts.changeYourPasswordSubTitle,
-                style: Theme.of(context).textTheme.labelMedium,
-                textAlign: TextAlign.center),
-            const SizedBox(height: CustomSizes.spaceBtwSections),
+            Text(ADTexts.changeYourPasswordTitle, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            Text(ADTexts.changeYourPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
             /// Submit button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => Get.offAll(() => const LoginScreen()),
-                child: const Text(CustomTexts.done),
-              ),
-            ),
-            const SizedBox(height: CustomSizes.spaceBtwItems),
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {},
-                child: const Text(CustomTexts.resendEmail),
-              ),
-            ),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.offAll(() => const LoginScreen()), child: const Text(ADTexts.done))),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            SizedBox(width: double.infinity, child: TextButton(onPressed: () {}, child: const Text(ADTexts.resendEmail))),
           ],
         ),
       ),

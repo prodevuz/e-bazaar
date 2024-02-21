@@ -15,21 +15,9 @@ class OnBoardingPageView extends StatelessWidget {
       controller: controller.pageController,
       onPageChanged: controller.updatePageIndicator,
       children: const [
-        OnBoardingPage(
-          image: CustomImages.onBoardingImage1,
-          title: CustomTexts.onBoardingTitle1,
-          subTitle: CustomTexts.onBoardingSubTitle1,
-        ),
-        OnBoardingPage(
-          image: CustomImages.onBoardingImage2,
-          title: CustomTexts.onBoardingTitle2,
-          subTitle: CustomTexts.onBoardingSubTitle2,
-        ),
-        OnBoardingPage(
-          image: CustomImages.onBoardingImage3,
-          title: CustomTexts.onBoardingTitle3,
-          subTitle: CustomTexts.onBoardingSubTitle3,
-        ),
+        OnBoardingPage(image: ADImages.onBoardingImage1, title: ADTexts.onBoardingTitle1, subTitle: ADTexts.onBoardingSubTitle1),
+        OnBoardingPage(image: ADImages.onBoardingImage2, title: ADTexts.onBoardingTitle2, subTitle: ADTexts.onBoardingSubTitle2),
+        OnBoardingPage(image: ADImages.onBoardingImage3, title: ADTexts.onBoardingTitle3, subTitle: ADTexts.onBoardingSubTitle3),
       ],
     );
   }

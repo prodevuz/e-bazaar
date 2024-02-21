@@ -14,67 +14,30 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding:
-            const EdgeInsets.symmetric(vertical: CustomSizes.spaceBtwSections),
+        padding: const EdgeInsets.symmetric(vertical: ADSizes.spaceBtwSections),
         child: Column(
           children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.direct_right),
-                labelText: CustomTexts.email,
-              ),
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwInputFields,
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
-                labelText: CustomTexts.password,
-                suffixIcon: Icon(Iconsax.eye_slash),
-              ),
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwInputFields / 2,
-            ),
+            TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: ADTexts.email)),
+            const SizedBox(height: ADSizes.spaceBtwInputFields),
+            TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check), labelText: ADTexts.password, suffixIcon: Icon(Iconsax.eye_slash))),
+            const SizedBox(height: ADSizes.spaceBtwInputFields / 2),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     Checkbox(value: true, onChanged: (value) {}),
-                    const Text(CustomTexts.rememberMe),
+                    const Text(ADTexts.rememberMe),
                   ],
                 ),
-                TextButton(
-                  onPressed: () => Get.to(() => const ForgetPassword()),
-                  child: const Text(CustomTexts.forgetPasswordTitle),
-                ),
+                TextButton(onPressed: () => Get.to(() => const ForgetPassword()), child: const Text(ADTexts.forgetPasswordTitle)),
               ],
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwSections,
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => Get.to(() => const NavigationMenu()),
-                child: const Text(CustomTexts.signIn),
-              ),
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: () => Get.to(() => const SignupScreen()),
-                child: const Text(CustomTexts.createAccount),
-              ),
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwSections,
-            ),
+            const SizedBox(height: ADSizes.spaceBtwSections),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(ADTexts.signIn))),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () => Get.to(() => const SignupScreen()), child: const Text(ADTexts.createAccount))),
+            const SizedBox(height: ADSizes.spaceBtwSections),
           ],
         ),
       ),

@@ -17,58 +17,30 @@ class VerifyEmailScreen extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            onPressed: () => Get.offAll(const LoginScreen()),
-            icon: const Icon(CupertinoIcons.clear),
-          ),
+          IconButton(onPressed: () => Get.offAll(const LoginScreen()), icon: const Icon(CupertinoIcons.clear)),
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+          padding: const EdgeInsets.all(ADSizes.defaultSpace),
           child: Column(
             children: [
               /// Image
-              Image(
-                  image:
-                      const AssetImage(CustomImages.deliveredEmailIllustration),
-                  width: HelperFunctions.screenWidth() * 0.6),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              Image(image: const AssetImage(ADImages.deliveredEmailIllustration), width: HelperFunctions.screenWidth() * 0.6),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Title & SubTitle
-              Text(CustomTexts.confirmEmail,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  textAlign: TextAlign.center),
-              const SizedBox(height: CustomSizes.spaceBtwItems),
-              Text('abdurakhmon278@gmail.com',
-                  style: Theme.of(context).textTheme.labelLarge,
-                  textAlign: TextAlign.center),
-              const SizedBox(height: CustomSizes.spaceBtwItems),
-              Text(CustomTexts.confirmEmailSubTitle,
-                  style: Theme.of(context).textTheme.labelMedium,
-                  textAlign: TextAlign.center),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              Text(ADTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+              const SizedBox(height: ADSizes.spaceBtwItems),
+              Text('abdurakhmon278@gmail.com', style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
+              const SizedBox(height: ADSizes.spaceBtwItems),
+              Text(ADTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Buttons
-              SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                      onPressed: () => Get.to(
-                            () => SuccessScreen(
-                              image: CustomImages.staticSuccessIllustration,
-                              title: CustomTexts.yourAccountCreatedTitle,
-                              subTitle: CustomTexts.yourAccountCreatedSubTitle,
-                              onPressed: () =>
-                                  Get.to(() => const LoginScreen()),
-                            ),
-                          ),
-                      child: const Text(CustomTexts.cContinue))),
-              const SizedBox(height: CustomSizes.spaceBtwItems),
-              SizedBox(
-                  width: double.infinity,
-                  child: TextButton(
-                      onPressed: () {},
-                      child: const Text(CustomTexts.resendEmail))),
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(image: ADImages.staticSuccessIllustration, title: ADTexts.yourAccountCreatedTitle, subTitle: ADTexts.yourAccountCreatedSubTitle, onPressed: () => Get.to(() => const LoginScreen()))), child: const Text(ADTexts.cContinue))),
+              const SizedBox(height: ADSizes.spaceBtwItems),
+              SizedBox(width: double.infinity, child: TextButton(onPressed: () {}, child: const Text(ADTexts.resendEmail))),
             ],
           ),
         ),

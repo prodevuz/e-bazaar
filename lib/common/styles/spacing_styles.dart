@@ -1,11 +1,11 @@
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
-class CustomSpacingStyles {
+class ADSpacingStyles {
   static const EdgeInsetsGeometry paddingWithAppBarHeight = EdgeInsets.only(
-    top: CustomSizes.appBarHeight,
-    left: CustomSizes.defaultSpace,
-    bottom: CustomSizes.defaultSpace,
-    right: CustomSizes.defaultSpace,
+    top: ADSizes.appBarHeight,
+    left: ADSizes.defaultSpace,
+    bottom: ADSizes.defaultSpace,
+    right: ADSizes.defaultSpace,
   );
 }

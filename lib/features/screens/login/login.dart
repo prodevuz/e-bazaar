@@ -16,24 +16,20 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: CustomSpacingStyles.paddingWithAppBarHeight,
+          padding: ADSpacingStyles.paddingWithAppBarHeight,
           child: Column(
             children: [
               /// Login header
-
               const LoginHeader(),
 
               /// Login Form
-
               const LoginForm(),
 
               /// Divider
-
-              FormDivider(dividerText: CustomTexts.orSignInWith.capitalize!),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              FormDivider(dividerText: ADTexts.orSignInWith.capitalize!),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Footer
-
               const SocialButtons(),
             ],
           ),

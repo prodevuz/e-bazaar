@@ -10,8 +10,8 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: CustomTheme.lightTheme,
-      darkTheme: CustomTheme.darkTheme,
+      theme: ADTheme.lightTheme,
+      darkTheme: ADTheme.darkTheme,
       home: const OnBoardingScreen(),
     );
   }

@@ -8,8 +8,8 @@ import 'package:ebazaar/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:ebazaar/utils/theme/custom_themes/text_theme.dart';
 import 'package:flutter/material.dart';
 
-class CustomTheme {
-  CustomTheme._();
+class ADTheme {
+  ADTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
@@ -17,14 +17,14 @@ class CustomTheme {
     fontFamily: 'Poppins',
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
-    textTheme: CustomTextTheme.lightTextTheme,
-    elevatedButtonTheme: CustomElevatedButtonTheme.lightElevatedButtonTheme,
-    appBarTheme: CustomAppBarTheme.lightAppBarTheme,
-    bottomSheetTheme: CustomBottomSheetTheme.lightBottomSheetTheme,
-    checkboxTheme: CustomCheckboxTheme.lightCheckboxTheme,
-    chipTheme: CustomChipTheme.lightChipTheme,
-    outlinedButtonTheme: CustomOutlinedButtonTheme.lightOutlinedButtonTheme,
-    inputDecorationTheme: CustomInputDecorationTheme.lightInputDecorationTheme,
+    textTheme: ADTextTheme.lightTextTheme,
+    elevatedButtonTheme: ADElevatedButtonTheme.lightElevatedButtonTheme,
+    appBarTheme: ADAppBarTheme.lightAppBarTheme,
+    bottomSheetTheme: ADBottomSheetTheme.lightBottomSheetTheme,
+    checkboxTheme: ADCheckboxTheme.lightCheckboxTheme,
+    chipTheme: ADChipTheme.lightChipTheme,
+    outlinedButtonTheme: ADOutlinedButtonTheme.lightOutlinedButtonTheme,
+    inputDecorationTheme: ADInputDecorationTheme.lightInputDecorationTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -32,15 +32,13 @@ class CustomTheme {
     fontFamily: 'Poppins',
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.black,
-    textTheme: CustomTextTheme.darkTextTheme,
-    elevatedButtonTheme: CustomElevatedButtonTheme.darkElevatedButtonTheme,
-    appBarTheme: CustomAppBarTheme.darkAppBarTheme,
-    bottomSheetTheme: CustomBottomSheetTheme.darkBottomSheetTheme,
-    checkboxTheme: CustomCheckboxTheme.darkCheckboxTheme,
-    chipTheme: CustomChipTheme.darkChipTheme,
-    outlinedButtonTheme: CustomOutlinedButtonTheme.darkOutlinedButtonTheme,
-    inputDecorationTheme: CustomInputDecorationTheme.darkInputDecorationTheme,
-
-
+    textTheme: ADTextTheme.darkTextTheme,
+    elevatedButtonTheme: ADElevatedButtonTheme.darkElevatedButtonTheme,
+    appBarTheme: ADAppBarTheme.darkAppBarTheme,
+    bottomSheetTheme: ADBottomSheetTheme.darkBottomSheetTheme,
+    checkboxTheme: ADCheckboxTheme.darkCheckboxTheme,
+    chipTheme: ADChipTheme.darkChipTheme,
+    outlinedButtonTheme: ADOutlinedButtonTheme.darkOutlinedButtonTheme,
+    inputDecorationTheme: ADInputDecorationTheme.darkInputDecorationTheme,
   );
 }

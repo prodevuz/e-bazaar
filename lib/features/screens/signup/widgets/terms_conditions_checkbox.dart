@@ -10,49 +10,19 @@ class TermsConditionsCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return Row(
       children: [
-        SizedBox(
-          width: 24,
-          height: 24,
-          child: Checkbox(
-            value: true,
-            onChanged: (value) {},
-          ),
-        ),
-        const SizedBox(
-          width: CustomSizes.spaceBtwItems,
-        ),
+        SizedBox(width: 24, height: 24, child: Checkbox(value: true, onChanged: (value) {})),
+        const SizedBox(width: ADSizes.spaceBtwItems),
         Flexible(
           child: Text.rich(
             TextSpan(
               children: [
-                TextSpan(
-                  text: CustomTexts.privacyPolicy,
-                  style: Theme.of(context).textTheme.bodyMedium!.apply(
-                        color: dark ? CustomColors.white : CustomColors.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor:
-                            dark ? CustomColors.white : CustomColors.primary,
-                      ),
-                ),
-                TextSpan(
-                  text: '${CustomTexts.and} ',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                TextSpan(
-                  text: CustomTexts.termsOfUse,
-                  style: Theme.of(context).textTheme.bodyMedium!.apply(
-                        color: dark ? CustomColors.white : CustomColors.primary,
-                        decoration: TextDecoration.underline,
-                        decorationColor:
-                            dark ? CustomColors.white : CustomColors.primary,
-                      ),
-                ),
-                TextSpan(
-                  text: '${CustomTexts.iAgreeTo} ',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
+                TextSpan(text: ADTexts.privacyPolicy, style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? ADColors.white : ADColors.primary, decoration: TextDecoration.underline, decorationColor: dark ? ADColors.white : ADColors.primary)),
+                TextSpan(text: '${ADTexts.and} ', style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(text: ADTexts.termsOfUse, style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? ADColors.white : ADColors.primary, decoration: TextDecoration.underline, decorationColor: dark ? ADColors.white : ADColors.primary)),
+                TextSpan(text: '${ADTexts.iAgreeTo} ', style: Theme.of(context).textTheme.bodySmall),
               ],
             ),
           ),

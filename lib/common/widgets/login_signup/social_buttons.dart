@@ -13,35 +13,35 @@ class SocialButtons extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.all(color: CustomColors.grey),
+            border: Border.all(color: ADColors.grey),
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
             onPressed: () {},
             icon: const Image(
-              width: CustomSizes.iconMd,
-              height: CustomSizes.iconMd,
+              width: ADSizes.iconMd,
+              height: ADSizes.iconMd,
               image: AssetImage(
-                CustomImages.google,
+                ADImages.google,
               ),
             ),
           ),
         ),
         const SizedBox(
-          width: CustomSizes.spaceBtwItems,
+          width: ADSizes.spaceBtwItems,
         ),
         Container(
           decoration: BoxDecoration(
-            border: Border.all(color: CustomColors.grey),
+            border: Border.all(color: ADColors.grey),
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
             onPressed: () {},
             icon: const Image(
-              width: CustomSizes.iconMd,
-              height: CustomSizes.iconMd,
+              width: ADSizes.iconMd,
+              height: ADSizes.iconMd,
               image: AssetImage(
-                CustomImages.facebook,
+                ADImages.facebook,
               ),
             ),
           ),

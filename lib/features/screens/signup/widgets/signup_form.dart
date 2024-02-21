@@ -14,86 +14,38 @@ class SignupForm extends StatelessWidget {
     return Form(
       child: Column(
         children: [
+          /// Full name
           Row(
             children: [
-              Expanded(
-                child: TextFormField(
-                  expands: false,
-                  decoration: const InputDecoration(
-                    labelText: CustomTexts.firstName,
-                    prefixIcon: Icon(Iconsax.user),
-                  ),
-                ),
-              ),
-              const SizedBox(width: CustomSizes.spaceBtwInputFields),
-              Expanded(
-                child: TextFormField(
-                  expands: false,
-                  decoration: const InputDecoration(
-                    labelText: CustomTexts.lastName,
-                    prefixIcon: Icon(Iconsax.user),
-                  ),
-                ),
-              ),
+              Expanded(child: TextFormField(expands: false, decoration: const InputDecoration(labelText: ADTexts.firstName, prefixIcon: Icon(Iconsax.user)))),
+              const SizedBox(width: ADSizes.spaceBtwInputFields),
+              Expanded(child: TextFormField(expands: false, decoration: const InputDecoration(labelText: ADTexts.lastName, prefixIcon: Icon(Iconsax.user)))),
             ],
           ),
-          const SizedBox(height: CustomSizes.spaceBtwInputFields),
+          const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Username
-          TextFormField(
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: CustomTexts.username,
-              prefixIcon: Icon(Iconsax.user_edit),
-            ),
-          ),
-          const SizedBox(height: CustomSizes.spaceBtwInputFields),
+          TextFormField(expands: false, decoration: const InputDecoration(labelText: ADTexts.username, prefixIcon: Icon(Iconsax.user_edit))),
+          const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Email
-          TextFormField(
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: CustomTexts.email,
-              prefixIcon: Icon(Iconsax.direct),
-            ),
-          ),
-          const SizedBox(height: CustomSizes.spaceBtwInputFields),
+          TextFormField(expands: false, decoration: const InputDecoration(labelText: ADTexts.email, prefixIcon: Icon(Iconsax.direct))),
+          const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Phone number
-          TextFormField(
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: CustomTexts.phoneNo,
-              prefixIcon: Icon(Iconsax.call),
-            ),
-          ),
-          const SizedBox(height: CustomSizes.spaceBtwInputFields),
+          TextFormField(expands: false, decoration: const InputDecoration(labelText: ADTexts.phoneNo, prefixIcon: Icon(Iconsax.call))),
+          const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Password
-          TextFormField(
-            obscureText: true,
-            expands: false,
-            decoration: const InputDecoration(
-              labelText: CustomTexts.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
-            ),
-          ),
-          const SizedBox(height: CustomSizes.spaceBtwInputFields),
+          TextFormField(obscureText: true, expands: false, decoration: const InputDecoration(labelText: ADTexts.password, prefixIcon: Icon(Iconsax.password_check), suffixIcon: Icon(Iconsax.eye_slash))),
+          const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Terms&Conditions Checkbox
           const TermsConditionsCheckbox(),
-          const SizedBox(height: CustomSizes.spaceBtwSections),
+          const SizedBox(height: ADSizes.spaceBtwSections),
 
           /// Sign Up Button
-
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () => Get.to(() => const VerifyEmailScreen()),
-              child: const Text(CustomTexts.createAccount),
-            ),
-          ),
+          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const VerifyEmailScreen()), child: const Text(ADTexts.createAccount))),
         ],
       ),
     );

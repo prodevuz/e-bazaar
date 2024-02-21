@@ -15,26 +15,23 @@ class SignupScreen extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+          padding: const EdgeInsets.all(ADSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Title
-              Text(CustomTexts.signUpTitle,
-                  style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              Text(ADTexts.signUpTitle, style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Form
               const SignupForm(),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Divider
-
-              FormDivider(dividerText: CustomTexts.orSignUpWith.capitalize!),
-              const SizedBox(height: CustomSizes.spaceBtwSections),
+              FormDivider(dividerText: ADTexts.orSignUpWith.capitalize!),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Social buttons
-
               const SocialButtons(),
             ],
           ),

@@ -13,39 +13,21 @@ class ForgetPassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+        padding: const EdgeInsets.all(ADSizes.defaultSpace),
         child: Column(
           children: [
             /// Headings
-            Text(
-              CustomTexts.forgetPasswordTitle,
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: CustomSizes.spaceBtwItems),
-            Text(
-              CustomTexts.forgetPasswordSubTitle,
-              style: Theme.of(context).textTheme.labelMedium,
-            ),
-            const SizedBox(height: CustomSizes.spaceBtwSections * 2),
+            Text(ADTexts.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            Text(ADTexts.forgetPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium),
+            const SizedBox(height: ADSizes.spaceBtwSections * 2),
 
             /// Text field
-
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: CustomTexts.email,
-                prefixIcon: Icon(Iconsax.direct_right),
-              ),
-            ),
-            const SizedBox(height: CustomSizes.spaceBtwItems),
+            TextFormField(decoration: const InputDecoration(labelText: ADTexts.email, prefixIcon: Icon(Iconsax.direct_right))),
+            const SizedBox(height: ADSizes.spaceBtwItems),
 
             /// Submit Button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => Get.off(() => const ResetPassword()),
-                child: const Text(CustomTexts.submit),
-              ),
-            ),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.off(() => const ResetPassword()), child: const Text(ADTexts.submit))),
           ],
         ),
       ),
