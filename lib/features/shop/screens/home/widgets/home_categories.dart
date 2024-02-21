@@ -15,7 +15,7 @@ class HomeCategories extends StatelessWidget {
         itemCount: 6,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemBuilder: (_, index) => VerticalImageText(image: ADImages.shoeIcon, title: 'Shoes', onTap: () {})
+        itemBuilder: (_, index) => VerticalImageText(image: ADImages.sportIcon, title: 'Shoes', onTap: () {})
       ),
     );
   }
