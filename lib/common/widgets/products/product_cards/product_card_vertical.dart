@@ -63,17 +63,22 @@ class ProductCardVertical extends StatelessWidget {
                       const Icon(Iconsax.verify5, color: ADColors.primary, size: ADSizes.iconXs),
                     ],
                   ),
-
-                  /// Price
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const ProductPriceText(price: '35.5', isLarge: true),
-                      Container(decoration: const BoxDecoration(color: ADColors.dark, borderRadius: BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusMd), bottomRight: Radius.circular(ADSizes.productImageRadius))), child: const SizedBox(width: ADSizes.iconLg * 1.2, height: ADSizes.iconLg * 1.2, child: Center(child: Icon(Iconsax.add, color: ADColors.white)))),
-                    ],
-                  ),
                 ],
               ),
+            ),
+
+            const Spacer(),
+
+            /// Price
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: ADSizes.sm),
+                  child: ProductPriceText(price: '35.5', isLarge: true),
+                ),
+                Container(decoration: const BoxDecoration(color: ADColors.dark, borderRadius: BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusMd), bottomRight: Radius.circular(ADSizes.productImageRadius))), child: const SizedBox(width: ADSizes.iconLg * 1.2, height: ADSizes.iconLg * 1.2, child: Center(child: Icon(Iconsax.add, color: ADColors.white)))),
+              ],
             ),
           ],
         ),

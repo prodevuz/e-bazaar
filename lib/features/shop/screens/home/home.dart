@@ -1,4 +1,4 @@
-import 'package:ebazaar/common/widgets/products/product_cards/product_card.dart';
+import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
