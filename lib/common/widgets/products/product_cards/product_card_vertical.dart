@@ -1,3 +1,4 @@
+import 'package:ebazaar/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ebazaar/common/styles/shadows.dart';
@@ -28,7 +29,7 @@ class ProductCardVertical extends StatelessWidget {
             /// Thumbnail Image
             RoundedContainer(
               height: 180,
-              padding: const EdgeInsets.all(ADSizes.sm),
+              // padding: const EdgeInsets.all(ADSizes.sm),
               backgroundColor: dark ? ADColors.dark : ADColors.light,
               child: Stack(
                 children: [
@@ -36,33 +37,37 @@ class ProductCardVertical extends StatelessWidget {
                   const RoundedImage(imageUrl: ADImages.deliveredEmailIllustration, applyImageRadius: true), // productImage1
 
                   /// Sole Tag
-                  Positioned(top: 12, child: RoundedContainer(radius: ADSizes.sm, backgroundColor: ADColors.secondary.withOpacity(0.8), padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs), child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)))),
+                  Positioned(
+                      top: ADSizes.sm + 12,
+                      /* // 12 */
+                      left: ADSizes.sm,
+                      /* // 0 */
+                      child: RoundedContainer(radius: ADSizes.sm, backgroundColor: ADColors.secondary.withOpacity(0.8), padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs), child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)))),
 
                   /// Favorite Button
-                  const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
+                  const Positioned(
+                      top: ADSizes.sm,
+                      /* // 0 */
+                      right: ADSizes.sm,
+                      /* // 0 */
+                      child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
                 ],
               ),
             ),
             const SizedBox(height: ADSizes.spaceBtwItems / 2),
 
             /// Details
-            Padding(
-              padding: const EdgeInsets.only(left: ADSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: ADSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   /// Title
-                  const ProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
-                  const SizedBox(height: ADSizes.spaceBtwItems / 2),
+                  ProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
+                  SizedBox(height: ADSizes.spaceBtwItems / 2),
 
                   /// Brand
-                  Row(
-                    children: [
-                      Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium),
-                      const SizedBox(width: ADSizes.xs),
-                      const Icon(Iconsax.verify5, color: ADColors.primary, size: ADSizes.iconXs),
-                    ],
-                  ),
+                  BrandTitleWithVerifiedIcon(title: 'Nike'),
                 ],
               ),
             ),

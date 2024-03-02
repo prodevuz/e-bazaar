@@ -1,3 +1,4 @@
+import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/theme/custom_themes/input_decoration_theme.dart';
 import 'package:ebazaar/utils/theme/custom_themes/outlined_button_theme.dart';
 import 'package:ebazaar/utils/theme/custom_themes/chip_theme.dart';
@@ -16,7 +17,7 @@ class ADTheme {
     brightness: Brightness.light,
     fontFamily: 'Poppins',
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: ADColors.white,
     textTheme: ADTextTheme.lightTextTheme,
     elevatedButtonTheme: ADElevatedButtonTheme.lightElevatedButtonTheme,
     appBarTheme: ADAppBarTheme.lightAppBarTheme,
