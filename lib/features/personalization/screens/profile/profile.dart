@@ -54,7 +54,7 @@ class ProfileScreen extends StatelessWidget {
               ProfileMenu(onPressed: () {}, title: "Elektron pochta", value: "abdurakhmon278@gmail.com"),
               ProfileMenu(onPressed: () {}, title: "Telefon raqam", value: "+998915550895"),
               ProfileMenu(onPressed: () {}, title: "Jins", value: "Erkak"),
-              ProfileMenu(onPressed: () {}, title: "Tog'ulgan sana", value: "27 Apr, 2007"),
+              ProfileMenu(onPressed: () {}, title: "Tug'ulgan sana", value: "27 Apr, 2007"),
 
               const Divider(),
               const SizedBox(height: ADSizes.spaceBtwItems),
