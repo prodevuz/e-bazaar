@@ -3,17 +3,17 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-class SircularImage extends StatelessWidget {
-  const SircularImage({
+class CircularImage extends StatelessWidget {
+  const CircularImage({
     super.key,
     this.width = 56,
     this.height = 56,
-    this.fit = BoxFit.cover,
-    required this.image,
-    this.isNetworkImage = false,
     this.overlayColor,
+    required this.image,
     this.backgroundColor,
+    this.fit = BoxFit.cover,
     this.padding = ADSizes.sm,
+    this.isNetworkImage = false,
   });
 
   final BoxFit fit;
@@ -34,10 +34,13 @@ class SircularImage extends StatelessWidget {
         color: backgroundColor ?? (dark ? ADColors.black : ADColors.white),
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Image(
-        fit: fit,
-        image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-        color: dark ? ADColors.white : ADColors.dark,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Image(
+          fit: fit,
+          image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
+          color: overlayColor,
+        ),
       ),
     );
   }

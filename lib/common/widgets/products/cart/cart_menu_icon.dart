@@ -6,11 +6,11 @@ import 'package:ebazaar/utils/constants/colors.dart';
 class CartCounterIcon extends StatelessWidget {
   const CartCounterIcon({
     super.key,
-    this.iconColor,
+    this.isHome = false,
     required this.onPressed,
   });
 
-  final Color? iconColor;
+  final bool isHome;
   final VoidCallback onPressed;
 
   @override
@@ -22,7 +22,11 @@ class CartCounterIcon extends StatelessWidget {
           onPressed: onPressed,
           icon: Icon(
             Iconsax.shopping_bag,
-            color: iconColor ?? (dark ? ADColors.white : ADColors.black),
+            color: isHome
+                ? ADColors.white
+                : dark
+                    ? ADColors.white.withOpacity(0.9)
+                    : ADColors.black,
           ),
         ),
         Positioned(
@@ -30,9 +34,26 @@ class CartCounterIcon extends StatelessWidget {
           child: Container(
             width: 18,
             height: 18,
-            decoration: BoxDecoration(color: ADColors.black, borderRadius: BorderRadius.circular(100)),
+            decoration: BoxDecoration(
+              color: isHome
+                  ? ADColors.black
+                  : dark
+                      ? ADColors.white
+                      : ADColors.black,
+              borderRadius: BorderRadius.circular(100),
+            ),
             child: Center(
-              child: Text('2', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.white, fontSizeFactor: 0.8)),
+              child: Text(
+                '2',
+                style: Theme.of(context).textTheme.labelLarge!.apply(
+                      color: isHome
+                          ? ADColors.white
+                          : dark
+                              ? ADColors.black
+                              : ADColors.white,
+                      fontSizeFactor: 0.8,
+                    ),
+              ),
             ),
           ),
         ),

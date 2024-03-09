@@ -20,7 +20,7 @@ class HomeAppBar extends StatelessWidget {
         ],
       ),
       actions: [
-        CartCounterIcon(onPressed: () {}, iconColor: ADColors.white),
+        CartCounterIcon(onPressed: () {}, isHome: true),
       ],
     );
   }

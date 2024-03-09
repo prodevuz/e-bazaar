@@ -10,10 +10,10 @@ class RoundedContainer extends StatelessWidget {
     this.height,
     this.margin,
     this.padding,
-    this.radius = ADSizes.cardRadiusLg,
     this.showBorder = false,
-    this.borderColor = ADColors.borderPrimary,
+    this.radius = ADSizes.cardRadiusLg,
     this.backgroundColor = ADColors.white,
+    this.borderColor = ADColors.borderPrimary,
   });
 
   final double? width;
@@ -33,7 +33,11 @@ class RoundedContainer extends StatelessWidget {
       height: height,
       margin: margin,
       padding: padding,
-      decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(radius), border: showBorder ? Border.all(color: borderColor) : null),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(radius),
+        border: showBorder ? Border.all(color: borderColor) : null,
+      ),
       child: child,
     );
   }

@@ -40,9 +40,9 @@ class HomeScreen extends StatelessWidget {
 
                     /// Categories
                     HomeCategories(),
-                    SizedBox(height: ADSizes.spaceBtwSections),
                   ]),
                 ),
+                SizedBox(height: ADSizes.spaceBtwSections),
               ]),
             ),
 
@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: ADSizes.spaceBtwSections),
 
                   /// Popular Products
-                  GridLayout(itemCount: 2, itemBuilder: (_, index) => const ProductCardVertical()),
+                  GridLayout(itemCount: 6, itemBuilder: (_, index) => const ProductCardVertical()),
                 ],
               ),
             ),

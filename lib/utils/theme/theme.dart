@@ -32,7 +32,7 @@ class ADTheme {
     brightness: Brightness.dark,
     fontFamily: 'Poppins',
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: ADColors.black,
     textTheme: ADTextTheme.darkTextTheme,
     elevatedButtonTheme: ADElevatedButtonTheme.darkElevatedButtonTheme,
     appBarTheme: ADAppBarTheme.darkAppBarTheme,

@@ -40,7 +40,20 @@ class ADImages {
 
   // Banners
 
-  static const String promoBanner1 = "assets/images/banners/promo-banner-1.jpg";
+  static const String promoBanner1 = "assets/images/banners/promo-banner-1.png";
   static const String promoBanner2 = "assets/images/banners/promo-banner-2.png";
   static const String promoBanner3 = "assets/images/banners/promo-banner-3.png";
+
+  // Profile
+
+  static const String user = "assets/images/user/user.png";
+
+  // Products
+
+  static const String productImage1 = "assets/images/products/product-1.png";
+  static const String productImage2= "assets/images/products/product-2.png";
+  static const String productImage3 = "assets/images/products/product-3.png";
+  static const String productImage4 = "assets/images/products/product-4.png";
+  static const String productImage5 = "assets/images/products/product-5.png";
+  static const String productImage6 = "assets/images/products/product-6.png";
 }
