@@ -12,10 +12,10 @@ class HomeCategories extends StatelessWidget {
     return SizedBox(
       height: 80,
       child: ListView.builder(
-        itemCount: 6,
+        itemCount: ADImages.categoryIcons.length,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemBuilder: (_, index) => VerticalImageText(image: ADImages.sportIcon, title: 'Shoes', onTap: () {})
+        itemBuilder: (_, index) => VerticalImageText(image: ADImages.categoryIcons[index], title: 'Shoes', onTap: () {})
       ),
     );
   }

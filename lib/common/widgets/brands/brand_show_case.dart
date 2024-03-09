@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 class BrandShowcase extends StatelessWidget {
   const BrandShowcase({
     super.key,
+    this.brand = "Nike",
     required this.images,
   });
 
+  final String brand;
   final List<String> images;
 
   @override
@@ -25,13 +27,11 @@ class BrandShowcase extends StatelessWidget {
       child: Column(
         children: [
           /// Brand with Products Count
-          const BrandCard(showBorder: false),
+          BrandCard(name: brand, showBorder: false),
           const SizedBox(height: ADSizes.spaceBtwItems),
 
           /// Brand Top 3 Product Images
-          Row(
-            children: images.map((image) => brandTopProductImageWidget(image, dark)).toList(),
-          ),
+          Row(children: images.map((image) => brandTopProductImageWidget(image, dark)).toList()),
         ],
       ),
     );

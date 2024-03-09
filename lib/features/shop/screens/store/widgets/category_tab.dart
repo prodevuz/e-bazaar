@@ -20,15 +20,15 @@ class CategoryTab extends StatelessWidget {
           child: Column(
             children: [
               /// Brands
-              const BrandShowcase(images: [ADImages.onBoardingImage3, ADImages.onBoardingImage2, ADImages.onBoardingImage1]),
-              const BrandShowcase(images: [ADImages.onBoardingImage3, ADImages.onBoardingImage2, ADImages.onBoardingImage1]),
+              const BrandShowcase(brand: "Gucci", images: [ADImages.productImage6, ADImages.productImage3, ADImages.productImage1]),
+              const BrandShowcase(images: [ADImages.productImage4, ADImages.productImage2, ADImages.productImage5]),
               const SizedBox(height: ADSizes.spaceBtwItems),
 
               /// Products
               SectionHeading(title: "Sizga yoqishi mumkin", onPressed: () {}),
               const SizedBox(height: ADSizes.spaceBtwItems),
 
-              GridLayout(itemCount: 4, itemBuilder: (_, index) => const ProductCardVertical()),
+              GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
               const SizedBox(height: ADSizes.spaceBtwSections),
             ],
           ),

@@ -35,7 +35,7 @@ flutter:
     - assets/images/user/
     - assets/icons/brands/
     - assets/images/banners/
-    - assets/icons/categories/
     - assets/images/products/
+    - assets/icons/categories/
     - assets/images/animations/
     - assets/images/on_boarding_images/

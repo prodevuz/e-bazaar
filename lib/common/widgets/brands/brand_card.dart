@@ -12,9 +12,12 @@ class BrandCard extends StatelessWidget {
   const BrandCard({
     super.key,
     this.onTap,
+    this.name = "Nike",
     required this.showBorder,
+    this.icon = ADImages.clothIcon,
   });
 
+  final String icon, name;
   final bool showBorder;
   final void Function()? onTap;
 
@@ -30,7 +33,7 @@ class BrandCard extends StatelessWidget {
         child: Row(
           children: [
             /// Icon
-            Flexible(child: CircularImage(image: ADImages.clothIcon, backgroundColor: Colors.transparent, overlayColor: dark ? ADColors.white : ADColors.black)),
+            Flexible(child: CircularImage(image: icon, backgroundColor: Colors.transparent, overlayColor: dark ? ADColors.white : ADColors.black)),
             const SizedBox(width: ADSizes.spaceBtwItems / 2),
 
             /// Text
@@ -39,12 +42,8 @@ class BrandCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const BrandTitleWithVerifiedIcon(title: 'Nike', brandTextSize: TextSizes.large),
-                  Text(
-                    '256 maxsulot',
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.labelMedium,
-                  ),
+                  BrandTitleWithVerifiedIcon(title: name, brandTextSize: TextSizes.large),
+                  Text('256 maxsulot', overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium),
                 ],
               ),
             ),

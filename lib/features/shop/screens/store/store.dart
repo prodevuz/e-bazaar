@@ -20,12 +20,7 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        appBar: ADAppBar(
-          title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium),
-          actions: [
-            CartCounterIcon(onPressed: () {}),
-          ],
-        ),
+        appBar: ADAppBar(title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium), actions: [CartCounterIcon(onPressed: () {})]),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
@@ -43,12 +38,7 @@ class StoreScreen extends StatelessWidget {
                     children: [
                       /// Search Bar
                       const SizedBox(height: ADSizes.spaceBtwItems),
-                      const SearchContainer(
-                        text: "Do'kondan qidiring",
-                        showBorder: true,
-                        showBackground: false,
-                        padding: EdgeInsets.zero,
-                      ),
+                      const SearchContainer(text: "Do'kondan qidiring", showBorder: true, showBackground: false, padding: EdgeInsets.zero),
                       const SizedBox(height: ADSizes.spaceBtwSections),
 
                       /// Featured Brands
@@ -60,7 +50,8 @@ class StoreScreen extends StatelessWidget {
                         itemCount: 4,
                         mainAxisExtent: 80,
                         itemBuilder: (_, index) {
-                          return const BrandCard(showBorder: false);
+                          List<String> brands = ["Nike", "Adidas", "Gucci", "Puma"];
+                          return BrandCard(name: brands[index], showBorder: true);
                         },
                       ),
                     ],
@@ -82,15 +73,7 @@ class StoreScreen extends StatelessWidget {
           },
 
           /// Body
-          body: const TabBarView(
-            children: [
-              CategoryTab(),
-              CategoryTab(),
-              CategoryTab(),
-              CategoryTab(),
-              CategoryTab(),
-            ],
-          ),
+          body: const TabBarView(children: [CategoryTab(), CategoryTab(), CategoryTab(), CategoryTab(), CategoryTab()]),
         ),
       ),
     );

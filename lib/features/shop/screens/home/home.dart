@@ -53,14 +53,18 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   /// Promo slider
                   const PromoSlider(banners: [
-                    ADImages.onBoardingImage1, // promoBanner1
-                    ADImages.onBoardingImage2, // promoBanner2
-                    ADImages.onBoardingImage3, // promoBanner3
+                    ADImages.promoBanner1,
+                    ADImages.promoBanner2,
+                    ADImages.promoBanner3,
                   ]),
                   const SizedBox(height: ADSizes.spaceBtwSections),
 
                   /// Popular Products
-                  GridLayout(itemCount: 6, itemBuilder: (_, index) => const ProductCardVertical()),
+                  GridLayout(
+                      itemCount: ADImages.productImages.length,
+                      itemBuilder: (_, index) {
+                        return ProductCardVertical(image: ADImages.productImages[index]);
+                      }),
                 ],
               ),
             ),
