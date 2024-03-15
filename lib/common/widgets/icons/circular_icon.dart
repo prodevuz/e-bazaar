@@ -6,13 +6,13 @@ import 'package:ebazaar/utils/helpers/helper_functions.dart';
 class CircularIcon extends StatelessWidget {
   const CircularIcon({
     super.key,
-    required this.icon,
+    this.color,
     this.width,
     this.height,
-    this.size = ADSizes.lg,
-    this.color,
-    this.backgroundColor,
     this.onPressed,
+    required this.icon,
+    this.backgroundColor,
+    this.size = ADSizes.lg,
   });
 
   final double? width, height, size;

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
 
 class ADChipTheme {
   ADChipTheme._();
   static ChipThemeData lightChipTheme = ChipThemeData(
-    disabledColor: Colors.grey.withOpacity(0.4),
+    disabledColor: ADColors.grey.withOpacity(0.4),
     labelStyle: const TextStyle(color: Colors.black),
-    selectedColor: Colors.blue,
+    selectedColor: ADColors.primary,
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: Colors.white,
+    checkmarkColor: ADColors.white,
   );
   static ChipThemeData darkChipTheme = const ChipThemeData(
-    disabledColor: Colors.grey,
-    labelStyle: TextStyle(color: Colors.white),
-    selectedColor: Colors.blue,
+    // disabledColor: ADColors.darkerGrey,
+    labelStyle: TextStyle(color: ADColors.white),
+    selectedColor: ADColors.primary,
     padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: Colors.white,
+    checkmarkColor: ADColors.white,
   );
 }

@@ -5,17 +5,17 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 class RoundedImage extends StatelessWidget {
   const RoundedImage({
     super.key,
-    this.width = double.infinity,
+    this.border,
+    this.padding,
+    this.onPressed,
     this.height = 200,
     required this.imageUrl,
-    this.applyImageRadius = true,
-    this.border,
-    this.backgroundColor = ADColors.light,
-    this.fit = BoxFit.contain, /// BoxFit.cover,
-    this.padding,
+    this.fit = BoxFit.contain,
     this.isNetworkImage = false,
-    this.onPressed,
+    this.width = double.infinity,
+    this.applyImageRadius = true,
     this.borderRadius = ADSizes.md,
+    this.backgroundColor = ADColors.light,
   });
 
   final double width, height;
