@@ -15,8 +15,8 @@ class ProductDescriptionText extends StatelessWidget {
       text,
       trimLines: 2,
       trimMode: TrimMode.Line,
-      trimCollapsedText: "Ko'proq",
-      trimExpandedText: "Kamroq",
+      trimCollapsedText: " Ko'proq",
+      trimExpandedText: " Kamroq",
       moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
       lessStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
     );
