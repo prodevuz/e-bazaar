@@ -19,8 +19,8 @@ class HomeAppBar extends StatelessWidget {
           Text(ADTexts.homeAppbarSubTitle, style: Theme.of(context).textTheme.headlineSmall!.apply(color: ADColors.white)),
         ],
       ),
-      actions: [
-        CartCounterIcon(onPressed: () {}, isHome: true),
+      actions: const [
+        CartCounterIcon(isHome: true),
       ],
     );
   }

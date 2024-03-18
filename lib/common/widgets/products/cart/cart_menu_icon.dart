@@ -1,5 +1,7 @@
+import 'package:ebazaar/features/shop/screens/cart/cart.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 
@@ -7,11 +9,9 @@ class CartCounterIcon extends StatelessWidget {
   const CartCounterIcon({
     super.key,
     this.isHome = false,
-    required this.onPressed,
   });
 
   final bool isHome;
-  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CartCounterIcon extends StatelessWidget {
     return Stack(
       children: [
         IconButton(
-          onPressed: onPressed,
+          onPressed: () => Get.to(() => const CartScreen()),
           icon: Icon(
             Iconsax.shopping_bag,
             color: isHome

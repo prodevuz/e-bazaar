@@ -1,4 +1,3 @@
-import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
@@ -9,6 +8,7 @@ import 'package:ebazaar/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 class HomeScreen extends StatelessWidget {

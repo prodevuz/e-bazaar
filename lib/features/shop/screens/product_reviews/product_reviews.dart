@@ -1,8 +1,8 @@
-import 'package:ebazaar/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/common/widgets/products/ratings/rating_indicator.dart';
+import 'package:ebazaar/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:ebazaar/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 
 class ProductReviewsScreen extends StatelessWidget {

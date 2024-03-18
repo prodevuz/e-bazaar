@@ -1,9 +1,9 @@
-import 'package:ebazaar/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
+import 'package:ebazaar/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:ebazaar/features/shop/screens/product_details/widgets/rating_and_share.dart';
 import 'package:ebazaar/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:ebazaar/features/shop/screens/product_details/widgets/product_attributes.dart';
@@ -40,7 +40,7 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(height: ADSizes.spaceBtwSections),
 
                   /// Checkout Button
-                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text("Checkout"))),
+                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text("Rasmiylashtirish"))),
                   const SizedBox(height: ADSizes.spaceBtwSections),
 
                   /// Description

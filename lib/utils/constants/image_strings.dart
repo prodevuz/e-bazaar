@@ -21,6 +21,7 @@ class ADImages {
 
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";
   static const String productsSaleIllustration = "assets/images/animations/sammy-line-sale.gif";
+  static const String successfulPaymentIcon = "assets/images/animations/success.gif";
   static const String staticSuccessIllustration = "assets/images/animations/sammy-line-success.png";
   static const String deliveredInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.gif";
   static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
@@ -70,6 +71,30 @@ class ADImages {
   static const String productImage6 = "assets/images/products/product-6.png";
 
   static const List<String> productImages = [
+    "assets/images/products/product-1.png",
+    "assets/images/products/product-2.png",
+    "assets/images/products/product-3.png",
+    "assets/images/products/product-4.png",
+    "assets/images/products/product-5.png",
+    "assets/images/products/product-6.png",
+    "assets/images/products/product-1.png",
+    "assets/images/products/product-2.png",
+    "assets/images/products/product-3.png",
+    "assets/images/products/product-4.png",
+    "assets/images/products/product-5.png",
+    "assets/images/products/product-6.png",
+    "assets/images/products/product-1.png",
+    "assets/images/products/product-2.png",
+    "assets/images/products/product-3.png",
+    "assets/images/products/product-4.png",
+    "assets/images/products/product-5.png",
+    "assets/images/products/product-6.png",
+    "assets/images/products/product-1.png",
+    "assets/images/products/product-2.png",
+    "assets/images/products/product-3.png",
+    "assets/images/products/product-4.png",
+    "assets/images/products/product-5.png",
+    "assets/images/products/product-6.png",
     "assets/images/products/product-1.png",
     "assets/images/products/product-2.png",
     "assets/images/products/product-3.png",

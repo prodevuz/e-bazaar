@@ -20,7 +20,7 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        appBar: ADAppBar(title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium), actions: [CartCounterIcon(onPressed: () {})]),
+        appBar: ADAppBar(title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium), actions: const [CartCounterIcon()]),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [

@@ -1,11 +1,15 @@
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
+import 'package:ebazaar/features/shop/screens/cart/cart.dart';
+import 'package:ebazaar/features/shop/screens/order/order.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:ebazaar/common/widgets/list_tiles/settings_menu_tile.dart';
+import 'package:ebazaar/features/personalization/screens/address/address.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -40,13 +44,13 @@ class SettingsScreen extends StatelessWidget {
                   const SectionHeading(title: 'Hisob sozlamalari', showActionButton: false),
                   const SizedBox(height: ADSizes.spaceBtwItems),
 
-                  const SettingsMenuTile(icon: Iconsax.safe_home, title: "Manzillarim", subTitle: "Yetkazib berish manzilini tanlang"),
-                  const SettingsMenuTile(icon: Iconsax.shopping_cart, title: "Savat", subTitle: "Maxsulotlarni qo'shing, olib tashlang va buyurtma bering"),
-                  const SettingsMenuTile(icon: Iconsax.bag_tick, title: "Buyurtmalarim", subTitle: "Jarayondagi va tugallangan buyurtmalar"),
-                  const SettingsMenuTile(icon: Iconsax.bank, title: "Bank hisobi", subTitle: "Bank hisobi balansi"),
-                  const SettingsMenuTile(icon: Iconsax.discount_shape, title: "Kuponlarim", subTitle: "Chegirma kuponlar ro'yxati"),
-                  const SettingsMenuTile(icon: Iconsax.notification, title: "Bildirishnomalar", subTitle: "Har qanday turdagi bildirishnoma xabarini belgilang"),
-                  const SettingsMenuTile(icon: Iconsax.security_card, title: "Hisob maxfiyligi", subTitle: "Ma'lumotdan foydalanish va ulangan hisoblarni boshqaring"),
+                  SettingsMenuTile(icon: Iconsax.safe_home, title: "Manzillarim", subTitle: "Yetkazib berish manzilini tanlang", onTap: () => Get.to(() => const UserAddressScreen())),
+                  SettingsMenuTile(icon: Iconsax.shopping_cart, title: "Savat", subTitle: "Maxsulotlarni qo'shing, olib tashlang va buyurtma bering", onTap: () => Get.to(() => const CartScreen())),
+                  SettingsMenuTile(icon: Iconsax.bag_tick, title: "Buyurtmalarim", subTitle: "Jarayondagi va tugallangan buyurtmalar", onTap: () => Get.to(() => const OrderScreen())),
+                  SettingsMenuTile(icon: Iconsax.bank, title: "Bank hisobi", subTitle: "Bank hisobi balansi", onTap: () => Get.to(() => const UserAddressScreen())),
+                  SettingsMenuTile(icon: Iconsax.discount_shape, title: "Kuponlarim", subTitle: "Chegirma kuponlar ro'yxati", onTap: () => Get.to(() => const UserAddressScreen())),
+                  SettingsMenuTile(icon: Iconsax.notification, title: "Bildirishnomalar", subTitle: "Har qanday turdagi bildirishnoma xabarini belgilang", onTap: () => Get.to(() => const UserAddressScreen())),
+                  SettingsMenuTile(icon: Iconsax.security_card, title: "Hisob maxfiyligi", subTitle: "Ma'lumotdan foydalanish va ulangan hisoblarni boshqaring", onTap: () => Get.to(() => const UserAddressScreen())),
 
                   /// App Settings
                   const SizedBox(height: ADSizes.spaceBtwSections),
