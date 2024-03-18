@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
@@ -6,6 +7,7 @@ import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/promo_slider.dart';
+import 'package:ebazaar/features/shop/screens/all_products/all_products.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
@@ -54,6 +56,7 @@ class HomeScreen extends StatelessWidget {
                   /// Promo slider
                   const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
                   const SizedBox(height: ADSizes.spaceBtwSections),
+                  SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProducts())),
 
                   /// Popular Products
                   GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
