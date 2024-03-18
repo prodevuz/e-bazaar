@@ -56,7 +56,8 @@ class HomeScreen extends StatelessWidget {
                   /// Promo slider
                   const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
                   const SizedBox(height: ADSizes.spaceBtwSections),
-                  SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProducts())),
+                  SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProductsScreen())),
+                  const SizedBox(height: ADSizes.spaceBtwItems),
 
                   /// Popular Products
                   GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),

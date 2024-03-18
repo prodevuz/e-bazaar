@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
@@ -7,6 +8,7 @@ import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:ebazaar/common/widgets/brands/brand_card.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
+import 'package:ebazaar/features/shop/screens/brands/all_brands.dart';
 import 'package:ebazaar/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:ebazaar/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/search_container.dart';
@@ -42,7 +44,7 @@ class StoreScreen extends StatelessWidget {
                       const SizedBox(height: ADSizes.spaceBtwSections),
 
                       /// Featured Brands
-                      SectionHeading(title: "Mashxur brendlar", onPressed: (){}),
+                      SectionHeading(title: "Mashxur brendlar", onPressed: () => Get.to(() => const AllBrandsScreen())),
                       const SizedBox(height: ADSizes.spaceBtwItems / 1.5),
 
                       /// Brand Cards
