@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "753809253369",
+    "firebase_url": "https://ghausshop-default-rtdb.firebaseio.com",
+    "project_id": "ghausshop",
+    "storage_bucket": "ghausshop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753809253369:android:b0a53bede72b3706395328",
+        "android_client_info": {
+          "package_name": "uz.ebazaar.ebazaar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAebdxonCIVAx6O7JNxA6cTTkZgVEPQZRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

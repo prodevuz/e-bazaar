@@ -1,7 +1,7 @@
-import 'package:ebazaar/features/screens/onboarding/onboarding.dart';
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/theme/theme.dart';
-import 'package:get/get.dart';
+import 'package:ebazaar/features/screens/onboarding/onboarding.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
