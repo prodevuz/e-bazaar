@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/validators/validation.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
-import 'package:ebazaar/features/authentication/screens/signup/verify_email.dart';
 import 'package:ebazaar/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:ebazaar/features/authentication/screens/signup/widgets/terms_conditions_checkbox.dart';
 
@@ -15,6 +14,7 @@ class SignupForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
         children: [
           /// Full name
@@ -40,7 +40,22 @@ class SignupForm extends StatelessWidget {
           const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Password
-          TextFormField(controller: controller.password, obscureText: true, validator: (value) => Validator.validatePassword(value), expands: false, decoration: const InputDecoration(labelText: ADTexts.password, prefixIcon: Icon(Iconsax.password_check), suffixIcon: Icon(Iconsax.eye_slash))),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              obscureText: controller.hidePassword.value,
+              validator: (value) => Validator.validatePassword(value),
+              expands: false,
+              decoration: InputDecoration(
+                labelText: ADTexts.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                  icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                ),
+              ),
+            ),
+          ),
           const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Terms & Conditions Checkbox
@@ -48,7 +63,7 @@ class SignupForm extends StatelessWidget {
           const SizedBox(height: ADSizes.spaceBtwSections),
 
           /// Sign Up Button
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const VerifyEmailScreen()), child: const Text(ADTexts.createAccount))),
+          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.signup(), child: const Text(ADTexts.createAccount))),
         ],
       ),
     );

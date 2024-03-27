@@ -1,3 +1,4 @@
+import 'package:ebazaar/bindings/general_bindings.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/theme/theme.dart';
@@ -13,6 +14,7 @@ class App extends StatelessWidget {
       () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode: controller.themeMode.value,
+        initialBinding: GeneralBindings(),
         theme: ADTheme.lightTheme,
         darkTheme: ADTheme.darkTheme,
         home: const Scaffold(backgroundColor: ADColors.primary, body: Center(child: CircularProgressIndicator(color: ADColors.white))),
