@@ -1,5 +1,5 @@
-import 'package:ebazaar/features/authentication/controllers.onboarding/onboarding_controller.dart';
-import 'package:ebazaar/features/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:ebazaar/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

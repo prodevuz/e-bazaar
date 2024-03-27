@@ -13,7 +13,20 @@
           "package_name": "uz.ebazaar.ebazaar"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "753809253369-ju226a73cjgdj8617u9jpce77btph0ac.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.ebazaar.ebazaar",
+            "certificate_hash": "fbb125948070aa4d085a9c94280bef3207b517dc"
+          }
+        },
+        {
+          "client_id": "753809253369-96fp5kag1ac486lcf689kjjfte529h84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAebdxonCIVAx6O7JNxA6cTTkZgVEPQZRk"
@@ -21,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753809253369-96fp5kag1ac486lcf689kjjfte529h84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

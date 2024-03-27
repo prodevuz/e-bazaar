@@ -1,4 +1,4 @@
-import 'package:ebazaar/features/screens/password_configuration/reset_password.dart';
+import 'package:ebazaar/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

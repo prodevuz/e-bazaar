@@ -1,4 +1,4 @@
-import 'package:ebazaar/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/device/device_utility.dart';

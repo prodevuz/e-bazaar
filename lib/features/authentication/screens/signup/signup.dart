@@ -1,10 +1,10 @@
-import 'package:ebazaar/common/widgets/login_signup/form_divider.dart';
-import 'package:ebazaar/common/widgets/login_signup/social_buttons.dart';
-import 'package:ebazaar/features/screens/signup/widgets/signup_form.dart';
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ebazaar/common/widgets/login_signup/form_divider.dart';
+import 'package:ebazaar/common/widgets/login_signup/social_buttons.dart';
+import 'package:ebazaar/features/authentication/screens/signup/widgets/signup_form.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

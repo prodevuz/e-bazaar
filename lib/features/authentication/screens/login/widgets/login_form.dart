@@ -1,5 +1,5 @@
-import 'package:ebazaar/features/screens/password_configuration/forget_password.dart';
-import 'package:ebazaar/features/screens/signup/signup.dart';
+import 'package:ebazaar/features/authentication/screens/password_configuration/forget_password.dart';
+import 'package:ebazaar/features/authentication/screens/signup/signup.dart';
 import 'package:ebazaar/navigation_menu.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
@@ -34,7 +34,7 @@ class LoginForm extends StatelessWidget {
               ],
             ),
             const SizedBox(height: ADSizes.spaceBtwSections),
-            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(ADTexts.signIn))),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.offAll(() => const NavigationMenu()), child: const Text(ADTexts.signIn))),
             const SizedBox(height: ADSizes.spaceBtwItems),
             SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () => Get.to(() => const SignupScreen()), child: const Text(ADTexts.createAccount))),
             const SizedBox(height: ADSizes.spaceBtwSections),

@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 class HelperFunctions {
   HelperFunctions._();
 
+  static ThemeMode themeMode = ThemeMode.system;
+
   static Color? getColor(String value) {
     if (value == 'Green') {
       return Colors.green;

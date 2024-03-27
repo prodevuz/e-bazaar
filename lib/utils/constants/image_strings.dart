@@ -61,6 +61,10 @@ class ADImages {
 
   static const String user = "assets/images/user/user.png";
 
+  // System
+  static const String sun = "assets/icons/system/sun.png";
+  static const String moon = "assets/icons/system/moon.png";
+
   // Products
 
   static const String productImage1 = "assets/images/products/product-1.png";

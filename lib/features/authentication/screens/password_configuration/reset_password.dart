@@ -1,4 +1,4 @@
-import 'package:ebazaar/features/screens/login/login.dart';
+import 'package:ebazaar/features/authentication/screens/login/login.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
