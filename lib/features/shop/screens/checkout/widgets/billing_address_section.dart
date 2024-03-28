@@ -1,6 +1,6 @@
-import 'package:ebazaar/common/widgets/texts/section_heading.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 
 class BillingAddressSection extends StatelessWidget {
   const BillingAddressSection({super.key});

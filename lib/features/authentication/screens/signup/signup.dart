@@ -1,7 +1,7 @@
-import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
 import 'package:ebazaar/common/widgets/login_signup/form_divider.dart';
 import 'package:ebazaar/common/widgets/login_signup/social_buttons.dart';

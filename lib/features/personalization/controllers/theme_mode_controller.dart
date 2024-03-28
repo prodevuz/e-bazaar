@@ -4,6 +4,7 @@ import 'package:ebazaar/utils/helpers/helper_functions.dart';
 
 class ThemeModeController extends GetxController {
   static ThemeModeController get instance => Get.find();
+
   Rx<ThemeMode> themeMode = ThemeMode.system.obs;
   Rx<bool> boolValue = false.obs;
   final dark = HelperFunctions.isDarkMode;

@@ -8,9 +8,7 @@ class Formatter {
     return DateFormat("dd-MMM-yyyy").format(date);
   }
 
-  static String formatCurrency(double amount) {
-    return NumberFormat.currency(locale: 'en-US', symbol: '\$').format(amount);
-  }
+  static String formatCurrency(double amount) => NumberFormat.currency(locale: 'en-US', symbol: '\$').format(amount);
 
   static String formatPhoneNumber(String phoneNumber) {
     if (phoneNumber.length == 10) {

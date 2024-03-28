@@ -1,10 +1,10 @@
-import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/device/device_utility.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
 
 class OnBoardingDotNavigation extends StatelessWidget {
   const OnBoardingDotNavigation({super.key});
@@ -13,6 +13,7 @@ class OnBoardingDotNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = OnBoardingController.instance;
     final dark = HelperFunctions.isDarkMode(context);
+    
     return Positioned(
       bottom: ADDeviceUtils.getBottomNavigationBarHeight() + 25,
       left: ADSizes.defaultSpace,

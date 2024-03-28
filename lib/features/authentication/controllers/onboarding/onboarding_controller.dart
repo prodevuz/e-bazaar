@@ -5,9 +5,12 @@ import 'package:ebazaar/features/authentication/screens/login/login.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
+
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
+
   void updatePageIndicator(index) => currentPageIndex.value = index;
+
   void dotNavigationClick(index) {
     currentPageIndex.value = index;
     pageController.jumpToPage(index);
@@ -24,7 +27,5 @@ class OnBoardingController extends GetxController {
     }
   }
 
-  void skipPage() {
-    Get.offAll(const LoginScreen());
-  }
+  void skipPage() => Get.offAll(const LoginScreen());
 }

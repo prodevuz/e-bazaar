@@ -1,12 +1,12 @@
-import 'package:ebazaar/common/widgets/success_screen/success_screen.dart';
-import 'package:ebazaar/features/authentication/screens/login/login.dart';
-import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ebazaar/features/authentication/screens/login/login.dart';
+import 'package:ebazaar/common/widgets/success_screen/success_screen.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -16,9 +16,7 @@ class VerifyEmailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(onPressed: () => Get.offAll(const LoginScreen()), icon: const Icon(CupertinoIcons.clear)),
-        ],
+        actions: [IconButton(onPressed: () => Get.offAll(const LoginScreen()), icon: const Icon(CupertinoIcons.clear))],
       ),
       body: SingleChildScrollView(
         child: Padding(

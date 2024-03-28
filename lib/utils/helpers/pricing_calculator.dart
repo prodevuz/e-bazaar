@@ -1,14 +1,10 @@
 class PricingCalculator {
   PricingCalculator._();
-  static double calculateTotalPrice(
-    double productPrice,
-    String location,
-  ) {
+
+  static double calculateTotalPrice(double productPrice, String location) {
     double taxRate = getTaxRateForLocation(location);
     double taxAmount = productPrice * taxRate;
-
     double shippingCost = getShippingCost(location);
-
     double totalPrice = productPrice + taxAmount + shippingCost;
 
     return totalPrice;
@@ -25,18 +21,9 @@ class PricingCalculator {
     return getTaxAmount.toStringAsFixed(2);
   }
 
-  static double getTaxRateForLocation(String location) {
-    return 0.10;
-  }
+  static double getTaxRateForLocation(String location) => 0.10;
 
-  static double getShippingCost(String location) {
-    return 5.00;
-  }
+  static double getShippingCost(String location) => 5.00;
 
-  // static double calculateCartTotal(CartModel cart) {
-  //   return cart.items.map((e) => e.price).fold(
-  //         0,
-  //         (previousPrice, currentPrice) => previousPrice + (currentPrice ?? 0),
-  //       );
-  // }
+  // static double calculateCartTotal(CartModel cart) => cart.items.map((e) => e.price).fold(0, (previousPrice, currentPrice) => previousPrice + (currentPrice ?? 0));
 }

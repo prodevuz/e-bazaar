@@ -32,7 +32,7 @@ class ProductDetailScreen extends StatelessWidget {
                   /// Rating & Share Button
                   const RatingAndShare(),
 
-                  /// Price, Title, Stock, & Brand
+                  /// Price, Title, Stock & Brand
                   const ProductMetaData(),
 
                   /// Attributes

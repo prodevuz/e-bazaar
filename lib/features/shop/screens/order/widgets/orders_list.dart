@@ -11,10 +11,11 @@ class OrderListItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return ListView.separated(
       itemCount: 10,
       shrinkWrap: true,
-      separatorBuilder: (_,__) => const SizedBox(height: ADSizes.spaceBtwItems),
+      separatorBuilder: (_, __) => const SizedBox(height: ADSizes.spaceBtwItems),
       itemBuilder: (_, index) => RoundedContainer(
         showBorder: true,
         padding: const EdgeInsets.all(ADSizes.md),
@@ -28,7 +29,7 @@ class OrderListItems extends StatelessWidget {
                 /// 1 - Icon
                 const Icon(Iconsax.ship),
                 const SizedBox(width: ADSizes.spaceBtwItems / 2),
-      
+
                 /// 2 - Status & Date
                 Expanded(
                   child: Column(
@@ -40,13 +41,13 @@ class OrderListItems extends StatelessWidget {
                     ],
                   ),
                 ),
-      
+
                 /// 3 - Icon
                 IconButton(onPressed: () {}, icon: const Icon(Iconsax.arrow_right_34, size: ADSizes.iconSm)),
               ],
             ),
             const SizedBox(height: ADSizes.spaceBtwItems),
-      
+
             /// Row 2
             Row(
               children: [
@@ -56,7 +57,7 @@ class OrderListItems extends StatelessWidget {
                       /// 1 - Icon
                       const Icon(Iconsax.tag),
                       const SizedBox(width: ADSizes.spaceBtwItems / 2),
-                  
+
                       /// 2 - Status & Date
                       Expanded(
                         child: Column(
@@ -77,7 +78,7 @@ class OrderListItems extends StatelessWidget {
                       /// 1 - Icon
                       const Icon(Iconsax.calendar),
                       const SizedBox(width: ADSizes.spaceBtwItems / 2),
-                  
+
                       /// 2 - Status & Date
                       Expanded(
                         child: Column(

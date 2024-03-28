@@ -1,15 +1,9 @@
-import 'package:ebazaar/utils/constants/enums.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/enums.dart';
 
 class BrandTitleText extends StatelessWidget {
-  const BrandTitleText({
-    super.key,
-    this.color,
-    this.maxLines = 1,
-    required this.title,
-    this.textAlign = TextAlign.center,
-    this.brandTextSize = TextSizes.small,
-  });
+  const BrandTitleText({super.key, this.color, this.maxLines = 1, required this.title, this.textAlign = TextAlign.center, this.brandTextSize = TextSizes.small});
+ 
   final Color? color;
   final String title;
   final int maxLines;

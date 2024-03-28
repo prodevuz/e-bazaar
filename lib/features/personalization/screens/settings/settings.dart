@@ -1,10 +1,10 @@
-import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:ebazaar/features/shop/screens/cart/cart.dart';
 import 'package:ebazaar/features/shop/screens/order/order.dart';
@@ -21,41 +21,36 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = ThemeModeController.instance;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
             PrimaryHeaderContainer(
-              child: Column(
-                children: [
-                  /// AppBar
-                  Row(
-                    children: [
-                      Expanded(flex: 3, child: ADAppBar(title: Text('Hisob', style: Theme.of(context).textTheme.headlineMedium!.apply(color: ADColors.white)))),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            const SizedBox(height: 45),
-                            Switch(
-                              activeThumbImage: const AssetImage(ADImages.moon),
-                              activeColor: ADColors.grey,
-                              inactiveThumbImage: (const AssetImage(ADImages.sun)),
-                              inactiveThumbColor: Colors.transparent,
-                              value: HelperFunctions.isDarkMode(context),
-                              onChanged: (value) => controller.changeThemeMode(context),
-                            ),
-                          ],
-                        ),
+              child: Column(children: [
+                /// AppBar
+                Row(children: [
+                  Expanded(flex: 3, child: ADAppBar(title: Text('Hisob', style: Theme.of(context).textTheme.headlineMedium!.apply(color: ADColors.white)))),
+                  Expanded(
+                    child: Column(children: [
+                      const SizedBox(height: 45),
+                      Switch(
+                        activeThumbImage: const AssetImage(ADImages.moon),
+                        activeColor: ADColors.grey,
+                        inactiveThumbImage: (const AssetImage(ADImages.sun)),
+                        inactiveThumbColor: Colors.transparent,
+                        value: HelperFunctions.isDarkMode(context),
+                        onChanged: (value) => controller.changeThemeMode(context),
                       ),
-                    ],
+                    ]),
                   ),
+                ]),
 
-                  /// User Profile Card
-                  const UserProfileTile(),
-                  const SizedBox(height: ADSizes.spaceBtwSections),
-                ],
-              ),
+                /// User Profile Card
+                const UserProfileTile(),
+                const SizedBox(height: ADSizes.spaceBtwSections),
+              ]),
             ),
 
             /// Body

@@ -29,7 +29,7 @@ class ADSizes {
   static const double buttonWidth = 120.0;
   static const double buttonElevation = 4.0;
 
-  // AppBar sizes
+  // App Bar sizes
 
   static const double appBarHeight = 56.0;
 

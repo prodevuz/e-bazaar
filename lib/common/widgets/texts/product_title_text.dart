@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProductTitleText extends StatelessWidget {
-  const ProductTitleText({
-    super.key,
-    required this.title,
-    this.smallSize = false,
-    this.maxLines = 2,
-    this.textAlign = TextAlign.left,
-  });
+  const ProductTitleText({super.key, required this.title, this.smallSize = false, this.maxLines = 2, this.textAlign = TextAlign.left});
 
   final String title;
   final bool smallSize;

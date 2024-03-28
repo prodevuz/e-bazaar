@@ -1,7 +1,5 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:get/get.dart';
-import 'package:flutter/services.dart';
 import 'package:ebazaar/utils/loaders/loaders.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
@@ -9,35 +7,39 @@ class NetworkManager extends GetxController {
   static NetworkManager get instance => Get.find();
 
   final Connectivity _connectivity = Connectivity();
-  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
-  final RxList<ConnectivityResult> _connectionStatus = [ConnectivityResult.none].obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+  // StreamController to broadcast connectivity changes
+  StreamController<ConnectivityResult> connectionStatusController = StreamController<ConnectivityResult>();
+  final RxList<ConnectivityResult> results = [ConnectivityResult.none].obs;
+  NetworkManager() {
+    // Initialize the controller and listen for changes
+
+    _listenChange(results.first);
+  }
+  void _listenChange(ConnectivityResult result) {
+    _connectivity.onConnectivityChanged.listen((result) async {
+      if (result.first != results.first) {
+        results.value = result;
+        isConnected();
+      }
+
+      connectionStatusController.add(result.first);
+      _listenChange(result.first);
+    });
   }
 
-  void _updateConnectionStatus(List<ConnectivityResult> results) async {
-    _connectionStatus.value = results;
-    !results.contains(ConnectivityResult.wifi) || !results.contains(ConnectivityResult.mobile) ? ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q") : null;
-  }
-
+  // Check current connectivity status
   Future<bool> isConnected() async {
-    try {
-      final result = await InternetAddress.lookup('google.com');
-
-      // If the lookup succeeds, there's likely a connection
-      return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
-        
-    } on PlatformException catch (_) {
+    var connectivityResult = await _connectivity.checkConnectivity();
+    _listenChange(results.first);
+    if (connectivityResult.first != ConnectivityResult.none) {
+      return true;
+    } else {
+      ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q");
       return false;
     }
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-    _connectivitySubscription.cancel();
-  }
+  // Stream to listen for connectivity changes
+  Stream<ConnectivityResult> get connectionChange => connectionStatusController.stream;
 }

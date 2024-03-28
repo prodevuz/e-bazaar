@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 
 class DefaultFirebaseOptions {
-  get options => androidOptions;
 
   FirebaseOptions androidOptions = const FirebaseOptions(
     apiKey: "AIzaSyAebdxonCIVAx6O7JNxA6cTTkZgVEPQZRk",

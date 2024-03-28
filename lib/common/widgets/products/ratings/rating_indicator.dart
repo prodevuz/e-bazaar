@@ -4,10 +4,7 @@ import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ADRatingBarIndicator extends StatelessWidget {
-  const ADRatingBarIndicator({
-    super.key,
-    required this.rating,
-  });
+  const ADRatingBarIndicator({super.key, required this.rating});
 
   final double rating;
 

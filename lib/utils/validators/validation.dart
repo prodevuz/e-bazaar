@@ -1,22 +1,14 @@
 class Validator {
-  static String? validateEmptyText(String? fieldName, String? value) {
-    if (value == null || value.isEmpty) {
-      return "$fieldName is required.";
-    }
-    return null;
-  }
+  static String? validateEmptyText(String? fieldName, String? value) => value == null || value.isEmpty ? "$fieldName yozilishi shart." : null;
 
   static String? validateEmail(String? value) {
-    if (value == null || value.isEmpty) {
-      return "Email bo'lishi shart.";
-    }
+
+    String? result;
+    value == null || value.isEmpty ? result = "Email bo'lishi shart." : null;
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    !emailRegExp.hasMatch(value!) ? result = "Noto'g'ri email." : null;
 
-    if (!emailRegExp.hasMatch(value)) {
-      return "Noto'g'ri email.";
-    }
-
-    return null;
+    return result;
   }
 
   static String? validatePassword(String? value) {

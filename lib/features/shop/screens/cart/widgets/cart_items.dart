@@ -5,10 +5,7 @@ import 'package:ebazaar/common/widgets/texts/product_price_text.dart';
 import 'package:ebazaar/common/widgets/products/cart/add_remove_button.dart';
 
 class CartItems extends StatelessWidget {
-  const CartItems({
-    super.key,
-    this.showAddRemoveButtons = true,
-  });
+  const CartItems({super.key, this.showAddRemoveButtons = true});
 
   final bool showAddRemoveButtons;
 

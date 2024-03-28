@@ -1,1 +1,1 @@
-const String customSecretApiKey = "";
+const String customSecretApiKey = '';

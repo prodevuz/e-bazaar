@@ -35,14 +35,16 @@ class HomeScreen extends StatelessWidget {
                 /// Categories
                 Padding(
                   padding: EdgeInsets.only(left: ADSizes.defaultSpace),
-                  child: Column(children: [
-                    /// Heading
-                    SectionHeading(title: "Mashxur Kategoriyalar", showActionButton: false, textColor: ADColors.white),
-                    SizedBox(height: ADSizes.spaceBtwItems),
+                  child: Column(
+                    children: [
+                      /// Heading
+                      SectionHeading(title: "Mashxur Kategoriyalar", showActionButton: false, textColor: ADColors.white),
+                      SizedBox(height: ADSizes.spaceBtwItems),
 
-                    /// Categories
-                    HomeCategories(),
-                  ]),
+                      /// Categories
+                      HomeCategories(),
+                    ],
+                  ),
                 ),
                 SizedBox(height: ADSizes.spaceBtwSections),
               ]),
@@ -51,18 +53,16 @@ class HomeScreen extends StatelessWidget {
             /// Body
             Padding(
               padding: const EdgeInsets.all(ADSizes.defaultSpace),
-              child: Column(
-                children: [
-                  /// Promo slider
-                  const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
-                  const SizedBox(height: ADSizes.spaceBtwSections),
-                  SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProductsScreen())),
-                  const SizedBox(height: ADSizes.spaceBtwItems),
+              child: Column(children: [
+                /// Promo slider
+                const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
+                const SizedBox(height: ADSizes.spaceBtwSections),
+                SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProductsScreen())),
+                const SizedBox(height: ADSizes.spaceBtwItems),
 
-                  /// Popular Products
-                  GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
-                ],
-              ),
+                /// Popular Products
+                GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
+              ]),
             ),
           ],
         ),

@@ -12,6 +12,7 @@ class BillingPaymentSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return Column(
       children: [
         SectionHeading(title: "To'lov usuli", buttonTitle: "O'zgartirish", onPressed: () {}),

@@ -1,19 +1,19 @@
-import 'package:ebazaar/data/models/user/user_model.dart';
-import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
-import 'package:ebazaar/data/repositories/user/user_repository.dart';
-import 'package:ebazaar/utils/constants/image_strings.dart';
-import 'package:ebazaar/utils/helpers/network_manager.dart';
-import 'package:ebazaar/utils/loaders/loaders.dart';
-import 'package:ebazaar/utils/popups/full_screen_loader.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/loaders/loaders.dart';
+import 'package:ebazaar/data/models/user/user_model.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:ebazaar/utils/helpers/network_manager.dart';
+import 'package:ebazaar/utils/popups/full_screen_loader.dart';
+import 'package:ebazaar/data/repositories/user/user_repository.dart';
+import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 
 class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
   /// Variables
   final hidePassword = true.obs;
-  final privacyPolicy = true.obs;
+  final privacyPolicy = false.obs;
   final email = TextEditingController();
   final lastName = TextEditingController();
   final username = TextEditingController();
@@ -30,10 +30,10 @@ class SignupController extends GetxController {
       FullScreenLoader.openLoadingDialog("Ma'lumotlaringiz qayta ishlanmoqda...", ADImages.docerAnimation);
 
       // Check Internet Connectivity
-      final isConnected = await NetworkManager.instance.isConnected();
+      bool isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) return;
 
-      // Form Validationr
+      // Form Validation
       if (!signupFormKey.currentState!.validate()) return;
 
       // Privacy & Policy
@@ -62,9 +62,10 @@ class SignupController extends GetxController {
       // Show success message
 
       // Move to Verify Email Screen
+    
     } catch (e) {
       // Show some Generic error to the user
-      ADLoaders.errorSnackBar(title: "Voy xatolik!", message: e.toString());
+      ADLoaders.errorSnackBar(title: "Xato", message: e.toString());
     } finally {
       // Remove loader
       FullScreenLoader.stopLoading();

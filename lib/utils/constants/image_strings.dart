@@ -19,26 +19,26 @@ class ADImages {
 
   // Animations
 
+  static const String successfulPaymentIcon = "assets/images/animations/success.gif";
+  static const String docerAnimation = "assets/images/animations/docer-animation.json";
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";
   static const String productsSaleIllustration = "assets/images/animations/sammy-line-sale.gif";
-  static const String successfulPaymentIcon = "assets/images/animations/success.gif";
   static const String staticSuccessIllustration = "assets/images/animations/sammy-line-success.png";
   static const String deliveredInPlaneIllustration = "assets/images/animations/sammy-line-come-back-later.gif";
   static const String deliveredEmailIllustration = "assets/images/animations/sammy-line-man-receives-a-mail.png";
   static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
-  static const String docerAnimation = "assets/images/animations/docer-animation.json";
 
   // Category Icons
 
-  static const String sportIcon = "assets/icons/categories/icons8-bowling-64.png";
-  static const String clothIcon = "assets/icons/categories/icons8-tailors-dummy-64.png";
   static const String shoeIcon = "assets/icons/categories/icons8-shoes-64.png";
-  static const String cosmeticsIcon = "assets/icons/categories/icons8-cosmetics-64.png";
+  static const String sportIcon = "assets/icons/categories/icons8-bowling-64.png";
   static const String animalIcon = "assets/icons/categories/icons8-dog-heart-64.png";
   static const String toyIcon = "assets/icons/categories/icons8-wooden-toy-car-64.png";
+  static const String clothIcon = "assets/icons/categories/icons8-tailors-dummy-64.png";
+  static const String cosmeticsIcon = "assets/icons/categories/icons8-cosmetics-64.png";
   static const String furnitureIcon = "assets/icons/categories/icons8-dining-chair-64.png";
-  static const String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
   static const String electronicsIcon = "assets/icons/categories/icons8-smartphone-64.png";
+  static const String jeweleryIcon = "assets/icons/categories/icons8-sparkling-diamond-64.png";
 
   static List<String> categoryIcons = [
     "assets/icons/categories/icons8-bowling-64.png",

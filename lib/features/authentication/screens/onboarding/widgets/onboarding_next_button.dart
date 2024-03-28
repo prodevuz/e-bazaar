@@ -1,10 +1,10 @@
-import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/device/device_utility.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
 
 class OnBoardingNextButton extends StatelessWidget {
   const OnBoardingNextButton({super.key});
@@ -12,6 +12,7 @@ class OnBoardingNextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+    
     return Positioned(
       right: ADSizes.defaultSpace,
       bottom: ADDeviceUtils.getBottomNavigationBarHeight(),

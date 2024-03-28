@@ -1,17 +1,12 @@
-import 'package:ebazaar/common/styles/spacing_styles.dart';
+import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/common/styles/spacing_styles.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.subTitle,
-    required this.onPressed,
-  });
+  const SuccessScreen({super.key, required this.image, required this.title, required this.subTitle, required this.onPressed});
+  
   final String image, title, subTitle;
   final VoidCallback onPressed;
 

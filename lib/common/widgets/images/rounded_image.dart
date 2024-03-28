@@ -18,16 +18,16 @@ class RoundedImage extends StatelessWidget {
     this.backgroundColor = ADColors.light,
   });
 
-  final double width, height;
-  final String imageUrl;
-  final bool applyImageRadius;
-  final BoxBorder? border;
-  final Color backgroundColor;
   final BoxFit fit;
-  final EdgeInsetsGeometry? padding;
-  final bool isNetworkImage;
-  final VoidCallback? onPressed;
+  final String imageUrl;
+  final BoxBorder? border;
   final double borderRadius;
+  final bool isNetworkImage;
+  final double width, height;
+  final bool applyImageRadius;
+  final Color backgroundColor;
+  final VoidCallback? onPressed;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {

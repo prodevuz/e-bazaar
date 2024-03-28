@@ -1,20 +1,9 @@
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
 
 class RoundedContainer extends StatelessWidget {
-  const RoundedContainer({
-    super.key,
-    this.child,
-    this.width,
-    this.height,
-    this.margin,
-    this.padding,
-    this.showBorder = false,
-    this.radius = ADSizes.cardRadiusLg,
-    this.backgroundColor = ADColors.white,
-    this.borderColor = ADColors.borderPrimary,
-  });
+  const RoundedContainer({super.key, this.child, this.width, this.height, this.margin, this.padding, this.showBorder = false, this.radius = ADSizes.cardRadiusLg, this.backgroundColor = ADColors.white, this.borderColor = ADColors.borderPrimary});
 
   final double? width;
   final double? height;
@@ -33,11 +22,7 @@ class RoundedContainer extends StatelessWidget {
       height: height,
       margin: margin,
       padding: padding,
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(radius),
-        border: showBorder ? Border.all(color: borderColor) : null,
-      ),
+      decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(radius), border: showBorder ? Border.all(color: borderColor) : null),
       child: child,
     );
   }

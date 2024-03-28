@@ -13,6 +13,7 @@ class SignupForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SignupController());
+
     return Form(
       key: controller.signupFormKey,
       child: Column(
@@ -40,22 +41,20 @@ class SignupForm extends StatelessWidget {
           const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Password
-          Obx(
-            () => TextFormField(
-              controller: controller.password,
-              obscureText: controller.hidePassword.value,
-              validator: (value) => Validator.validatePassword(value),
-              expands: false,
-              decoration: InputDecoration(
-                labelText: ADTexts.password,
-                prefixIcon: const Icon(Iconsax.password_check),
-                suffixIcon: IconButton(
-                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
-                  icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+          Obx(() => TextFormField(
+                controller: controller.password,
+                obscureText: controller.hidePassword.value,
+                validator: (value) => Validator.validatePassword(value),
+                expands: false,
+                decoration: InputDecoration(
+                  labelText: ADTexts.password,
+                  prefixIcon: const Icon(Iconsax.password_check),
+                  suffixIcon: IconButton(
+                    onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                    icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                  ),
                 ),
-              ),
-            ),
-          ),
+              )),
           const SizedBox(height: ADSizes.spaceBtwInputFields),
 
           /// Terms & Conditions Checkbox

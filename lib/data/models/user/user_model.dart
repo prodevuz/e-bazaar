@@ -9,8 +9,9 @@ class UserModel {
     required this.username,
     required this.email,
     required this.phoneNumber,
-    required this.profilePicture,
+    required this.profilePicture
   });
+  
   final String id;
   final String firstName;
   final String lastName;

@@ -1,9 +1,9 @@
-import 'package:ebazaar/common/widgets/texts/brand_title_text.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/enums.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/enums.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/common/widgets/texts/brand_title_text.dart';
 
 class BrandTitleWithVerifiedIcon extends StatelessWidget {
   const BrandTitleWithVerifiedIcon({
@@ -15,6 +15,7 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.brandTextSize = TextSizes.small,
   });
+
   final String title;
   final int maxLines;
   final Color? textColor, iconColor;
@@ -26,15 +27,7 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Flexible(
-          child: BrandTitleText(
-            title: title,
-            color: textColor,
-            maxLines: maxLines,
-            textAlign: textAlign,
-            brandTextSize: brandTextSize,
-          ),
-        ),
+        Flexible(child: BrandTitleText(title: title, color: textColor, maxLines: maxLines, textAlign: textAlign, brandTextSize: brandTextSize)),
         const SizedBox(width: ADSizes.xs),
         const Icon(Iconsax.verify5, color: ADColors.primary, size: ADSizes.iconXs),
       ],

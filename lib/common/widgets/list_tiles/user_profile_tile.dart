@@ -1,15 +1,13 @@
-import 'package:ebazaar/common/widgets/images/circular_image.dart';
-import 'package:ebazaar/features/personalization/screens/profile/profile.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/image_strings.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:ebazaar/common/widgets/images/circular_image.dart';
+import 'package:ebazaar/features/personalization/screens/profile/profile.dart';
 
 class UserProfileTile extends StatelessWidget {
-  const UserProfileTile({
-    super.key,
-  });
+  const UserProfileTile({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
-import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
 
 class BillingAmountSection extends StatelessWidget {
   const BillingAmountSection({super.key});

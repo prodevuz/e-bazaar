@@ -1,16 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:ebazaar/common/widgets/brands/brand_card.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
 
 class BrandShowcase extends StatelessWidget {
-  const BrandShowcase({
-    super.key,
-    this.brand = "Nike",
-    required this.images,
-  });
+  const BrandShowcase({super.key, this.brand = "Nike", required this.images});
 
   final String brand;
   final List<String> images;
@@ -18,22 +14,21 @@ class BrandShowcase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return RoundedContainer(
       showBorder: true,
       borderColor: ADColors.darkGrey,
       backgroundColor: Colors.transparent,
       padding: const EdgeInsets.all(ADSizes.md),
       margin: const EdgeInsets.only(bottom: ADSizes.spaceBtwItems),
-      child: Column(
-        children: [
-          /// Brand with Products Count
-          BrandCard(name: brand, showBorder: false),
-          const SizedBox(height: ADSizes.spaceBtwItems),
+      child: Column(children: [
+        /// Brand with Products Count
+        BrandCard(name: brand, showBorder: false),
+        const SizedBox(height: ADSizes.spaceBtwItems),
 
-          /// Brand Top 3 Product Images
-          Row(children: images.map((image) => brandTopProductImageWidget(image, dark)).toList()),
-        ],
-      ),
+        /// Brand Top 3 Product Images
+        Row(children: images.map((image) => brandTopProductImageWidget(image, dark)).toList()),
+      ]),
     );
   }
 

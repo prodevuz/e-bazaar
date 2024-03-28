@@ -19,6 +19,7 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return DefaultTabController(
       length: 5,
       child: Scaffold(

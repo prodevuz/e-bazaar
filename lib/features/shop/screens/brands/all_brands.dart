@@ -9,6 +9,7 @@ import 'package:ebazaar/features/shop/screens/brands/brand_products.dart';
 
 class AllBrandsScreen extends StatelessWidget {
   const AllBrandsScreen({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

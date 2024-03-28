@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ADAppBarTheme {
   ADAppBarTheme._();
+
   static const lightAppBarTheme = AppBarTheme(
     elevation: 0,
     centerTitle: false,
@@ -12,6 +13,7 @@ class ADAppBarTheme {
     actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
     titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black),
   );
+  
   static const darkAppBarTheme = AppBarTheme(
     elevation: 0,
     centerTitle: false,

@@ -1,21 +1,19 @@
-import 'package:ebazaar/common/widgets/custom_shapes/containers/circular_container.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/helpers/helper_functions.dart';
+import 'package:ebazaar/common/widgets/custom_shapes/containers/circular_container.dart';
 
 class ADChoiceChip extends StatelessWidget {
-  const ADChoiceChip({
-    super.key,
-    required this.selected,
-    required this.text,
-    this.onSelected,
-  });
+  const ADChoiceChip({super.key, required this.selected, required this.text, this.onSelected});
+ 
   final String text;
   final bool selected;
   final void Function(bool)? onSelected;
+
   @override
   Widget build(BuildContext context) {
     final isColor = HelperFunctions.getColor(text) != null;
+    
     return Theme(
       data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
       child: ChoiceChip(

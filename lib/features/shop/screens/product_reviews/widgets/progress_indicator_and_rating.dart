@@ -1,14 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 
 class RatingProgressIndicator extends StatelessWidget {
-  const RatingProgressIndicator({
-    super.key,
-    required this.text,
-    required this.value,
-  });
+  const RatingProgressIndicator({super.key, required this.text, required this.value});
 
   final String text;
   final double value;

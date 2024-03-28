@@ -1,6 +1,6 @@
+import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebazaar/data/models/user/user_model.dart';
-import 'package:get/get.dart';
 
 class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();

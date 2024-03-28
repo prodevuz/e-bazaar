@@ -1,7 +1,7 @@
-import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/device/device_utility.dart';
-import 'package:flutter/material.dart';
+import 'package:ebazaar/features/authentication/controllers/onboarding/onboarding_controller.dart';
 
 class OnBoardingSkip extends StatelessWidget {
   const OnBoardingSkip({super.key});

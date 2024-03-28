@@ -1,16 +1,9 @@
-
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
 
 class ProfileMenu extends StatelessWidget {
-  const ProfileMenu({
-    super.key,
-    this.icon = Iconsax.arrow_right_34,
-    required this.onPressed,
-    required this.title,
-    required this.value,
-  });
+  const ProfileMenu({super.key, this.icon = Iconsax.arrow_right_34, required this.onPressed, required this.title, required this.value});
 
   final IconData icon;
   final VoidCallback onPressed;
@@ -22,13 +15,11 @@ class ProfileMenu extends StatelessWidget {
       onTap: onPressed,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: ADSizes.spaceBtwItems / 1.5),
-        child: Row(
-          children: [
-            Expanded(flex: 3, child: Text(title, style: Theme.of(context).textTheme.bodySmall, overflow: TextOverflow.ellipsis)),
-            Expanded(flex: 5, child: Text(value, style: Theme.of(context).textTheme.bodyMedium, overflow: TextOverflow.ellipsis)),
-            Expanded(child: Icon(icon, size: 18)),
-          ],
-        ),
+        child: Row(children: [
+          Expanded(flex: 3, child: Text(title, style: Theme.of(context).textTheme.bodySmall, overflow: TextOverflow.ellipsis)),
+          Expanded(flex: 5, child: Text(value, style: Theme.of(context).textTheme.bodyMedium, overflow: TextOverflow.ellipsis)),
+          Expanded(child: Icon(icon, size: 18)),
+        ]),
       ),
     );
   }

@@ -1,7 +1,7 @@
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/helpers/helper_functions.dart';
 
 class CircularImage extends StatelessWidget {
   const CircularImage({
@@ -26,21 +26,15 @@ class CircularImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return Container(
       width: width,
       height: height,
       padding: EdgeInsets.all(padding),
-      decoration: BoxDecoration(
-        color: backgroundColor ?? (dark ? ADColors.black : ADColors.white),
-        borderRadius: BorderRadius.circular(100),
-      ),
+      decoration: BoxDecoration(color: backgroundColor ?? (dark ? ADColors.black : ADColors.white), borderRadius: BorderRadius.circular(100)),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100),
-        child: Image(
-          fit: fit,
-          image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider,
-          color: overlayColor,
-        ),
+        child: Image(fit: fit, image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider, color: overlayColor),
       ),
     );
   }

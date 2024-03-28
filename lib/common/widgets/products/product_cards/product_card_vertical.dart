@@ -21,6 +21,7 @@ class ProductCardVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return GestureDetector(
       onTap: () => Get.to(const ProductDetailScreen()),
       child: Container(
@@ -31,78 +32,65 @@ class ProductCardVertical extends StatelessWidget {
           borderRadius: BorderRadius.circular(ADSizes.productImageRadius),
           color: dark ? ADColors.darkerGrey : ADColors.white,
         ),
-        child: Column(
-          children: [
-            /// Thumbnail Image
-            RoundedContainer(
-              height: 180,
-              padding: const EdgeInsets.all(ADSizes.sm),
-              backgroundColor: dark ? ADColors.dark : ADColors.light,
-              child: Stack(
-                children: [
-                  /// Thumbnail Image
-                  RoundedImage(imageUrl: image, applyImageRadius: true, backgroundColor: dark ? ADColors.dark : ADColors.light),
+        child: Column(children: [
+          /// Thumbnail Image
+          RoundedContainer(
+            height: 180,
+            padding: const EdgeInsets.all(ADSizes.sm),
+            backgroundColor: dark ? ADColors.dark : ADColors.light,
+            child: Stack(children: [
+              /// Thumbnail Image
+              RoundedImage(imageUrl: image, applyImageRadius: true, backgroundColor: dark ? ADColors.dark : ADColors.light),
 
-                  /// Sale Tag
-                  Positioned(
-                    top: 12,
-                    left: 0,
-                    child: RoundedContainer(
-                      radius: ADSizes.sm,
-                      backgroundColor: ADColors.secondary.withOpacity(0.8),
-                      padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
-                      child: Text(
-                        '25%',
-                        style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black),
-                      ),
-                    ),
-                  ),
-
-                  /// Favorite Button
-                  const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
-                ],
-              ),
-            ),
-            const SizedBox(height: ADSizes.spaceBtwItems / 2),
-
-            /// Details
-            const Padding(
-              padding: EdgeInsets.only(left: ADSizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  /// Title
-                  ProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
-                  SizedBox(height: ADSizes.spaceBtwItems / 2),
-
-                  /// Brand
-                  BrandTitleWithVerifiedIcon(title: 'Nike'),
-                ],
-              ),
-            ),
-
-            const Spacer(),
-
-            /// Price
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Padding(padding: EdgeInsets.only(left: ADSizes.sm), child: ProductPriceText(price: '35.5', isLarge: true)),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: ADColors.dark,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusMd), bottomRight: Radius.circular(ADSizes.productImageRadius)),
-                  ),
-                  child: const SizedBox(
-                    width: ADSizes.iconLg * 1.2,
-                    height: ADSizes.iconLg * 1.2,
-                    child: Center(child: Icon(Iconsax.add, color: ADColors.white)),
-                  ),
+              /// Sale Tag
+              Positioned(
+                top: 12,
+                left: 0,
+                child: RoundedContainer(
+                  radius: ADSizes.sm,
+                  backgroundColor: ADColors.secondary.withOpacity(0.8),
+                  padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
+                  child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)),
                 ),
-              ],
+              ),
+
+              /// Favorite Button
+              const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
+            ]),
+          ),
+          const SizedBox(height: ADSizes.spaceBtwItems / 2),
+
+          /// Details
+          const Padding(
+            padding: EdgeInsets.only(left: ADSizes.sm),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              /// Title
+              ProductTitleText(title: 'Green Nike Air Shoes', smallSize: true),
+              SizedBox(height: ADSizes.spaceBtwItems / 2),
+
+              /// Brand
+              BrandTitleWithVerifiedIcon(title: 'Nike'),
+            ]),
+          ),
+
+          const Spacer(),
+
+          /// Price
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            const Padding(padding: EdgeInsets.only(left: ADSizes.sm), child: ProductPriceText(price: '35.5', isLarge: true)),
+            Container(
+              decoration: const BoxDecoration(
+                color: ADColors.dark,
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusMd), bottomRight: Radius.circular(ADSizes.productImageRadius)),
+              ),
+              child: const SizedBox(
+                width: ADSizes.iconLg * 1.2,
+                height: ADSizes.iconLg * 1.2,
+                child: Center(child: Icon(Iconsax.add, color: ADColors.white)),
+              ),
             ),
-          ],
-        ),
+          ]),
+        ]),
       ),
     );
   }

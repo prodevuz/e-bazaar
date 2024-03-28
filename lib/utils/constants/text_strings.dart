@@ -2,10 +2,10 @@ class ADTexts {
   ADTexts._();
 
   // Global texts
+  static const String done = "Tayyor";
   static const String submit = "Jo'natish";
   static const String appName = "E-Bazaar";
   static const String cContinue = "Davom etish";
-  static const String done = "Tayyor";
 
   // OnBoarding texts
 

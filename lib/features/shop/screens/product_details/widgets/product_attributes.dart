@@ -1,12 +1,12 @@
-import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ebazaar/common/widgets/texts/product_price_text.dart';
-import 'package:ebazaar/common/widgets/texts/product_title_text.dart';
-import 'package:ebazaar/common/widgets/texts/section_heading.dart';
-import 'package:ebazaar/common/widgets/chips/choice_chips.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/helpers/helper_functions.dart';
+import 'package:ebazaar/common/widgets/chips/choice_chips.dart';
+import 'package:ebazaar/common/widgets/texts/section_heading.dart';
+import 'package:ebazaar/common/widgets/texts/product_title_text.dart';
+import 'package:ebazaar/common/widgets/texts/product_price_text.dart';
+import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
 
 class ProductAttributes extends StatelessWidget {
   const ProductAttributes({
@@ -16,6 +16,7 @@ class ProductAttributes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return Column(
       children: [
         /// Selected Attributes Pricing & Description
@@ -58,11 +59,7 @@ class ProductAttributes extends StatelessWidget {
               ),
 
               /// Variation Description
-              const ProductTitleText(
-                title: "This is the description of the product and it can go up to max 4 lines",
-                smallSize: true,
-                maxLines: 4,
-              ),
+              const ProductTitleText(title: "This is the description of the product and it can go up to max 4 lines", smallSize: true, maxLines: 4),
             ],
           ),
         ),

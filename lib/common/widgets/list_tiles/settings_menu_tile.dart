@@ -1,15 +1,8 @@
-import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
 
 class SettingsMenuTile extends StatelessWidget {
-  const SettingsMenuTile({
-    super.key,
-    this.onTap,
-    this.trailing,
-    required this.icon,
-    required this.title,
-    required this.subTitle,
-  });
+  const SettingsMenuTile({super.key, this.onTap, this.trailing, required this.icon, required this.title, required this.subTitle});
 
   final IconData icon;
   final Widget? trailing;

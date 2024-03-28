@@ -12,10 +12,10 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ADAppBar(showBackArrow: true, title: Text("Savat", style: Theme.of(context).textTheme.headlineSmall)),
+
+      /// Items in Cart
       body: const Padding(
         padding: EdgeInsets.all(ADSizes.defaultSpace),
-
-        /// Items in Cart
         child: CartItems(),
       ),
 

@@ -20,9 +20,11 @@ class CircularIcon extends StatelessWidget {
   final Color? color;
   final Color? backgroundColor;
   final VoidCallback? onPressed;
+
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+    
     return Container(
       width: width,
       height: height,

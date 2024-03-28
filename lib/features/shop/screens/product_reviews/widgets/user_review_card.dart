@@ -1,11 +1,11 @@
-import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:ebazaar/common/widgets/products/ratings/rating_indicator.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:readmore/readmore.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:readmore/readmore.dart';
+import 'package:ebazaar/common/widgets/products/ratings/rating_indicator.dart';
+import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
 
 class UserReviewCard extends StatelessWidget {
   const UserReviewCard({super.key});

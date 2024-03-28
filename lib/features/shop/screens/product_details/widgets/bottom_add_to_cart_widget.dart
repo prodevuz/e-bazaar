@@ -1,9 +1,9 @@
-import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/helpers/helper_functions.dart';
+import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 
 class BottomAddToCart extends StatelessWidget {
   const BottomAddToCart({super.key});
@@ -11,14 +11,12 @@ class BottomAddToCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: ADSizes.defaultSpace, vertical: ADSizes.defaultSpace / 2),
       decoration: BoxDecoration(
         color: dark ? ADColors.darkerGrey : ADColors.light,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(ADSizes.cardRadiusLg),
-          topRight: Radius.circular(ADSizes.cardRadiusLg),
-        ),
+        borderRadius: const BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusLg), topRight: Radius.circular(ADSizes.cardRadiusLg)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

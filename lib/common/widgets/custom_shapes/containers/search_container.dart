@@ -1,8 +1,8 @@
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/utils/helpers/helper_functions.dart';
 
 class SearchContainer extends StatelessWidget {
   const SearchContainer({
@@ -24,12 +24,13 @@ class SearchContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return GestureDetector(
       onTap: onTap,
       child: Padding(
         padding: padding,
         child: Container(
-          width: HelperFunctions.screenWidth(), //# ADDeviceUtils.getScreenWidth(context),
+          width: HelperFunctions.screenWidth(),
           padding: const EdgeInsets.all(ADSizes.md),
           decoration: BoxDecoration(
             color: showBackground
@@ -40,13 +41,11 @@ class SearchContainer extends StatelessWidget {
             borderRadius: BorderRadius.circular(ADSizes.cardRadiusLg),
             border: showBorder ? Border.all(color: ADColors.grey) : null,
           ),
-          child: Row(
-            children: [
-              Icon(icon, color: ADColors.darkerGrey),
-              const SizedBox(width: ADSizes.spaceBtwItems),
-              Text(text, style: Theme.of(context).textTheme.bodySmall),
-            ],
-          ),
+          child: Row(children: [
+            Icon(icon, color: ADColors.darkerGrey),
+            const SizedBox(width: ADSizes.spaceBtwItems),
+            Text(text, style: Theme.of(context).textTheme.bodySmall),
+          ]),
         ),
       ),
     );

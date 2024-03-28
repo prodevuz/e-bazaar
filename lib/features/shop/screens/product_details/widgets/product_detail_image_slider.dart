@@ -15,6 +15,7 @@ class ProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
+
     return CurvedEdgeWidget(
       child: Container(
         color: dark ? ADColors.darkerGrey : ADColors.light,
@@ -54,10 +55,7 @@ class ProductImageSlider extends StatelessWidget {
             ),
 
             /// AppBar Icons
-            const ADAppBar(
-              showBackArrow: true,
-              actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)],
-            ),
+            const ADAppBar(showBackArrow: true, actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)]),
           ],
         ),
       ),

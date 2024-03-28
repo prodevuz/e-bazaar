@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProductPriceText extends StatelessWidget {
-  const ProductPriceText({
-    super.key,
-    required this.price,
-    this.maxLines = 1,
-    this.isLarge = false,
-    this.lineThrough = false,
-    this.currencySign = '\$',
-  });
+  const ProductPriceText({super.key, required this.price, this.maxLines = 1, this.isLarge = false, this.lineThrough = false, this.currencySign = '\$'});
 
   final bool isLarge;
   final String currencySign, price;

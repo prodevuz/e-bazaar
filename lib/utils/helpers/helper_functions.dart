@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
 
 class HelperFunctions {
   HelperFunctions._();
@@ -35,31 +35,22 @@ class HelperFunctions {
     }
   }
 
-  static void showSnackBar(String message) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(content: Text(message)));
-  }
+  static void showSnackBar(String message) => ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(content: Text(message)));
 
-  static void showAlert(String title, String message) {
-    showDialog(
-      context: Get.context!,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(message),
-          actions: [
-            TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('OK')),
-          ],
-        );
-      },
-    );
-  }
+  static void showAlert(String title, String message) => showDialog(
+        context: Get.context!,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(title),
+            content: Text(message),
+            actions: [
+              TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('OK')),
+            ],
+          );
+        },
+      );
 
-  static void navigateToString(BuildContext context, Widget screen) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (_) => screen),
-    );
-  }
+  static void navigateToString(BuildContext context, Widget screen) => Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
 
   static String truncateText(String text, int maxLength) {
     if (text.length <= maxLength) {
@@ -69,29 +60,17 @@ class HelperFunctions {
     }
   }
 
-  static bool isDarkMode(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark;
-  }
+  static bool isDarkMode(BuildContext context) => Theme.of(context).brightness == Brightness.dark;
 
-  static Size screenSize() {
-    return MediaQuery.of(Get.context!).size;
-  }
+  static Size screenSize() => MediaQuery.of(Get.context!).size;
 
-  static double screenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
-  }
+  static double screenHeight() => MediaQuery.of(Get.context!).size.height;
 
-  static double screenWidth({BuildContext? context}) {
-    return MediaQuery.of(context ?? Get.context!).size.width;
-  }
+  static double screenWidth({BuildContext? context}) => MediaQuery.of(context ?? Get.context!).size.width;
 
-  static String getFormattedDate(DateTime date, {String format = 'dd-MMM-yyyy'}) {
-    return DateFormat(format).format(date);
-  }
+  static String getFormattedDate(DateTime date, {String format = 'dd-MMM-yyyy'}) => DateFormat(format).format(date);
 
-  static List<T> removeDuplicates<T>(List<T> list) {
-    return list.toSet().toList();
-  }
+  static List<T> removeDuplicates<T>(List<T> list) => list.toSet().toList();
 
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrappedList = <Widget>[];

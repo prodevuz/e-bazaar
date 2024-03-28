@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/features/shop/screens/order/widgets/orders_list.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:flutter/material.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});
