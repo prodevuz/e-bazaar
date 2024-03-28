@@ -15,25 +15,22 @@ class ProductReviewsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text("Fikr va mulohazalar tasdiqlangan va ular siz bilan bir xil turdagi qurilma ishlatadigan odamlar tomonidan yozilgan."),
-              const SizedBox(height: ADSizes.spaceBtwItems),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text("Fikr va mulohazalar tasdiqlangan va ular siz bilan bir xil turdagi qurilma ishlatadigan odamlar tomonidan yozilgan."),
+            const SizedBox(height: ADSizes.spaceBtwItems),
 
-              /// Overall Product Ratings
-              const OverallProductRating(),
-              const ADRatingBarIndicator(rating: 3.8),
-              Text("12,611", style: Theme.of(context).textTheme.bodySmall),
-              const SizedBox(height: ADSizes.spaceBtwSections),
+            /// Overall Product Ratings
+            const OverallProductRating(),
+            const ADRatingBarIndicator(rating: 3.8),
+            Text("12,611", style: Theme.of(context).textTheme.bodySmall),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
-              /// Users Reviews List
-              const UserReviewCard(),
-              const UserReviewCard(),
-              const UserReviewCard(),
-              const UserReviewCard(),
-            ],
-          ),
+            /// Users Reviews List
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
+            const UserReviewCard(),
+          ]),
         ),
       ),
     );

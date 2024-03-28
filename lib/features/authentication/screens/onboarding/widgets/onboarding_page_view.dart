@@ -11,15 +11,11 @@ class OnBoardingPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(OnBoardingController());
-    
-    return PageView(
-      controller: controller.pageController,
-      onPageChanged: controller.updatePageIndicator,
-      children: const [
-        OnBoardingPage(image: ADImages.onBoardingImage1, title: ADTexts.onBoardingTitle1, subTitle: ADTexts.onBoardingSubTitle1),
-        OnBoardingPage(image: ADImages.onBoardingImage2, title: ADTexts.onBoardingTitle2, subTitle: ADTexts.onBoardingSubTitle2),
-        OnBoardingPage(image: ADImages.onBoardingImage3, title: ADTexts.onBoardingTitle3, subTitle: ADTexts.onBoardingSubTitle3),
-      ],
-    );
+
+    return PageView(controller: controller.pageController, onPageChanged: controller.updatePageIndicator, children: const [
+      OnBoardingPage(image: ADImages.onBoardingImage1, title: ADTexts.onBoardingTitle1, subTitle: ADTexts.onBoardingSubTitle1),
+      OnBoardingPage(image: ADImages.onBoardingImage2, title: ADTexts.onBoardingTitle2, subTitle: ADTexts.onBoardingSubTitle2),
+      OnBoardingPage(image: ADImages.onBoardingImage3, title: ADTexts.onBoardingTitle3, subTitle: ADTexts.onBoardingSubTitle3),
+    ]);
   }
 }

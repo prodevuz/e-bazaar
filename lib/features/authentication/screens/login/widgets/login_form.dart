@@ -20,18 +20,13 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: ADSizes.spaceBtwInputFields),
           TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check), labelText: ADTexts.password, suffixIcon: Icon(Iconsax.eye_slash))),
           const SizedBox(height: ADSizes.spaceBtwInputFields / 2),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Checkbox(value: true, onChanged: (value) {}),
-                  const Text(ADTexts.rememberMe),
-                ],
-              ),
-              TextButton(onPressed: () => Get.to(() => const ForgetPassword()), child: const Text(ADTexts.forgetPasswordTitle)),
-            ],
-          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Row(children: [
+              Checkbox(value: true, onChanged: (value) {}),
+              const Text(ADTexts.rememberMe),
+            ]),
+            TextButton(onPressed: () => Get.to(() => const ForgetPassword()), child: const Text(ADTexts.forgetPasswordTitle)),
+          ]),
           const SizedBox(height: ADSizes.spaceBtwSections),
           SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.offAll(() => const NavigationMenu()), child: const Text(ADTexts.signIn))),
           const SizedBox(height: ADSizes.spaceBtwItems),

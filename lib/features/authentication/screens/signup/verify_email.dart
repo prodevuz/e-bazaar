@@ -14,33 +14,28 @@ class VerifyEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        actions: [IconButton(onPressed: () => Get.offAll(const LoginScreen()), icon: const Icon(CupertinoIcons.clear))],
-      ),
+      appBar: AppBar(automaticallyImplyLeading: false, actions: [IconButton(onPressed: () => Get.offAll(const LoginScreen()), icon: const Icon(CupertinoIcons.clear))]),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Image
-              Image(image: const AssetImage(ADImages.deliveredEmailIllustration), width: HelperFunctions.screenWidth() * 0.6),
-              const SizedBox(height: ADSizes.spaceBtwSections),
+          child: Column(children: [
+            /// Image
+            Image(image: const AssetImage(ADImages.deliveredEmailIllustration), width: HelperFunctions.screenWidth() * 0.6),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
-              /// Title & SubTitle
-              Text(ADTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
-              const SizedBox(height: ADSizes.spaceBtwItems),
-              Text('abdurakhmon278@gmail.com', style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
-              const SizedBox(height: ADSizes.spaceBtwItems),
-              Text(ADTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
-              const SizedBox(height: ADSizes.spaceBtwSections),
+            /// Title & SubTitle
+            Text(ADTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            Text('abdurakhmon278@gmail.com', style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            Text(ADTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
-              /// Buttons
-              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(image: ADImages.staticSuccessIllustration, title: ADTexts.yourAccountCreatedTitle, subTitle: ADTexts.yourAccountCreatedSubTitle, onPressed: () => Get.to(() => const LoginScreen()))), child: const Text(ADTexts.cContinue))),
-              const SizedBox(height: ADSizes.spaceBtwItems),
-              SizedBox(width: double.infinity, child: TextButton(onPressed: () {}, child: const Text(ADTexts.resendEmail))),
-            ],
-          ),
+            /// Buttons
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(image: ADImages.staticSuccessIllustration, title: ADTexts.yourAccountCreatedTitle, subTitle: ADTexts.yourAccountCreatedSubTitle, onPressed: () => Get.to(() => const LoginScreen()))), child: const Text(ADTexts.cContinue))),
+            const SizedBox(height: ADSizes.spaceBtwItems),
+            SizedBox(width: double.infinity, child: TextButton(onPressed: () {}, child: const Text(ADTexts.resendEmail))),
+          ]),
         ),
       ),
     );

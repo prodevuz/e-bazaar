@@ -19,51 +19,44 @@ class ProductDetailScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const BottomAddToCart(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            /// Product Image Slider
-            const ProductImageSlider(),
+        child: Column(children: [
+          /// Product Image Slider
+          const ProductImageSlider(),
 
-            /// Product Details
-            Padding(
-              padding: const EdgeInsets.only(right: ADSizes.defaultSpace, left: ADSizes.defaultSpace, bottom: ADSizes.defaultSpace),
-              child: Column(
-                children: [
-                  /// Rating & Share Button
-                  const RatingAndShare(),
+          /// Product Details
+          Padding(
+            padding: const EdgeInsets.only(right: ADSizes.defaultSpace, left: ADSizes.defaultSpace, bottom: ADSizes.defaultSpace),
+            child: Column(children: [
+              /// Rating & Share Button
+              const RatingAndShare(),
 
-                  /// Price, Title, Stock & Brand
-                  const ProductMetaData(),
+              /// Price, Title, Stock & Brand
+              const ProductMetaData(),
 
-                  /// Attributes
-                  const ProductAttributes(),
-                  const SizedBox(height: ADSizes.spaceBtwSections),
+              /// Attributes
+              const ProductAttributes(),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
-                  /// Checkout Button
-                  SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text("Rasmiylashtirish"))),
-                  const SizedBox(height: ADSizes.spaceBtwSections),
+              /// Checkout Button
+              SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text("Rasmiylashtirish"))),
+              const SizedBox(height: ADSizes.spaceBtwSections),
 
-                  /// Description
-                  const SectionHeading(title: "Tavsif", showActionButton: false),
-                  const SizedBox(height: ADSizes.spaceBtwItems),
-                  const ProductDescriptionText(),
+              /// Description
+              const SectionHeading(title: "Tavsif", showActionButton: false),
+              const SizedBox(height: ADSizes.spaceBtwItems),
+              const ProductDescriptionText(),
 
-                  /// Reviews
-                  const Divider(),
-                  const SizedBox(height: ADSizes.spaceBtwItems),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SectionHeading(title: "Fikrlar(199)", onPressed: () {}, showActionButton: false),
-                      IconButton(onPressed: () => Get.to(() => const ProductReviewsScreen()), icon: const Icon(Iconsax.arrow_right_3, size: 18)),
-                    ],
-                  ),
-                  const SizedBox(height: ADSizes.spaceBtwSections),
-                ],
-              ),
-            ),
-          ],
-        ),
+              /// Reviews
+              const Divider(),
+              const SizedBox(height: ADSizes.spaceBtwItems),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                SectionHeading(title: "Fikrlar(199)", onPressed: () {}, showActionButton: false),
+                IconButton(onPressed: () => Get.to(() => const ProductReviewsScreen()), icon: const Icon(Iconsax.arrow_right_3, size: 18)),
+              ]),
+              const SizedBox(height: ADSizes.spaceBtwSections),
+            ]),
+          ),
+        ]),
       ),
     );
   }

@@ -26,42 +26,38 @@ class CheckoutScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Items in Cart
-              const CartItems(showAddRemoveButtons: false),
-              const SizedBox(height: ADSizes.spaceBtwSections),
+          child: Column(children: [
+            /// Items in Cart
+            const CartItems(showAddRemoveButtons: false),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
-              /// Coupon TextField
-              const CouponCode(),
-              const SizedBox(height: ADSizes.spaceBtwSections),
+            /// Coupon TextField
+            const CouponCode(),
+            const SizedBox(height: ADSizes.spaceBtwSections),
 
-              /// Billing Section
-              RoundedContainer(
-                showBorder: true,
-                padding: const EdgeInsets.all(ADSizes.md),
-                backgroundColor: dark ? ADColors.black : ADColors.white,
-                child: const Column(
-                  children: [
-                    /// Pricing
-                    BillingAmountSection(),
-                    SizedBox(height: ADSizes.spaceBtwItems),
+            /// Billing Section
+            RoundedContainer(
+              showBorder: true,
+              padding: const EdgeInsets.all(ADSizes.md),
+              backgroundColor: dark ? ADColors.black : ADColors.white,
+              child: const Column(children: [
+                /// Pricing
+                BillingAmountSection(),
+                SizedBox(height: ADSizes.spaceBtwItems),
 
-                    /// Divider
-                    Divider(),
-                    SizedBox(height: ADSizes.spaceBtwItems),
+                /// Divider
+                Divider(),
+                SizedBox(height: ADSizes.spaceBtwItems),
 
-                    /// Payment Methods
-                    BillingPaymentSection(),
-                    SizedBox(height: ADSizes.spaceBtwItems),
+                /// Payment Methods
+                BillingPaymentSection(),
+                SizedBox(height: ADSizes.spaceBtwItems),
 
-                    /// Address
-                    BillingAddressSection(),
-                  ],
-                ),
-              ),
-            ],
-          ),
+                /// Address
+                BillingAddressSection(),
+              ]),
+            ),
+          ]),
         ),
       ),
 

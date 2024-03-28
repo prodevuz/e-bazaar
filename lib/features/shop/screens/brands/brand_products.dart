@@ -6,7 +6,7 @@ import 'package:ebazaar/common/widgets/products/sortable/sortable_products.dart'
 
 class BrandProducts extends StatelessWidget {
   const BrandProducts({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -14,15 +14,13 @@ class BrandProducts extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Brand Detail
-              BrandCard(showBorder: true),
-              SizedBox(height: ADSizes.spaceBtwSections),
+          child: Column(children: [
+            /// Brand Detail
+            BrandCard(showBorder: true),
+            SizedBox(height: ADSizes.spaceBtwSections),
 
-              SortableProducts(),
-            ],
-          ),
+            SortableProducts(),
+          ]),
         ),
       ),
     );

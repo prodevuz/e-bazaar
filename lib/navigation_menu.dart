@@ -17,22 +17,12 @@ class NavigationMenu extends StatelessWidget {
     final darkMode = HelperFunctions.isDarkMode(context);
 
     return Scaffold(
-      bottomNavigationBar: Obx(
-        () => NavigationBar(
-          height: 80,
-          elevation: 0,
-          selectedIndex: controller.selectedIndex.value,
-          backgroundColor: darkMode ? ADColors.black : ADColors.white,
-          onDestinationSelected: (index) => controller.selectedIndex.value = index,
-          indicatorColor: darkMode ? ADColors.white.withOpacity(0.1) : ADColors.black.withOpacity(0.1),
-          destinations: const [
+      bottomNavigationBar: Obx(() => NavigationBar(height: 80, elevation: 0, selectedIndex: controller.selectedIndex.value, backgroundColor: darkMode ? ADColors.black : ADColors.white, onDestinationSelected: (index) => controller.selectedIndex.value = index, indicatorColor: darkMode ? ADColors.white.withOpacity(0.1) : ADColors.black.withOpacity(0.1), destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: "Asosiy"),
             NavigationDestination(icon: Icon(Iconsax.shop), label: "Do'kon"),
             NavigationDestination(icon: Icon(Iconsax.heart), label: "Yoqtirilgan"),
             NavigationDestination(icon: Icon(Iconsax.user), label: "Profil"),
-          ],
-        ),
-      ),
+          ])),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }

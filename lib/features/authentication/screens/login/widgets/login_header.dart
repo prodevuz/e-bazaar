@@ -11,14 +11,11 @@ class LoginHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Image(height: 150, image: AssetImage(dark ? ADImages.lightAppLogo : ADImages.darkAppLogo)),
-        Text(ADTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium),
-        const SizedBox(height: ADSizes.sm),
-        Text(ADTexts.loginSubTitle, style: Theme.of(context).textTheme.bodyMedium),
-      ],
-    );
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Image(height: 150, image: AssetImage(dark ? ADImages.lightAppLogo : ADImages.darkAppLogo)),
+      Text(ADTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium),
+      const SizedBox(height: ADSizes.sm),
+      Text(ADTexts.loginSubTitle, style: Theme.of(context).textTheme.bodyMedium),
+    ]);
   }
 }

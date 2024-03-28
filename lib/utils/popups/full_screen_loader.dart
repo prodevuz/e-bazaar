@@ -14,9 +14,7 @@ class FullScreenLoader {
             color: HelperFunctions.isDarkMode(Get.context!) ? ADColors.dark : ADColors.white,
             width: double.infinity,
             height: double.infinity,
-            child: Column(
-              children: [const SizedBox(height: 250), AnimationLoaderWidget(text: text, animation: animation)],
-            ),
+            child: Column(children: [const SizedBox(height: 250), AnimationLoaderWidget(text: text, animation: animation)]),
           ),
         ),
       );

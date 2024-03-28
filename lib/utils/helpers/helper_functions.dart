@@ -40,13 +40,9 @@ class HelperFunctions {
   static void showAlert(String title, String message) => showDialog(
         context: Get.context!,
         builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text(title),
-            content: Text(message),
-            actions: [
-              TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('OK')),
-            ],
-          );
+          return AlertDialog(title: Text(title), content: Text(message), actions: [
+            TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('OK')),
+          ]);
         },
       );
 

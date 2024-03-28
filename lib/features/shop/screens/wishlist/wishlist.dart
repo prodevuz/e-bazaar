@@ -17,18 +17,14 @@ class FavouriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: ADAppBar(
         title: Text('Yoqtirilgan', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [
-          CircularIcon(icon: Iconsax.add, onPressed: () => Get.to(const HomeScreen())),
-        ],
+        actions: [CircularIcon(icon: Iconsax.add, onPressed: () => Get.to(const HomeScreen()))],
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            children: [
-              GridLayout(itemCount: 6, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
-            ],
-          ),
+          child: Column(children: [
+            GridLayout(itemCount: 6, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
+          ]),
         ),
       ),
     );

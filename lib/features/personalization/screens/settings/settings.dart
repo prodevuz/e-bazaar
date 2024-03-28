@@ -24,70 +24,66 @@ class SettingsScreen extends StatelessWidget {
 
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            /// Header
-            PrimaryHeaderContainer(
-              child: Column(children: [
-                /// AppBar
-                Row(children: [
-                  Expanded(flex: 3, child: ADAppBar(title: Text('Hisob', style: Theme.of(context).textTheme.headlineMedium!.apply(color: ADColors.white)))),
-                  Expanded(
-                    child: Column(children: [
-                      const SizedBox(height: 45),
-                      Switch(
-                        activeThumbImage: const AssetImage(ADImages.moon),
-                        activeColor: ADColors.grey,
-                        inactiveThumbImage: (const AssetImage(ADImages.sun)),
-                        inactiveThumbColor: Colors.transparent,
-                        value: HelperFunctions.isDarkMode(context),
-                        onChanged: (value) => controller.changeThemeMode(context),
-                      ),
-                    ]),
-                  ),
-                ]),
-
-                /// User Profile Card
-                const UserProfileTile(),
-                const SizedBox(height: ADSizes.spaceBtwSections),
+        child: Column(children: [
+          /// Header
+          PrimaryHeaderContainer(
+            child: Column(children: [
+              /// AppBar
+              Row(children: [
+                Expanded(flex: 3, child: ADAppBar(title: Text('Hisob', style: Theme.of(context).textTheme.headlineMedium!.apply(color: ADColors.white)))),
+                Expanded(
+                  child: Column(children: [
+                    const SizedBox(height: 45),
+                    Switch(
+                      activeThumbImage: const AssetImage(ADImages.moon),
+                      activeColor: ADColors.grey,
+                      inactiveThumbImage: (const AssetImage(ADImages.sun)),
+                      inactiveThumbColor: Colors.transparent,
+                      value: HelperFunctions.isDarkMode(context),
+                      onChanged: (value) => controller.changeThemeMode(context),
+                    ),
+                  ]),
+                ),
               ]),
-            ),
 
-            /// Body
-            Padding(
-              padding: const EdgeInsets.all(ADSizes.defaultSpace),
-              child: Column(
-                children: [
-                  /// Account Settings
-                  const SectionHeading(title: 'Hisob sozlamalari', showActionButton: false),
-                  const SizedBox(height: ADSizes.spaceBtwItems),
+              /// User Profile Card
+              const UserProfileTile(),
+              const SizedBox(height: ADSizes.spaceBtwSections),
+            ]),
+          ),
 
-                  SettingsMenuTile(icon: Iconsax.safe_home, title: "Manzillarim", subTitle: "Yetkazib berish manzilini tanlang", onTap: () => Get.to(() => const UserAddressScreen())),
-                  SettingsMenuTile(icon: Iconsax.shopping_cart, title: "Savat", subTitle: "Maxsulotlarni qo'shing, olib tashlang va buyurtma bering", onTap: () => Get.to(() => const CartScreen())),
-                  SettingsMenuTile(icon: Iconsax.bag_tick, title: "Buyurtmalarim", subTitle: "Jarayondagi va tugallangan buyurtmalar", onTap: () => Get.to(() => const OrderScreen())),
-                  SettingsMenuTile(icon: Iconsax.bank, title: "Bank hisobi", subTitle: "Bank hisobi balansi", onTap: () => Get.to(() => const UserAddressScreen())),
-                  SettingsMenuTile(icon: Iconsax.discount_shape, title: "Kuponlarim", subTitle: "Chegirma kuponlar ro'yxati", onTap: () => Get.to(() => const UserAddressScreen())),
-                  SettingsMenuTile(icon: Iconsax.notification, title: "Bildirishnomalar", subTitle: "Har qanday turdagi bildirishnoma xabarini belgilang", onTap: () => Get.to(() => const UserAddressScreen())),
-                  SettingsMenuTile(icon: Iconsax.security_card, title: "Hisob maxfiyligi", subTitle: "Ma'lumotdan foydalanish va ulangan hisoblarni boshqaring", onTap: () => Get.to(() => const UserAddressScreen())),
+          /// Body
+          Padding(
+            padding: const EdgeInsets.all(ADSizes.defaultSpace),
+            child: Column(children: [
+              /// Account Settings
+              const SectionHeading(title: 'Hisob sozlamalari', showActionButton: false),
+              const SizedBox(height: ADSizes.spaceBtwItems),
 
-                  /// App Settings
-                  const SizedBox(height: ADSizes.spaceBtwSections),
-                  const SectionHeading(title: "Ilova sozlamalari", showActionButton: false),
-                  const SizedBox(height: ADSizes.spaceBtwItems),
-                  const SettingsMenuTile(icon: Iconsax.document_upload, title: "Ma'lumot yuklang", subTitle: "Cloud Firebasega ma'lumot yuklang"),
-                  SettingsMenuTile(icon: Iconsax.location, title: "Geojoylashuv", subTitle: "Joylashuvga moslangan tavsiyalar", trailing: Switch(value: true, onChanged: (value) {})),
-                  SettingsMenuTile(icon: Iconsax.security_user, title: "Xavfsiz rejim", subTitle: "Barcha yoshdagilar uchun xavfsiz maxsulotlar", trailing: Switch(value: false, onChanged: (value) {})),
-                  SettingsMenuTile(icon: Iconsax.image, title: "HD sifatli rasmlar", subTitle: "Rasmlar sifatini belgilang", trailing: Switch(value: false, onChanged: (value) {})),
+              SettingsMenuTile(icon: Iconsax.safe_home, title: "Manzillarim", subTitle: "Yetkazib berish manzilini tanlang", onTap: () => Get.to(() => const UserAddressScreen())),
+              SettingsMenuTile(icon: Iconsax.shopping_cart, title: "Savat", subTitle: "Maxsulotlarni qo'shing, olib tashlang va buyurtma bering", onTap: () => Get.to(() => const CartScreen())),
+              SettingsMenuTile(icon: Iconsax.bag_tick, title: "Buyurtmalarim", subTitle: "Jarayondagi va tugallangan buyurtmalar", onTap: () => Get.to(() => const OrderScreen())),
+              SettingsMenuTile(icon: Iconsax.bank, title: "Bank hisobi", subTitle: "Bank hisobi balansi", onTap: () => Get.to(() => const UserAddressScreen())),
+              SettingsMenuTile(icon: Iconsax.discount_shape, title: "Kuponlarim", subTitle: "Chegirma kuponlar ro'yxati", onTap: () => Get.to(() => const UserAddressScreen())),
+              SettingsMenuTile(icon: Iconsax.notification, title: "Bildirishnomalar", subTitle: "Har qanday turdagi bildirishnoma xabarini belgilang", onTap: () => Get.to(() => const UserAddressScreen())),
+              SettingsMenuTile(icon: Iconsax.security_card, title: "Hisob maxfiyligi", subTitle: "Ma'lumotdan foydalanish va ulangan hisoblarni boshqaring", onTap: () => Get.to(() => const UserAddressScreen())),
 
-                  /// Logout Button
-                  const SizedBox(height: ADSizes.spaceBtwSections),
-                  SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () {}, child: const Text("Chiqish"))),
-                  const SizedBox(height: ADSizes.spaceBtwSections * 2.5),
-                ],
-              ),
-            ),
-          ],
-        ),
+              /// App Settings
+              const SizedBox(height: ADSizes.spaceBtwSections),
+              const SectionHeading(title: "Ilova sozlamalari", showActionButton: false),
+              const SizedBox(height: ADSizes.spaceBtwItems),
+              const SettingsMenuTile(icon: Iconsax.document_upload, title: "Ma'lumot yuklang", subTitle: "Cloud Firebasega ma'lumot yuklang"),
+              SettingsMenuTile(icon: Iconsax.location, title: "Geojoylashuv", subTitle: "Joylashuvga moslangan tavsiyalar", trailing: Switch(value: true, onChanged: (value) {})),
+              SettingsMenuTile(icon: Iconsax.security_user, title: "Xavfsiz rejim", subTitle: "Barcha yoshdagilar uchun xavfsiz maxsulotlar", trailing: Switch(value: false, onChanged: (value) {})),
+              SettingsMenuTile(icon: Iconsax.image, title: "HD sifatli rasmlar", subTitle: "Rasmlar sifatini belgilang", trailing: Switch(value: false, onChanged: (value) {})),
+
+              /// Logout Button
+              const SizedBox(height: ADSizes.spaceBtwSections),
+              SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () {}, child: const Text("Chiqish"))),
+              const SizedBox(height: ADSizes.spaceBtwSections * 2.5),
+            ]),
+          ),
+        ]),
       ),
     );
   }

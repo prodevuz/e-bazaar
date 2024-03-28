@@ -28,26 +28,24 @@ class ProductCardHorizontal extends StatelessWidget {
           height: 120,
           padding: const EdgeInsets.all(ADSizes.sm),
           backgroundColor: dark ? ADColors.dark : ADColors.white,
-          child: Stack(
-            children: [
-              /// Thumbnail Image
-              const SizedBox(height: 120, width: 120, child: RoundedImage(imageUrl: ADImages.productImage1, applyImageRadius: true, backgroundColor: ADColors.white)),
+          child: Stack(children: [
+            /// Thumbnail Image
+            const SizedBox(height: 120, width: 120, child: RoundedImage(imageUrl: ADImages.productImage1, applyImageRadius: true, backgroundColor: ADColors.white)),
 
-              /// Sale Tag
-              Positioned(
-                top: 12,
-                child: RoundedContainer(
-                  radius: ADSizes.sm,
-                  backgroundColor: ADColors.secondary.withOpacity(0.8),
-                  padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
-                  child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)),
-                ),
+            /// Sale Tag
+            Positioned(
+              top: 12,
+              child: RoundedContainer(
+                radius: ADSizes.sm,
+                backgroundColor: ADColors.secondary.withOpacity(0.8),
+                padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
+                child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)),
               ),
+            ),
 
-              /// Favorite Button
-              const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
-            ],
-          ),
+            /// Favorite Button
+            const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
+          ]),
         ),
 
         /// Details

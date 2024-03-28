@@ -13,24 +13,20 @@ class BillingPaymentSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
 
-    return Column(
-      children: [
-        SectionHeading(title: "To'lov usuli", buttonTitle: "O'zgartirish", onPressed: () {}),
-        const SizedBox(height: ADSizes.spaceBtwItems / 2),
-        Row(
-          children: [
-            RoundedContainer(
-              width: 60,
-              height: 35,
-              backgroundColor: dark ? ADColors.light : ADColors.white,
-              padding: const EdgeInsets.all(ADSizes.sm),
-              child: const Image(image: AssetImage(ADImages.facebook), fit: BoxFit.contain),
-            ),
-            const SizedBox(width: ADSizes.spaceBtwItems / 2),
-            Text("PayPal", style: Theme.of(context).textTheme.bodyLarge),
-          ],
+    return Column(children: [
+      SectionHeading(title: "To'lov usuli", buttonTitle: "O'zgartirish", onPressed: () {}),
+      const SizedBox(height: ADSizes.spaceBtwItems / 2),
+      Row(children: [
+        RoundedContainer(
+          width: 60,
+          height: 35,
+          backgroundColor: dark ? ADColors.light : ADColors.white,
+          padding: const EdgeInsets.all(ADSizes.sm),
+          child: const Image(image: AssetImage(ADImages.facebook), fit: BoxFit.contain),
         ),
-      ],
-    );
+        const SizedBox(width: ADSizes.spaceBtwItems / 2),
+        Text("PayPal", style: Theme.of(context).textTheme.bodyLarge),
+      ]),
+    ]);
   }
 }

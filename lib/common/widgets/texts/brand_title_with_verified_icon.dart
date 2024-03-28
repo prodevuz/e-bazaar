@@ -24,13 +24,10 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Flexible(child: BrandTitleText(title: title, color: textColor, maxLines: maxLines, textAlign: textAlign, brandTextSize: brandTextSize)),
-        const SizedBox(width: ADSizes.xs),
-        const Icon(Iconsax.verify5, color: ADColors.primary, size: ADSizes.iconXs),
-      ],
-    );
+    return Row(mainAxisSize: MainAxisSize.min, children: [
+      Flexible(child: BrandTitleText(title: title, color: textColor, maxLines: maxLines, textAlign: textAlign, brandTextSize: brandTextSize)),
+      const SizedBox(width: ADSizes.xs),
+      const Icon(Iconsax.verify5, color: ADColors.primary, size: ADSizes.iconXs),
+    ]);
   }
 }

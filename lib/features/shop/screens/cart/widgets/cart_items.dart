@@ -14,28 +14,21 @@ class CartItems extends StatelessWidget {
     return ListView.separated(
       itemCount: 2,
       shrinkWrap: true,
-      itemBuilder: (_, index) => Column(
-        children: [
-          CartItem(index: index),
-          if (showAddRemoveButtons) const SizedBox(height: ADSizes.spaceBtwItems),
-          if (showAddRemoveButtons)
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    /// Extra Space
-                    SizedBox(width: 70),
+      itemBuilder: (_, index) => Column(children: [
+        CartItem(index: index),
+        if (showAddRemoveButtons) const SizedBox(height: ADSizes.spaceBtwItems),
+        if (showAddRemoveButtons)
+          const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Row(children: [
+              /// Extra Space
+              SizedBox(width: 70),
 
-                    /// Add Remove Button
-                    ProductQuantityWithAddRemoveButton(),
-                  ],
-                ),
-                ProductPriceText(price: "256"),
-              ],
-            ),
-        ],
-      ),
+              /// Add Remove Button
+              ProductQuantityWithAddRemoveButton(),
+            ]),
+            ProductPriceText(price: "256"),
+          ]),
+      ]),
       separatorBuilder: (_, __) => const SizedBox(height: ADSizes.spaceBtwSections),
     );
   }

@@ -11,13 +11,10 @@ class FormDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Flexible(child: Divider(color: dark ? ADColors.darkGrey : ADColors.grey, thickness: 0.5, indent: 60, endIndent: 5)),
-        Text(dividerText, style: Theme.of(context).textTheme.labelMedium),
-        Flexible(child: Divider(color: dark ? ADColors.darkGrey : ADColors.grey, thickness: 0.5, indent: 5, endIndent: 60)),
-      ],
-    );
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Flexible(child: Divider(color: dark ? ADColors.darkGrey : ADColors.grey, thickness: 0.5, indent: 60, endIndent: 5)),
+      Text(dividerText, style: Theme.of(context).textTheme.labelMedium),
+      Flexible(child: Divider(color: dark ? ADColors.darkGrey : ADColors.grey, thickness: 0.5, indent: 5, endIndent: 60)),
+    ]);
   }
 }

@@ -15,22 +15,20 @@ class ForgetPassword extends StatelessWidget {
       appBar: const ADAppBar(showBackArrow: true),
       body: Padding(
         padding: const EdgeInsets.all(ADSizes.defaultSpace),
-        child: Column(
-          children: [
-            /// Headings
-            Text(ADTexts.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: ADSizes.spaceBtwItems),
-            Text(ADTexts.forgetPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium),
-            const SizedBox(height: ADSizes.spaceBtwSections * 2),
+        child: Column(children: [
+          /// Headings
+          Text(ADTexts.forgetPasswordTitle, style: Theme.of(context).textTheme.headlineMedium),
+          const SizedBox(height: ADSizes.spaceBtwItems),
+          Text(ADTexts.forgetPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium),
+          const SizedBox(height: ADSizes.spaceBtwSections * 2),
 
-            /// Text field
-            TextFormField(decoration: const InputDecoration(labelText: ADTexts.email, prefixIcon: Icon(Iconsax.direct_right))),
-            const SizedBox(height: ADSizes.spaceBtwItems),
+          /// Text field
+          TextFormField(decoration: const InputDecoration(labelText: ADTexts.email, prefixIcon: Icon(Iconsax.direct_right))),
+          const SizedBox(height: ADSizes.spaceBtwItems),
 
-            /// Submit Button
-            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.off(() => const ResetPassword()), child: const Text(ADTexts.submit))),
-          ],
-        ),
+          /// Submit Button
+          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.off(() => const ResetPassword()), child: const Text(ADTexts.submit))),
+        ]),
       ),
     );
   }

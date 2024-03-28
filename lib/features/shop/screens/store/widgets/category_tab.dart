@@ -11,29 +11,23 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Brands
-              const BrandShowcase(brand: "Gucci", images: [ADImages.productImage6, ADImages.productImage3, ADImages.productImage1]),
-              const BrandShowcase(images: [ADImages.productImage4, ADImages.productImage2, ADImages.productImage5]),
-              const SizedBox(height: ADSizes.spaceBtwItems),
+    return ListView(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), children: [
+      Padding(
+        padding: const EdgeInsets.all(ADSizes.defaultSpace),
+        child: Column(children: [
+          /// Brands
+          const BrandShowcase(brand: "Gucci", images: [ADImages.productImage6, ADImages.productImage3, ADImages.productImage1]),
+          const BrandShowcase(images: [ADImages.productImage4, ADImages.productImage2, ADImages.productImage5]),
+          const SizedBox(height: ADSizes.spaceBtwItems),
 
-              /// Products
-              SectionHeading(title: "Sizga yoqishi mumkin", onPressed: () {}),
-              const SizedBox(height: ADSizes.spaceBtwItems),
+          /// Products
+          SectionHeading(title: "Sizga yoqishi mumkin", onPressed: () {}),
+          const SizedBox(height: ADSizes.spaceBtwItems),
 
-              GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
-              const SizedBox(height: ADSizes.spaceBtwSections),
-            ],
-          ),
-        ),
-      ],
-    );
+          GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
+          const SizedBox(height: ADSizes.spaceBtwSections),
+        ]),
+      ),
+    ]);
   }
 }

@@ -18,25 +18,20 @@ class BottomAddToCart extends StatelessWidget {
         color: dark ? ADColors.darkerGrey : ADColors.light,
         borderRadius: const BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusLg), topRight: Radius.circular(ADSizes.cardRadiusLg)),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              const CircularIcon(icon: Iconsax.minus, backgroundColor: ADColors.darkGrey, width: 40, height: 40, color: ADColors.white),
-              const SizedBox(width: ADSizes.spaceBtwItems),
-              Text('2', style: Theme.of(context).textTheme.titleSmall),
-              const SizedBox(width: ADSizes.spaceBtwItems),
-              const CircularIcon(icon: Iconsax.add, backgroundColor: ADColors.black, width: 40, height: 40, color: ADColors.white),
-            ],
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(ADSizes.md), backgroundColor: ADColors.black, side: const BorderSide(color: ADColors.black)),
-            child: const Text("Savatga qo'shish"),
-          ),
-        ],
-      ),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(children: [
+          const CircularIcon(icon: Iconsax.minus, backgroundColor: ADColors.darkGrey, width: 40, height: 40, color: ADColors.white),
+          const SizedBox(width: ADSizes.spaceBtwItems),
+          Text('2', style: Theme.of(context).textTheme.titleSmall),
+          const SizedBox(width: ADSizes.spaceBtwItems),
+          const CircularIcon(icon: Iconsax.add, backgroundColor: ADColors.black, width: 40, height: 40, color: ADColors.white),
+        ]),
+        ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(ADSizes.md), backgroundColor: ADColors.black, side: const BorderSide(color: ADColors.black)),
+          child: const Text("Savatga qo'shish"),
+        ),
+      ]),
     );
   }
 }

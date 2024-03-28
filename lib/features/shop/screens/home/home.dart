@@ -20,52 +20,48 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const PrimaryHeaderContainer(
-              child: Column(children: [
-                /// AppBar
-                HomeAppBar(),
-                SizedBox(height: ADSizes.spaceBtwSections),
+        child: Column(children: [
+          const PrimaryHeaderContainer(
+            child: Column(children: [
+              /// AppBar
+              HomeAppBar(),
+              SizedBox(height: ADSizes.spaceBtwSections),
 
-                /// SearchBar
-                SearchContainer(text: "Do'kondan qidiring"),
-                SizedBox(height: ADSizes.spaceBtwSections),
+              /// SearchBar
+              SearchContainer(text: "Do'kondan qidiring"),
+              SizedBox(height: ADSizes.spaceBtwSections),
 
-                /// Categories
-                Padding(
-                  padding: EdgeInsets.only(left: ADSizes.defaultSpace),
-                  child: Column(
-                    children: [
-                      /// Heading
-                      SectionHeading(title: "Mashxur Kategoriyalar", showActionButton: false, textColor: ADColors.white),
-                      SizedBox(height: ADSizes.spaceBtwItems),
+              /// Categories
+              Padding(
+                padding: EdgeInsets.only(left: ADSizes.defaultSpace),
+                child: Column(children: [
+                  /// Heading
+                  SectionHeading(title: "Mashxur Kategoriyalar", showActionButton: false, textColor: ADColors.white),
+                  SizedBox(height: ADSizes.spaceBtwItems),
 
-                      /// Categories
-                      HomeCategories(),
-                    ],
-                  ),
-                ),
-                SizedBox(height: ADSizes.spaceBtwSections),
-              ]),
-            ),
+                  /// Categories
+                  HomeCategories(),
+                ]),
+              ),
+              SizedBox(height: ADSizes.spaceBtwSections),
+            ]),
+          ),
 
-            /// Body
-            Padding(
-              padding: const EdgeInsets.all(ADSizes.defaultSpace),
-              child: Column(children: [
-                /// Promo slider
-                const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
-                const SizedBox(height: ADSizes.spaceBtwSections),
-                SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProductsScreen())),
-                const SizedBox(height: ADSizes.spaceBtwItems),
+          /// Body
+          Padding(
+            padding: const EdgeInsets.all(ADSizes.defaultSpace),
+            child: Column(children: [
+              /// Promo slider
+              const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
+              const SizedBox(height: ADSizes.spaceBtwSections),
+              SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProductsScreen())),
+              const SizedBox(height: ADSizes.spaceBtwItems),
 
-                /// Popular Products
-                GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
-              ]),
-            ),
-          ],
-        ),
+              /// Popular Products
+              GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
+            ]),
+          ),
+        ]),
       ),
     );
   }

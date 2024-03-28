@@ -10,23 +10,21 @@ class RatingProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(flex: 1, child: Text(text, style: Theme.of(context).textTheme.bodyMedium)),
-        Expanded(
-          flex: 12,
-          child: SizedBox(
-            width: HelperFunctions.screenWidth(context: context) * 0.8,
-            child: LinearProgressIndicator(
-              value: value,
-              minHeight: 11,
-              backgroundColor: ADColors.grey,
-              borderRadius: BorderRadius.circular(7),
-              valueColor: const AlwaysStoppedAnimation(ADColors.primary),
-            ),
+    return Row(children: [
+      Expanded(flex: 1, child: Text(text, style: Theme.of(context).textTheme.bodyMedium)),
+      Expanded(
+        flex: 12,
+        child: SizedBox(
+          width: HelperFunctions.screenWidth(context: context) * 0.8,
+          child: LinearProgressIndicator(
+            value: value,
+            minHeight: 11,
+            backgroundColor: ADColors.grey,
+            borderRadius: BorderRadius.circular(7),
+            valueColor: const AlwaysStoppedAnimation(ADColors.primary),
           ),
         ),
-      ],
-    );
+      ),
+    ]);
   }
 }

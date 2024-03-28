@@ -35,42 +35,36 @@ class StoreScreen extends StatelessWidget {
                 expandedHeight: 440,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(ADSizes.defaultSpace),
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: [
-                      /// Search Bar
-                      const SizedBox(height: ADSizes.spaceBtwItems),
-                      const SearchContainer(text: "Do'kondan qidiring", showBorder: true, showBackground: false, padding: EdgeInsets.zero),
-                      const SizedBox(height: ADSizes.spaceBtwSections),
+                  child: ListView(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), children: [
+                    /// Search Bar
+                    const SizedBox(height: ADSizes.spaceBtwItems),
+                    const SearchContainer(text: "Do'kondan qidiring", showBorder: true, showBackground: false, padding: EdgeInsets.zero),
+                    const SizedBox(height: ADSizes.spaceBtwSections),
 
-                      /// Featured Brands
-                      SectionHeading(title: "Mashxur brendlar", onPressed: () => Get.to(() => const AllBrandsScreen())),
-                      const SizedBox(height: ADSizes.spaceBtwItems / 1.5),
+                    /// Featured Brands
+                    SectionHeading(title: "Mashxur brendlar", onPressed: () => Get.to(() => const AllBrandsScreen())),
+                    const SizedBox(height: ADSizes.spaceBtwItems / 1.5),
 
-                      /// Brand Cards
-                      GridLayout(
-                        itemCount: 4,
-                        mainAxisExtent: 80,
-                        itemBuilder: (_, index) {
-                          List<String> brands = ["Nike", "Adidas", "Gucci", "Puma"];
-                          return BrandCard(name: brands[index], showBorder: true);
-                        },
-                      ),
-                    ],
-                  ),
+                    /// Brand Cards
+                    GridLayout(
+                      itemCount: 4,
+                      mainAxisExtent: 80,
+                      itemBuilder: (_, index) {
+                        List<String> brands = ["Nike", "Adidas", "Gucci", "Puma"];
+                        return BrandCard(name: brands[index], showBorder: true);
+                      },
+                    ),
+                  ]),
                 ),
 
                 /// Tab Bar
-                bottom: const ADTabBar(
-                  tabs: [
-                    Tab(child: Text("Sport")),
-                    Tab(child: Text("Mebel")),
-                    Tab(child: Text("Elektronika")),
-                    Tab(child: Text("Kiyimlar")),
-                    Tab(child: Text("Kosmetika")),
-                  ],
-                ),
+                bottom: const ADTabBar(tabs: [
+                  Tab(child: Text("Sport")),
+                  Tab(child: Text("Mebel")),
+                  Tab(child: Text("Elektronika")),
+                  Tab(child: Text("Kiyimlar")),
+                  Tab(child: Text("Kosmetika")),
+                ]),
               ),
             ];
           },

@@ -15,22 +15,17 @@ class PromoSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());
-    
-    return Column(
-      children: [
-        CarouselSlider(options: CarouselOptions(viewportFraction: 1, onPageChanged: (index, _) => controller.updatePageIndicator(index)), items: banners.map((url) => RoundedImage(imageUrl: url)).toList()),
-        const SizedBox(height: ADSizes.spaceBtwItems),
-        Center(
-          child: Obx(
-            () => Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                for (int i = 0; i < banners.length; i++) CircularContainer(width: 20, height: 4, margin: const EdgeInsets.only(right: 10), backgroundColor: controller.carouselCurrentIndex.value == i ? ADColors.primary : ADColors.grey),
-              ],
-            ),
-          ),
+
+    return Column(children: [
+      CarouselSlider(options: CarouselOptions(viewportFraction: 1, onPageChanged: (index, _) => controller.updatePageIndicator(index)), items: banners.map((url) => RoundedImage(imageUrl: url)).toList()),
+      const SizedBox(height: ADSizes.spaceBtwItems),
+      Center(
+        child: Obx(
+          () => Row(mainAxisSize: MainAxisSize.min, children: [
+            for (int i = 0; i < banners.length; i++) CircularContainer(width: 20, height: 4, margin: const EdgeInsets.only(right: 10), backgroundColor: controller.carouselCurrentIndex.value == i ? ADColors.primary : ADColors.grey),
+          ]),
         ),
-      ],
-    );
+      ),
+    ]);
   }
 }

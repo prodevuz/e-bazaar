@@ -9,7 +9,7 @@ import 'package:ebazaar/features/shop/screens/brands/brand_products.dart';
 
 class AllBrandsScreen extends StatelessWidget {
   const AllBrandsScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,23 +17,21 @@ class AllBrandsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Heading
-              const SectionHeading(title: "Brendlar", showActionButton: false),
-              const SizedBox(height: ADSizes.spaceBtwItems),
+          child: Column(children: [
+            /// Heading
+            const SectionHeading(title: "Brendlar", showActionButton: false),
+            const SizedBox(height: ADSizes.spaceBtwItems),
 
-              /// Brands
-              GridLayout(
-                itemCount: 15,
-                mainAxisExtent: 80,
-                itemBuilder: (_, index) => BrandCard(
-                  showBorder: true,
-                  onTap: () => Get.to(() => const BrandProducts()),
-                ),
+            /// Brands
+            GridLayout(
+              itemCount: 15,
+              mainAxisExtent: 80,
+              itemBuilder: (_, index) => BrandCard(
+                showBorder: true,
+                onTap: () => Get.to(() => const BrandProducts()),
               ),
-            ],
-          ),
+            ),
+          ]),
         ),
       ),
     );
