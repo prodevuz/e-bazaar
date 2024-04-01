@@ -6,6 +6,7 @@ import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/network_manager.dart';
 import 'package:ebazaar/utils/popups/full_screen_loader.dart';
 import 'package:ebazaar/data/repositories/user/user_repository.dart';
+import 'package:ebazaar/features/authentication/screens/signup/verify_email.dart';
 import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 
 class SignupController extends GetxController {
@@ -57,18 +58,19 @@ class SignupController extends GetxController {
       );
 
       final userRepository = Get.put(UserRepository());
-      userRepository.saveUserRecord(newUser);
+      await userRepository.saveUserRecord(newUser);
 
       // Show success message
+      ADLoaders.successSnackBar(title: "Tabriklaymiz", message: "Hisobingiz yaratildi! Davom etish uchun emailni tasdiqlang.");
+
+      // Remove loader
+      FullScreenLoader.stopLoading();
 
       // Move to Verify Email Screen
-    
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       // Show some Generic error to the user
       ADLoaders.errorSnackBar(title: "Xato", message: e.toString());
-    } finally {
-      // Remove loader
-      FullScreenLoader.stopLoading();
     }
   }
 }
