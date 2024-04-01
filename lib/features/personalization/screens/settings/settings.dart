@@ -1,3 +1,4 @@
+import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,6 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ThemeModeController.instance;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -40,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
                       inactiveThumbImage: (const AssetImage(ADImages.sun)),
                       inactiveThumbColor: Colors.transparent,
                       value: HelperFunctions.isDarkMode(context),
-                      onChanged: (value) => controller.changeThemeMode(context),
+                      onChanged: (value) => ThemeModeController.instance.changeThemeMode(context),
                     ),
                   ]),
                 ),
@@ -79,7 +79,7 @@ class SettingsScreen extends StatelessWidget {
 
               /// Logout Button
               const SizedBox(height: ADSizes.spaceBtwSections),
-              SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () {}, child: const Text("Chiqish"))),
+              SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () => AuthenticationRepository.instance.logout(), child: const Text("Chiqish"))),
               const SizedBox(height: ADSizes.spaceBtwSections * 2.5),
             ]),
           ),

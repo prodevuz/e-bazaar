@@ -1,3 +1,4 @@
+import 'package:ebazaar/data/repositories/user/user_repository.dart';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:ebazaar/navigation_menu.dart';
@@ -47,7 +48,25 @@ class AuthenticationRepository extends GetxController {
 
   /* --------------------- Email & Password sign-in --------------------- */
 
-  /// [EmailAuthentication] - SignIn
+  /// [EmailAuthentication] - LOGIN
+  Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
+    try {
+      final userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      await UserRepository.instance.loadUserData(userCredential.user!.uid);
+      ADLoaders.successSnackBar(title: "Tabriklaymiz", message: "Hisobga muvaffaqiyatli kirildi.");
+      return userCredential;
+    } on FirebaseAuthException catch (e) {
+      throw ADFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw ADFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw ADFormatException();
+    } on PlatformException catch (e) {
+      throw ADPlatformException(e.code).message;
+    } catch (e) {
+      throw "Nimadir xato ketdi. Iltimos qayta urinib ko'ring!";
+    }
+  }
 
   /// [EmailAuthentication] - REGISTER
   Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
@@ -66,7 +85,7 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
-  /// [ReAuthenticate] - ReAuthenticate User
+  /// [ReAuthenticate] - REAUTHENTICATE
 
   /// [EmailVerification] - MAIL VERIFICATION
   Future<void> sendEmailVerification() async {
@@ -98,7 +117,7 @@ class AuthenticationRepository extends GetxController {
 
   /// [EmailAuthentication] - FORGET PASSWORD
 
-  /// [Logout user] - Valid for any autentication
+  /// [LogoutUser] - LOGOUT
   Future<void> logout() async {
     try {
       await FirebaseAuth.instance.signOut();

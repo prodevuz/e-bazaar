@@ -12,20 +12,39 @@ class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
   final FirebaseFirestore _db = FirebaseFirestore.instance;
+  late UserModel currentUser;
 
   Future<void> saveUserRecord(UserModel user) async {
+    currentUser = user;
     try {
       await _db.collection("Users").doc(user.id).set(user.toJson());
-      } on FirebaseAuthException catch (e) {
-        throw ADFirebaseAuthException(e.code).message;
-      } on FirebaseException catch (e) {
-        throw ADFirebaseException(e.code).message;
-      } on FormatException catch (_) {
-        throw ADFormatException();
-      } on PlatformException catch (e) {
-        throw ADPlatformException(e.code).message;
+    } on FirebaseAuthException catch (e) {
+      throw ADFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw ADFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw ADFormatException();
+    } on PlatformException catch (e) {
+      throw ADPlatformException(e.code).message;
     } catch (e) {
       throw "Nimadir xato ketdi. Iltimos qayta urunib ko'ring";
+    }
+  }
+
+  Future<void> loadUserData(String uid) async {
+    try {
+      final DocumentSnapshot snapshot = await _db.collection("Users").doc(uid).get();
+      snapshot.exists ? currentUser = UserModel.fromSnapshot(snapshot as DocumentSnapshot<Map<String, dynamic>>) : throw Exception("Foydalanuvchi ma'lumotlarini olishda xatolik.");
+    } on FirebaseAuthException catch (e) {
+      throw ADFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw ADFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw ADFormatException();
+    } on PlatformException catch (e) {
+      throw ADPlatformException(e.code).message;
+    } catch (e) {
+      throw e.toString();
     }
   }
 }

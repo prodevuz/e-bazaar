@@ -1,3 +1,4 @@
+import 'package:ebazaar/data/repositories/user/user_repository.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,12 @@ class UserProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserRepository.instance;
+
     return ListTile(
       leading: const CircularImage(image: ADImages.user, width: 50, height: 50, padding: 0),
-      title: Text("AbdurRohman Davron", style: Theme.of(context).textTheme.headlineSmall!.apply(color: ADColors.white)),
-      subtitle: Text("abdurakhmon278@gmail.com", style: Theme.of(context).textTheme.bodyMedium!.apply(color: ADColors.white)),
+      title: Text(controller.currentUser.fullName, style: Theme.of(context).textTheme.headlineSmall!.apply(color: ADColors.white)),
+      subtitle: Text(controller.currentUser.email, style: Theme.of(context).textTheme.bodyMedium!.apply(color: ADColors.white)),
       trailing: IconButton(onPressed: () => Get.to(const ProfileScreen()), icon: const Icon(Iconsax.edit, color: ADColors.white)),
     );
   }

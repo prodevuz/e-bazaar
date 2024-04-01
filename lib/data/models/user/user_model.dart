@@ -28,12 +28,12 @@ class UserModel {
     if (data.data() != null) {
       return UserModel(
         id: data.id,
-        firstName: data["FirstName"] ?? '',
-        lastName: data["LastName"] ?? '',
-        username: data["Username"] ?? '',
-        email: data["Email"] ?? '',
-        phoneNumber: data["PhoneNumber"] ?? '',
-        profilePicture: data["ProfilePicture"] ?? '',
+        firstName: data["firstName"] ?? '',
+        lastName: data["lastName"] ?? '',
+        username: data["username"] ?? '',
+        email: data["email"] ?? '',
+        phoneNumber: data["phoneNumber"] ?? '',
+        profilePicture: data["profilePicture"] ?? '',
       );
     } else {
       return empty();
