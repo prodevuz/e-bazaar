@@ -12,18 +12,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ThemeModeController());
 
-    return Obx(
-      () => GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: controller.themeMode.value,
-        initialBinding: GeneralBindings(),
-        theme: ADTheme.lightTheme,
-        darkTheme: ADTheme.darkTheme,
-        home: const Scaffold(
-          backgroundColor: ADColors.primary,
-          body: Center(child: CircularProgressIndicator(color: ADColors.white)),
-        ),
-      ),
-    );
+    return Obx(() => GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          themeMode: controller.themeMode.value,
+          initialBinding: GeneralBindings(),
+          theme: ADTheme.lightTheme,
+          darkTheme: ADTheme.darkTheme,
+          home: const Scaffold(
+            backgroundColor: ADColors.primary,
+            body: Center(child: CircularProgressIndicator(color: ADColors.white)),
+          ),
+        ));
   }
 }
