@@ -1,10 +1,8 @@
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart';
 import 'package:ebazaar/navigation_menu.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:ebazaar/utils/logging/logger.dart';
 import 'package:ebazaar/utils/loaders/loaders.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ebazaar/utils/helpers/network_manager.dart';
@@ -26,6 +24,9 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
+  /// Get Authenticated user data
+  User? get authUser => _auth.currentUser;
+
   /// Called from main.dart on app launch
   @override
   void onReady() {
@@ -34,7 +35,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// Function to Show Relevent Screen
-  screenRedirect() async {
+  void screenRedirect() async {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
@@ -55,7 +56,6 @@ class AuthenticationRepository extends GetxController {
   Future<UserCredential> loginWithEmailAndPassword(String email, String password) async {
     try {
       final userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      await UserRepository.instance.loadUserData(userCredential.user!.uid);
       ADLoaders.successSnackBar(title: "Tabriklaymiz", message: "Hisobga muvaffaqiyatli kirildi.");
       return userCredential;
     } on FirebaseAuthException catch (e) {
@@ -96,9 +96,7 @@ class AuthenticationRepository extends GetxController {
         ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q");
         return;
       }
-
       await _auth.currentUser?.sendEmailVerification();
-
       ADLoaders.successSnackBar(title: "Email jo'natildi", message: "Pochtangizni tekshiring va emailingizni tasdiqlang.");
     } on FirebaseAuthException catch (e) {
       throw ADFirebaseAuthException(e.code).message;
@@ -109,9 +107,7 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw ADPlatformException(e.code).message;
     } catch (e) {
-      // Hide loading indicator
       FullScreenLoader.stopLoading();
-
       ADLoaders.errorSnackBar(title: "Xatolik", message: e.toString());
     }
   }
@@ -124,9 +120,7 @@ class AuthenticationRepository extends GetxController {
         ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q");
         return;
       }
-
       await _auth.sendPasswordResetEmail(email: email);
-
       ADLoaders.successSnackBar(title: "Email jo'natildi", message: "Pochtangizni tekshiring va emailingizni tasdiqlang.");
     } on FirebaseAuthException catch (e) {
       throw ADFirebaseAuthException(e.code).message;
@@ -137,13 +131,29 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw ADPlatformException(e.code).message;
     } catch (e) {
-      // Hide loading indicator
       FullScreenLoader.stopLoading();
-
       ADLoaders.errorSnackBar(title: "Xatolik", message: e.toString());
     }
   }
+
   /// [ReAuthenticate] - REAUTHENTICATE
+  Future<void> reAuthenticateWithEmailAndPassword(String email, String password) async {
+    try {
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw ADFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw ADFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw ADFormatException();
+    } on PlatformException catch (e) {
+      throw ADPlatformException(e.code).message;
+    } catch (e) {
+      FullScreenLoader.stopLoading();
+      ADLoaders.errorSnackBar(title: "Xatolik", message: e.toString());
+    }
+  }
 
   /// [GoogleAuthentification] - GOOGLE
   Future<UserCredential?> signInWithGoogle() async {
@@ -161,10 +171,7 @@ class AuthenticationRepository extends GetxController {
     } on PlatformException catch (e) {
       throw ADPlatformException(e.code).message;
     } catch (e) {
-      if (kDebugMode) {
-        LoggerHelper.error(e.toString());
-      }
-      return null;
+      throw "Nimadir xato ketdi. Iltimos qayta urinib ko'ring!";
     }
   }
 
@@ -176,6 +183,24 @@ class AuthenticationRepository extends GetxController {
       await GoogleSignIn().signOut();
       await FirebaseAuth.instance.signOut();
       Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw ADFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw ADFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw ADFormatException();
+    } on PlatformException catch (e) {
+      throw ADPlatformException(e.code).message;
+    } catch (e) {
+      throw "Nimadir xato ketdi. Iltimos qayta urinib ko'ring!";
+    }
+  }
+
+  /// [DeleteAccount] - DELETE
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid);
+      await _auth.currentUser?.delete();
     } on FirebaseAuthException catch (e) {
       throw ADFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

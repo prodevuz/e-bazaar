@@ -67,7 +67,7 @@ class SignupController extends GetxController {
         username: username.text.trim(),
         email: email.text.trim(),
         phoneNumber: phoneNumber.text.trim(),
-        profilePicture: '',
+        profilePicture: ADImages.user,
       );
 
       final userRepository = UserRepository.instance;
@@ -90,6 +90,7 @@ class SignupController extends GetxController {
     } on PlatformException catch (e) {
       throw ADPlatformException(e.code).message;
     } catch (e) {
+      FullScreenLoader.stopLoading();
       ADLoaders.errorSnackBar(title: "Xato", message: e.toString());
     }
   }

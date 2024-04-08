@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebazaar/utils/formatters/formatter.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
 
 class UserModel {
   UserModel({
@@ -13,8 +14,8 @@ class UserModel {
   });
 
   final String id;
-  final String firstName;
-  final String lastName;
+  String firstName;
+  String lastName;
   final String username;
   final String email;
   final String phoneNumber;
@@ -37,12 +38,12 @@ class UserModel {
     if (data.data() != null) {
       return UserModel(
         id: data.id,
-        firstName: data["firstName"] ?? '',
-        lastName: data["lastName"] ?? '',
-        username: data["username"] ?? '',
-        email: data["email"] ?? '',
-        phoneNumber: data["phoneNumber"] ?? '',
-        profilePicture: data["profilePicture"] ?? '',
+        firstName: data["FirstName"] ?? '',
+        lastName: data["LastName"] ?? '',
+        username: data["Username"] ?? '',
+        email: data["Email"] ?? '',
+        phoneNumber: data["PhoneNumber"] ?? '',
+        profilePicture: data["ProfilePicture"] ??  ADImages.user,
       );
     } else {
       return empty();
@@ -50,13 +51,13 @@ class UserModel {
   }
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "firstName": firstName,
-        "lastName": lastName,
-        "username": username,
-        "email": email,
-        "phoneNumber": phoneNumber,
-        "profilePicture": profilePicture,
+        "Id": id,
+        "FirstName": firstName,
+        "LastName": lastName,
+        "Username": username,
+        "Email": email,
+        "PhoneNumber": phoneNumber,
+        "ProfilePicture": profilePicture,
       };
 
   static UserModel empty() => UserModel(
@@ -66,6 +67,6 @@ class UserModel {
         username: "",
         email: "",
         phoneNumber: "",
-        profilePicture: "",
+        profilePicture: ADImages.user,
       );
 }

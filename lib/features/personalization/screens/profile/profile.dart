@@ -1,10 +1,12 @@
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
-import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/common/widgets/images/circular_image.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
+import 'package:ebazaar/features/personalization/controllers/user_controller.dart';
+import 'package:ebazaar/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:ebazaar/features/personalization/screens/profile/widgets/profile_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -12,6 +14,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance.user.value;
+
     return Scaffold(
       appBar: const ADAppBar(showBackArrow: true, title: Text("Profil")),
       body: SingleChildScrollView(
@@ -22,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Column(children: [
-                const CircularImage(image: ADImages.user, width: 80, height: 80),
+                CircularImage(image: controller.profilePicture, width: 80, height: 80),
                 TextButton(onPressed: () {}, child: const Text("Profil rasmini o'zgartiring")),
               ]),
             ),
@@ -36,8 +40,8 @@ class ProfileScreen extends StatelessWidget {
             const SectionHeading(title: "Profil ma'lumotlari", showActionButton: false),
             const SizedBox(height: ADSizes.spaceBtwItems),
 
-            ProfileMenu(onPressed: () {}, title: "Ism", value: "AbdurRahmon Davron"),
-            ProfileMenu(onPressed: () {}, title: "Username", value: "prodev278"),
+            ProfileMenu(onPressed: () => Get.to(() => const ChangeName()), title: "Ism", value: controller.fullName),
+            ProfileMenu(onPressed: () {}, title: "Username", value: controller.username),
 
             const SizedBox(height: ADSizes.spaceBtwItems / 2),
             const Divider(),
@@ -47,9 +51,9 @@ class ProfileScreen extends StatelessWidget {
             const SectionHeading(title: "Profil ma'lumotlari", showActionButton: false),
             const SizedBox(height: ADSizes.spaceBtwItems),
 
-            ProfileMenu(onPressed: () {}, title: "ID", icon: Iconsax.copy, value: "47728"),
-            ProfileMenu(onPressed: () {}, title: "Elektron pochta", value: "abdurakhmon278@gmail.com"),
-            ProfileMenu(onPressed: () {}, title: "Telefon raqam", value: "+998915550895"),
+            ProfileMenu(onPressed: () {}, title: "ID", icon: Iconsax.copy, value: controller.id),
+            ProfileMenu(onPressed: () {}, title: "Elektron pochta", value: controller.email),
+            ProfileMenu(onPressed: () {}, title: "Telefon raqam", value: controller.phoneNumber),
             ProfileMenu(onPressed: () {}, title: "Jins", value: "Erkak"),
             ProfileMenu(onPressed: () {}, title: "Tug'ulgan sana", value: "27 Apr, 2007"),
 

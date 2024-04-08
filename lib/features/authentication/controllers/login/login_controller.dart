@@ -21,9 +21,7 @@ class LoginController extends GetxController {
   final localStorage = GetStorage();
   final email = TextEditingController();
   final password = TextEditingController();
-
   final userController = Get.put(UserController());
-
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
   @override
@@ -75,6 +73,7 @@ class LoginController extends GetxController {
     } on PlatformException catch (e) {
       throw ADPlatformException(e.code).message;
     } catch (e) {
+      FullScreenLoader.stopLoading();
       ADLoaders.errorSnackBar(title: "Xato", message: e.toString());
     }
   }

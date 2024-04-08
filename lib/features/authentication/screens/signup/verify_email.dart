@@ -18,7 +18,10 @@ class VerifyEmailScreen extends StatelessWidget {
     final controller = Get.put(VerifyEmailController());
 
     return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false, actions: [IconButton(onPressed: () => AuthenticationRepository.instance.logout(), icon: const Icon(CupertinoIcons.clear))]),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: [IconButton(onPressed: () => AuthenticationRepository.instance.logout(), icon: const Icon(CupertinoIcons.clear))],
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
@@ -38,7 +41,7 @@ class VerifyEmailScreen extends StatelessWidget {
             /// Buttons
             SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () async => await controller.checkEmailVerificationStatus(), child: const Text(ADTexts.cContinue))),
             const SizedBox(height: ADSizes.spaceBtwItems),
-            SizedBox(width: double.infinity, child: TextButton(onPressed: () async => await controller.sendEmailVerification(), child: TextButton(onPressed: () => controller.sendEmailVerification(), child: const Text(ADTexts.resendEmail)))),
+            SizedBox(width: double.infinity, child: TextButton(onPressed: () => controller.sendEmailVerification(), child: const Text(ADTexts.resendEmail))),
           ]),
         ),
       ),
