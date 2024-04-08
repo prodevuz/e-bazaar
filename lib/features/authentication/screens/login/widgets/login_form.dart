@@ -21,7 +21,11 @@ class LoginForm extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: ADSizes.spaceBtwSections),
         child: Obx(
           () => Column(children: [
-            TextFormField(controller: controller.email, validator: (value) => Validator.validateEmail(value), decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: ADTexts.email)),
+            TextFormField(
+              controller: controller.email,
+              validator: (value) => Validator.validateEmail(value),
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: ADTexts.email),
+            ),
             const SizedBox(height: ADSizes.spaceBtwInputFields),
             TextFormField(
                 controller: controller.password,
@@ -30,7 +34,10 @@ class LoginForm extends StatelessWidget {
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Iconsax.password_check),
                   labelText: ADTexts.password,
-                  suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
+                  suffixIcon: IconButton(
+                    onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                    icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye),
+                  ),
                 )),
             const SizedBox(height: ADSizes.spaceBtwInputFields / 2),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -38,7 +45,7 @@ class LoginForm extends StatelessWidget {
               TextButton(onPressed: () => Get.to(() => const ForgetPassword()), child: const Text(ADTexts.forgetPasswordTitle)),
             ]),
             const SizedBox(height: ADSizes.spaceBtwSections),
-            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.login(), child: const Text(ADTexts.signIn))),
+            SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.emailAndPasswordSignIn(), child: const Text(ADTexts.signIn))),
             const SizedBox(height: ADSizes.spaceBtwItems),
             SizedBox(width: double.infinity, child: OutlinedButton(onPressed: () => Get.to(() => const SignupScreen()), child: const Text(ADTexts.createAccount))),
             const SizedBox(height: ADSizes.spaceBtwSections),

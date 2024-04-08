@@ -9,9 +9,9 @@ class UserModel {
     required this.username,
     required this.email,
     required this.phoneNumber,
-    required this.profilePicture
+    required this.profilePicture,
   });
-  
+
   final String id;
   final String firstName;
   final String lastName;
@@ -23,6 +23,15 @@ class UserModel {
   String get fullName => '$firstName $lastName';
   String get formattedPhoneNo => Formatter.formatPhoneNumber(phoneNumber);
   static List<String> nameParts(fullName) => fullName.split(" ");
+  static String generateUsername(fullName) {
+    List<String> nameParts = fullName.split(" ");
+    String firstName = nameParts[0].toLowerCase();
+    String lastName = nameParts.length > 1 ? nameParts[1].toLowerCase() : "";
+
+    String camelCaseUsername = "$firstName$lastName";
+    String usernameWithPrefix = "ads_$camelCaseUsername";
+    return usernameWithPrefix;
+  }
 
   factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> data) {
     if (data.data() != null) {
@@ -50,5 +59,13 @@ class UserModel {
         "profilePicture": profilePicture,
       };
 
-  static UserModel empty() => UserModel(id: "", firstName: "", lastName: "", username: "", email: "", phoneNumber: "", profilePicture: "");
+  static UserModel empty() => UserModel(
+        id: "",
+        firstName: "",
+        lastName: "",
+        username: "",
+        email: "",
+        phoneNumber: "",
+        profilePicture: "",
+      );
 }

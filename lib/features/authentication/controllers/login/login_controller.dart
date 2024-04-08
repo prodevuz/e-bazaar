@@ -11,6 +11,7 @@ import 'package:ebazaar/utils/exceptions/format_exception.dart';
 import 'package:ebazaar/utils/exceptions/firebase_exception.dart';
 import 'package:ebazaar/utils/exceptions/platform_exception.dart';
 import 'package:ebazaar/utils/exceptions/firebase_auth_exception.dart';
+import 'package:ebazaar/features/personalization/controllers/user_controller.dart';
 import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 
 class LoginController extends GetxController {
@@ -21,6 +22,8 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
 
+  final userController = UserController.instance;
+
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
   @override
@@ -30,8 +33,8 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
-  /// Login
-  void login() async {
+  /// Email and Password Sign In
+  Future<void> emailAndPasswordSignIn() async {
     try {
       // Start Loading
       FullScreenLoader.openLoadingDialog("Hisobingizga kirilmoqda", ADImages.docerAnimation);
@@ -72,6 +75,36 @@ class LoginController extends GetxController {
     } on PlatformException catch (e) {
       throw ADPlatformException(e.code).message;
     } catch (e) {
+      ADLoaders.errorSnackBar(title: "Xato", message: e.toString());
+    }
+  }
+
+  /// Google Sign In
+  Future<void> googleSignIn() async {
+    try {
+      // Start Loading
+      FullScreenLoader.openLoadingDialog("Hisobingizga kirilmoqda", ADImages.docerAnimation);
+
+      // Check Internet Connectivity
+      bool isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        FullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google Authentication
+      final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
+
+      // Save user record
+      await userController.saveUserRecord(userCredentials);
+
+      // Remove Loader
+      FullScreenLoader.stopLoading();
+
+      // Move to Home Page
+      AuthenticationRepository.instance.screenRedirect();
+    } catch (e) {
+      FullScreenLoader.stopLoading();
       ADLoaders.errorSnackBar(title: "Xato", message: e.toString());
     }
   }
