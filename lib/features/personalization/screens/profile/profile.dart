@@ -61,7 +61,12 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: ADSizes.spaceBtwItems),
 
             /// Accound Delete Button
-            Center(child: TextButton(onPressed: () {}, child: const Text("Hisobni o'chirish", style: TextStyle(color: Colors.red))))
+            Center(
+              child: TextButton(
+                onPressed: () => UserController.instance.deleteAccountWarningPopup(),
+                child: const Text("Hisobni o'chirish", style: TextStyle(color: Colors.red)),
+              ),
+            ),
           ]),
         ),
       ),
