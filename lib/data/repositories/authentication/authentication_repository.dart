@@ -117,7 +117,32 @@ class AuthenticationRepository extends GetxController {
   }
 
   /// [EmailAuthentication] - FORGET PASSWORD
+  Future<void> sendPasswordResendEmail(String email) async {
+    try {
+      bool isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q");
+        return;
+      }
 
+      await _auth.sendPasswordResetEmail(email: email);
+
+      ADLoaders.successSnackBar(title: "Email jo'natildi", message: "Pochtangizni tekshiring va emailingizni tasdiqlang.");
+    } on FirebaseAuthException catch (e) {
+      throw ADFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw ADFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw ADFormatException();
+    } on PlatformException catch (e) {
+      throw ADPlatformException(e.code).message;
+    } catch (e) {
+      // Hide loading indicator
+      FullScreenLoader.stopLoading();
+
+      ADLoaders.errorSnackBar(title: "Xatolik", message: e.toString());
+    }
+  }
   /// [ReAuthenticate] - REAUTHENTICATE
 
   /// [GoogleAuthentification] - GOOGLE

@@ -27,5 +27,5 @@ class OnBoardingController extends GetxController {
     }
   }
 
-  void skipPage() => Get.offAll(const LoginScreen());
+  void skipPage() => Get.offAll(() => const LoginScreen());
 }

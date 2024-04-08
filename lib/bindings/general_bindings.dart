@@ -5,7 +5,7 @@ import 'package:ebazaar/data/repositories/user/user_repository.dart';
 class GeneralBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => UserRepository());
+    Get.put(UserRepository());
     Get.lazyPut(() => NetworkManager());
   }
 }

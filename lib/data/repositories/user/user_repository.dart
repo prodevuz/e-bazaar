@@ -12,7 +12,7 @@ class UserRepository extends GetxController {
   static UserRepository get instance => Get.find();
 
   final FirebaseFirestore _db = FirebaseFirestore.instance;
-  late UserModel currentUser;
+  UserModel currentUser = UserModel(id: '', firstName: '', lastName: '', username: '', email: '', phoneNumber: '', profilePicture: '');
 
   Future<void> saveUserRecord(UserModel user) async {
     currentUser = user;

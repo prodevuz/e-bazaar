@@ -22,7 +22,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
 
-  final userController = UserController.instance;
+  final userController = Get.put(UserController());
 
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 

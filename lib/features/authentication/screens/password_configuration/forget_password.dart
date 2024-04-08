@@ -2,15 +2,17 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/validators/validation.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
-import 'package:ebazaar/features/authentication/screens/password_configuration/reset_password.dart';
+import 'package:ebazaar/features/authentication/controllers/forget_password/forget_password_controller.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ForgetPasswordController());
     return Scaffold(
       appBar: const ADAppBar(showBackArrow: true),
       body: Padding(
@@ -23,11 +25,18 @@ class ForgetPassword extends StatelessWidget {
           const SizedBox(height: ADSizes.spaceBtwSections * 2),
 
           /// Text field
-          TextFormField(decoration: const InputDecoration(labelText: ADTexts.email, prefixIcon: Icon(Iconsax.direct_right))),
+          Form(
+            key: controller.forgetPassworFormKey,
+            child: TextFormField(
+              controller: controller.email,
+              validator: Validator.validateEmail,
+              decoration: const InputDecoration(labelText: ADTexts.email, prefixIcon: Icon(Iconsax.direct_right)),
+            ),
+          ),
           const SizedBox(height: ADSizes.spaceBtwItems),
 
           /// Submit Button
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.off(() => const ResetPassword()), child: const Text(ADTexts.submit))),
+          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.sendPasswordResetEmail(), child: const Text(ADTexts.submit))),
         ]),
       ),
     );

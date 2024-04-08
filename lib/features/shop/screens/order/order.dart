@@ -10,13 +10,11 @@ class OrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ADAppBar(title: Text("Buyurtmalar", style: Theme.of(context).textTheme.headlineSmall), showBackArrow: true),
-      body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(ADSizes.defaultSpace),
+      body: const Padding(
+        padding: EdgeInsets.all(ADSizes.defaultSpace),
 
-          /// Orders
-          child: OrderListItems(),
-        ),
+        /// Orders
+        child: OrderListItems(),
       ),
     );
   }
