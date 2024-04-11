@@ -1,7 +1,7 @@
 class ADFormatException implements Exception {
   final String message;
 
-  ADFormatException([this.message = "Kutilmagan format xatoligi yuz berdi. Kiritilgan ma'lumotlaringizni tekshiring."]);
+  ADFormatException([this.message = "Noma'lum format xatoligi."]);
 
   factory ADFormatException.fromMessage(String message) {
     return ADFormatException(message);
@@ -9,8 +9,8 @@ class ADFormatException implements Exception {
 
   String get formattedMessage => message;
 
-  factory ADFormatException.fromCode(String code) {
-    switch ("") {
+  factory ADFormatException.fromCode(exception) {
+    switch (exception) {
       case 'invalid-email-format':
         return ADFormatException("Maxsus token formati noto'g'ri. Maxsus tokeningizni tekshirib ko'ring");
       case 'invalid-phone-number-format':
@@ -26,7 +26,7 @@ class ADFormatException implements Exception {
       case 'invalid_password_format':
         return ADFormatException("Parol formati yaroqsiz. Parol kamida 8 ta belgidan iborat bo'lishi kerak.");
       default:
-        return ADFormatException("Noma'lum format xatoligi");
+        return ADFormatException("Noma'lum format xatoligi: $exception");
     }
   }
 }

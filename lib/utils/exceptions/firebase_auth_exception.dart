@@ -1,12 +1,12 @@
 class ADFirebaseAuthException implements Exception {
-  final String code;
-
   ADFirebaseAuthException(this.code);
-
+  final String code;
   String get message {
     switch (code) {
       case 'user-not-found':
         return "Noto'g'ri login ma'lumotlari. Hisob topilmadi.";
+      case 'invalid-credential':
+        return "Noto'g'ri ma'lumotlar.";
       case 'email-already-in-use':
         return "Ushbu email allaqachon ro'yxatdan o'tkazilgan.";
       case 'invalid-email':

@@ -60,9 +60,9 @@ class ADDeviceUtils {
 
   static Future<bool> hasInternetConnection() async {
     try {
-      final result = await InternetAddress.lookup('example.com');
+      final result = await InternetAddress.lookup('fast.com');
       return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
-    } on SocketException catch (_) {
+    } catch (e) {
       return false;
     }
   }
@@ -70,12 +70,4 @@ class ADDeviceUtils {
   static bool isIOS() => Platform.isIOS;
 
   static bool isAndroid() => Platform.isAndroid;
-
-  static void launchUrl(String url) async {
-    // if (await canLaunchString(url)) {
-    // await launchUrlString(url);
-    // } else {
-    // throw 'Could not launch $url';
-    // }
-  }
 }

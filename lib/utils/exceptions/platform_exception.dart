@@ -1,7 +1,7 @@
 class ADPlatformException implements Exception {
-  final String code;
-
   ADPlatformException(this.code);
+
+  final String code;
 
   String get message {
     switch (code) {
@@ -26,9 +26,9 @@ class ADPlatformException implements Exception {
       case 'internal_error':
         return "Ichki xatolik yuz berdi.";
       case 'unknown_error':
-        return "Noma'lum platforma xatoligi yuz berdi.";
+        return "Noma'lum platforma xatoligi. Qayta urinib ko'ring";
       default:
-        return "Noma'lum platforma xatoligi yuz berdi.";
+        return "Noma'lum platforma xatoligi. Qayta urinib ko'ring.";
     }
   }
 }

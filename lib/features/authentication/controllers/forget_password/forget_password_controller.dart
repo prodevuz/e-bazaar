@@ -24,12 +24,14 @@ class ForgetPasswordController extends GetxController {
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         FullScreenLoader.stopLoading();
+        ADLoaders.warningSnackBar(title: "Oflaynsiz", message: "Internet aloqasini tekshiring.");
         return;
       }
 
       // Form Validation
       if (!forgetPassworFormKey.currentState!.validate()) {
         FullScreenLoader.stopLoading();
+        ADLoaders.warningSnackBar(title: "Ma'lumotlar to'g'ri to'ldirilishi shart.");
         return;
       }
 
@@ -44,11 +46,10 @@ class ForgetPasswordController extends GetxController {
     } catch (e) {
       // Remove Loader
       FullScreenLoader.stopLoading();
-      ADLoaders.errorSnackBar(title: "Xatolik", message: e.toString());
     }
   }
 
-  resendPasswordResetEmail(String email) async {
+  Future<void> resendPasswordResetEmail(String email) async {
     try {
       // Start loading
       FullScreenLoader.openLoadingDialog("So'rovingiz ko'rib chiqilmoqda...", ADImages.docerAnimation);
@@ -57,19 +58,21 @@ class ForgetPasswordController extends GetxController {
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         FullScreenLoader.stopLoading();
+        ADLoaders.warningSnackBar(title: "Oflaynsiz", message: "Internet aloqasini tekshiring.");
         return;
       }
 
       // Send Email to reset Password
       await AuthenticationRepository.instance.sendPasswordResendEmail(email);
 
+      // Show success message
+      ADLoaders.successSnackBar(title: "Email jo'natildi", message: "Pochtangizni tekshiring va emailingizni tasdiqlang.");
+
       // Remove Loader
       FullScreenLoader.stopLoading();
-
     } catch (e) {
       // Remove Loader
       FullScreenLoader.stopLoading();
-      ADLoaders.errorSnackBar(title: "Xatolik", message: e.toString());
     }
   }
 }

@@ -1,12 +1,12 @@
 class ADFirebaseException implements Exception {
-  final String code;
-
   ADFirebaseException(this.code);
+  
+  final String code;
 
   String get message {
     switch (code) {
       case 'unknown':
-        return "Noma'lum firebase xatosi yuz berdi. Qayta urinib ko'ring.";
+        return "Noma'lum firebase xatosi. Qayta urinib ko'ring.";
       case 'invalid-custom-token':
         return "Maxsus token formati noto'g'ri. Maxsus tokeningizni tekshirib ko'ring";
       case 'custom-token-mismatch':
@@ -54,7 +54,7 @@ class ADFirebaseException implements Exception {
       case 'missing-verification-code':
         return "Tasdiqlash kodi kiritilmagan. Tasdiqlash kodini kiriting.";
       default:
-        return "Noma'lum firebase xatoligi.";
+        return "Noma'lum server xatoligi.";
     }
   }
 }
