@@ -1,3 +1,4 @@
+import 'package:ebazaar/features/shop/controllers/category_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -19,9 +20,9 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
-
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: ADAppBar(title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium), actions: const [CartCounterIcon()]),
         body: NestedScrollView(
@@ -58,19 +59,13 @@ class StoreScreen extends StatelessWidget {
                 ),
 
                 /// Tab Bar
-                bottom: const ADTabBar(tabs: [
-                  Tab(child: Text("Sport")),
-                  Tab(child: Text("Mebel")),
-                  Tab(child: Text("Elektronika")),
-                  Tab(child: Text("Kiyimlar")),
-                  Tab(child: Text("Kosmetika")),
-                ]),
+                bottom: ADTabBar(tabs: categories.map((category) => Tab(child: Text(category.name))).toList()),
               ),
             ];
           },
 
           /// Body
-          body: const TabBarView(children: [CategoryTab(), CategoryTab(), CategoryTab(), CategoryTab(), CategoryTab()]),
+          body: TabBarView(children: categories.map((category) => CategoryTab(category: category)).toList()),
         ),
       ),
     );

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
-import 'package:ebazaar/common/widgets/effects/shimmer.dart';
+import 'package:ebazaar/common/widgets/shimmers/shimmer.dart';
 import 'package:ebazaar/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:ebazaar/features/personalization/controllers/user_controller.dart';
 

@@ -19,7 +19,7 @@ class UserModel {
   final String username;
   final String email;
   final String phoneNumber;
-  final String profilePicture;
+  String profilePicture;
 
   String get fullName => '$firstName $lastName';
   String get formattedPhoneNo => Formatter.formatPhoneNumber(phoneNumber);

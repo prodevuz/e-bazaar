@@ -1,3 +1,5 @@
+import 'package:ebazaar/common/widgets/shimmers/shimmer.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.instance.user.value;
+    final controller = UserController.instance;
 
     return Scaffold(
       appBar: const ADAppBar(showBackArrow: true, title: Text("Profil")),
@@ -26,8 +28,18 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Column(children: [
-                CircularImage(image: controller.profilePicture, width: 80, height: 80),
-                TextButton(onPressed: () {}, child: const Text("Profil rasmini o'zgartiring")),
+                Obx(() {
+                  final networkImage = controller.user.value.profilePicture;
+                  final image = networkImage.isNotEmpty ? networkImage : ADImages.user;
+                  return controller.imageUploading.value
+                      ? const ADShimmerEffect(
+                          width: 80,
+                          height: 80,
+                          radius: 80,
+                        )
+                      : CircularImage(image: image, width: 80, height: 80, isNetworkImage: networkImage.isNotEmpty);
+                }),
+                TextButton(onPressed: () => controller.uploadUserProfilePicture(), child: const Text("Profil rasmini o'zgartiring")),
               ]),
             ),
 
@@ -40,8 +52,8 @@ class ProfileScreen extends StatelessWidget {
             const SectionHeading(title: "Profil ma'lumotlari", showActionButton: false),
             const SizedBox(height: ADSizes.spaceBtwItems),
 
-            ProfileMenu(onPressed: () => Get.to(() => const ChangeName()), title: "Ism", value: controller.fullName),
-            ProfileMenu(onPressed: () {}, title: "Username", value: controller.username),
+            ProfileMenu(onPressed: () => Get.to(() => const ChangeName()), title: "Ism", value: controller.user.value.fullName),
+            ProfileMenu(onPressed: () {}, title: "Username", value: controller.user.value.username),
 
             const SizedBox(height: ADSizes.spaceBtwItems / 2),
             const Divider(),
@@ -51,9 +63,9 @@ class ProfileScreen extends StatelessWidget {
             const SectionHeading(title: "Profil ma'lumotlari", showActionButton: false),
             const SizedBox(height: ADSizes.spaceBtwItems),
 
-            ProfileMenu(onPressed: () {}, title: "ID", icon: Iconsax.copy, value: controller.id),
-            ProfileMenu(onPressed: () {}, title: "Elektron pochta", value: controller.email),
-            ProfileMenu(onPressed: () {}, title: "Telefon raqam", value: controller.phoneNumber),
+            ProfileMenu(onPressed: () {}, title: "ID", icon: Iconsax.copy, value: controller.user.value.id),
+            ProfileMenu(onPressed: () {}, title: "Elektron pochta", value: controller.user.value.email),
+            ProfileMenu(onPressed: () {}, title: "Telefon raqam", value: controller.user.value.phoneNumber),
             ProfileMenu(onPressed: () {}, title: "Jins", value: "Erkak"),
             ProfileMenu(onPressed: () {}, title: "Tug'ulgan sana", value: "27 Apr, 2007"),
 

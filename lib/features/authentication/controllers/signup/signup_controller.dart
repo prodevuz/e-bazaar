@@ -69,7 +69,7 @@ class SignupController extends GetxController {
       await userRepository.saveUserRecord(newUser);
 
       // Show success message
-      ADLoaders.successSnackBar(title: "Tabriklaymiz", message: "Hisobingiz yaratildi! Davom etish uchun emailni tasdiqlang.");
+      ADLoaders.successSnackBar(title: "Tabriklaymiz", message: "Hisobingiz yaratildi!");
 
       // Remove loader
       FullScreenLoader.stopLoading();
