@@ -22,6 +22,7 @@ class App extends StatelessWidget {
             backgroundColor: ADColors.primary,
             body: Center(child: CircularProgressIndicator(color: ADColors.white)),
           ),
-        ));
+        ),
+    );
   }
 }
