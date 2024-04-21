@@ -24,14 +24,14 @@ class CategoryController extends GetxController {
       // Show loader while loading categories
       isLoading.value = true;
 
+      // Temp
+      _categoryRepository.uploadDummyData(ADDummyData.categories);
+
       // Fetch categories from Firestore
       final categories = await _categoryRepository.getAllCategories();
 
       // Update the categories list
       allCategories.assignAll(categories);
-
-      // Temp
-      await _categoryRepository.uploadDummyData(ADDummyData.categories);
 
       // Filter featured categories
       featuredCategories.assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
