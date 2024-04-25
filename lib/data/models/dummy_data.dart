@@ -1,5 +1,5 @@
-import 'package:ebazaar/features/shop/models/category_model.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:ebazaar/features/shop/models/category_model.dart';
 
 class ADDummyData {
   static final List<CategoryModel> categories = [
@@ -13,38 +13,38 @@ class ADDummyData {
 
     /// Sub Categories
     // Sport
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.sportIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.sportIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.sportIcon, isFeatured: false),
+    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.sportIcon, isFeatured: false, parentId: '1'),
+    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.sportIcon, isFeatured: false, parentId: '1'),
+    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.sportIcon, isFeatured: false, parentId: '1'),
 
     // Furniture
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.furnitureIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.furnitureIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.furnitureIcon, isFeatured: false),
+    CategoryModel(id: '11', name: "Sport krasovkalar", image: ADImages.furnitureIcon, isFeatured: false, parentId: '2'),
+    CategoryModel(id: '12', name: "Sport kiyimlar", image: ADImages.furnitureIcon, isFeatured: false, parentId: '2'),
+    CategoryModel(id: '13', name: "Sport jixozlari", image: ADImages.furnitureIcon, isFeatured: false, parentId: '2'),
 
     // Electronics
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.electronicsIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.electronicsIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.electronicsIcon, isFeatured: false),
+    CategoryModel(id: '14', name: "Sport krasovkalar", image: ADImages.electronicsIcon, isFeatured: false, parentId: '3'),
+    CategoryModel(id: '15', name: "Sport kiyimlar", image: ADImages.electronicsIcon, isFeatured: false, parentId: '3'),
+    CategoryModel(id: '16', name: "Sport jixozlari", image: ADImages.electronicsIcon, isFeatured: false, parentId: '3'),
 
     // Clothes
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.clothIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.clothIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.clothIcon, isFeatured: false),
+    CategoryModel(id: '17', name: "Sport krasovkalar", image: ADImages.clothIcon, isFeatured: false, parentId: '4'),
+    CategoryModel(id: '18', name: "Sport kiyimlar", image: ADImages.clothIcon, isFeatured: false, parentId: '4'),
+    CategoryModel(id: '19', name: "Sport jixozlari", image: ADImages.clothIcon, isFeatured: false, parentId: '4'),
 
     // Animal
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.animalIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.animalIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.animalIcon, isFeatured: false),
+    CategoryModel(id: '20', name: "Sport krasovkalar", image: ADImages.animalIcon, isFeatured: false, parentId: '5'),
+    CategoryModel(id: '21', name: "Sport kiyimlar", image: ADImages.animalIcon, isFeatured: false, parentId: '5'),
+    CategoryModel(id: '22', name: "Sport jixozlari", image: ADImages.animalIcon, isFeatured: false, parentId: '5'),
 
     // Shoes
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.shoeIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.shoeIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.sportIcon, isFeatured: false),
+    CategoryModel(id: '23', name: "Sport krasovkalar", image: ADImages.shoeIcon, isFeatured: false, parentId: '6'),
+    CategoryModel(id: '24', name: "Sport kiyimlar", image: ADImages.shoeIcon, isFeatured: false, parentId: '6'),
+    CategoryModel(id: '25', name: "Sport jixozlari", image: ADImages.sportIcon, isFeatured: false, parentId: '6'),
 
     // Cosmetics
-    CategoryModel(id: '8', name: "Sport krasovkalar", image: ADImages.cosmeticsIcon, isFeatured: false),
-    CategoryModel(id: '9', name: "Sport kiyimlar", image: ADImages.cosmeticsIcon, isFeatured: false),
-    CategoryModel(id: '10', name: "Sport jixozlari", image: ADImages.cosmeticsIcon, isFeatured: false),
+    CategoryModel(id: '26', name: "Sport krasovkalar", image: ADImages.cosmeticsIcon, isFeatured: false, parentId: '7'),
+    CategoryModel(id: '27', name: "Sport kiyimlar", image: ADImages.cosmeticsIcon, isFeatured: false, parentId: '7'),
+    CategoryModel(id: '28', name: "Sport jixozlari", image: ADImages.cosmeticsIcon, isFeatured: false, parentId: '7'),
   ];
 }

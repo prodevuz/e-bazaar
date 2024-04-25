@@ -10,7 +10,7 @@ class VerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     this.backgroundColor,
-    this.isNetworkImage = false,
+    this.isNetworkImage = true,
     this.textColor = ADColors.white,
   });
 

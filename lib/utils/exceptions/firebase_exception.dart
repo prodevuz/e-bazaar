@@ -54,7 +54,7 @@ class ADFirebaseException implements Exception {
       case 'missing-verification-code':
         return "Tasdiqlash kodi kiritilmagan. Tasdiqlash kodini kiriting.";
       default:
-        return "Noma'lum server xatoligi.";
+        return "Noma'lum server xatoligi. ";
     }
   }
 }

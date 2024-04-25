@@ -1,9 +1,9 @@
-import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:ebazaar/data/models/dummy_data.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
@@ -13,6 +13,9 @@ import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:ebazaar/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:ebazaar/features/personalization/screens/address/address.dart';
+import 'package:ebazaar/data/repositories/categories/category_repository.dart';
+// import 'package:ebazaar/features/shop/controllers/category_controller.dart';
+import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 import 'package:ebazaar/features/personalization/controllers/theme_mode_controller.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/primary_header_container.dart';
 
@@ -72,7 +75,7 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(height: ADSizes.spaceBtwSections),
               const SectionHeading(title: "Ilova sozlamalari", showActionButton: false),
               const SizedBox(height: ADSizes.spaceBtwItems),
-              const SettingsMenuTile(icon: Iconsax.document_upload, title: "Ma'lumot yuklang", subTitle: "Cloud Firebasega ma'lumot yuklang"),
+              SettingsMenuTile(icon: Iconsax.document_upload, title: "Ma'lumot yuklang", subTitle: "Cloud Firebasega ma'lumot yuklang", onTap: () => CategoryRepository.instance.uploadDummyData(ADDummyData.categories)),
               SettingsMenuTile(icon: Iconsax.location, title: "Geojoylashuv", subTitle: "Joylashuvga moslangan tavsiyalar", trailing: Switch(value: true, onChanged: (value) {})),
               SettingsMenuTile(icon: Iconsax.security_user, title: "Xavfsiz rejim", subTitle: "Barcha yoshdagilar uchun xavfsiz maxsulotlar", trailing: Switch(value: false, onChanged: (value) {})),
               SettingsMenuTile(icon: Iconsax.image, title: "HD sifatli rasmlar", subTitle: "Rasmlar sifatini belgilang", trailing: Switch(value: false, onChanged: (value) {})),

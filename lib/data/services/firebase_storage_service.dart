@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ADFirebaseStorageService extends GetxController {
   static ADFirebaseStorageService get instance => Get.find();
@@ -25,6 +27,19 @@ class ADFirebaseStorageService extends GetxController {
     try {
       final ref = _firebaseStorage.ref(path).child(name);
       await ref.putData(image);
+      final url = await ref.getDownloadURL();
+      return url;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  /// Upload image on Cloud Firebase Storage
+  /// Returns the download URL of the uploaded image
+  Future<String> uploadImageFile(String path, XFile image) async {
+    try {
+      final ref = _firebaseStorage.ref(path).child(image.name);
+      await ref.putData(File(image.path).readAsBytesSync());
       final url = await ref.getDownloadURL();
       return url;
     } catch (e) {

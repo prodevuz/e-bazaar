@@ -1,8 +1,7 @@
-import 'package:ebazaar/data/models/dummy_data.dart';
+import 'package:get/get.dart';
 import 'package:ebazaar/utils/exceptions/exceptions.dart';
 import 'package:ebazaar/features/shop/models/category_model.dart';
 import 'package:ebazaar/data/repositories/categories/category_repository.dart';
-import 'package:get/get.dart';
 
 class CategoryController extends GetxController {
   static CategoryController get instance => Get.find();
@@ -23,9 +22,6 @@ class CategoryController extends GetxController {
     try {
       // Show loader while loading categories
       isLoading.value = true;
-
-      // Temp
-      _categoryRepository.uploadDummyData(ADDummyData.categories);
 
       // Fetch categories from Firestore
       final categories = await _categoryRepository.getAllCategories();
