@@ -1,8 +1,9 @@
 import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:ebazaar/features/shop/models/banner_model.dart';
 import 'package:ebazaar/features/shop/models/category_model.dart';
 
 class ADDummyData {
-  static final List<CategoryModel> categories = [
+  static final List<CategoryModel> categories = <CategoryModel>[
     CategoryModel(id: '1', name: "Sport", image: ADImages.sportIcon, isFeatured: true),
     CategoryModel(id: '2', name: "Mebel", image: ADImages.furnitureIcon, isFeatured: true),
     CategoryModel(id: '3', name: "Elektronika", image: ADImages.electronicsIcon, isFeatured: true),
@@ -46,5 +47,10 @@ class ADDummyData {
     CategoryModel(id: '26', name: "Sport krasovkalar", image: ADImages.cosmeticsIcon, isFeatured: false, parentId: '7'),
     CategoryModel(id: '27', name: "Sport kiyimlar", image: ADImages.cosmeticsIcon, isFeatured: false, parentId: '7'),
     CategoryModel(id: '28', name: "Sport jixozlari", image: ADImages.cosmeticsIcon, isFeatured: false, parentId: '7'),
+  ];
+  static final List<BannerModel> banners = [
+    BannerModel(imageUrl: ADImages.promoBanner1, targetScreen: "ADRoutes.order", active: true),
+    BannerModel(imageUrl: ADImages.promoBanner2, targetScreen: "ADRoutes.order", active: true),
+    BannerModel(imageUrl: ADImages.promoBanner3, targetScreen: "ADRoutes.order", active: true),
   ];
 }

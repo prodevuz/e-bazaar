@@ -63,6 +63,19 @@ class UserRepository extends GetxController {
     }
   }
 
+  /// Remove user image from Firebase Storage
+  Future<void> removeUserImage() async {
+    try {
+      final ref = FirebaseStorage.instance.ref("Users/Images/Profile");
+      final ListResult result = await ref.listAll();
+      if (result.items.isNotEmpty) {
+        await result.items.first.delete();
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   /// Upload any image
   Future<String> uploadImage(String path, XFile image) async {
     try {

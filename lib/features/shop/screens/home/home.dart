@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(ADSizes.defaultSpace),
             child: Column(children: [
               /// Promo slider
-              const PromoSlider(banners: [ADImages.promoBanner1, ADImages.promoBanner2, ADImages.promoBanner3]),
+              const PromoSlider(),
               const SizedBox(height: ADSizes.spaceBtwSections),
               SectionHeading(title: "Mashxur Maxsulotlar", showActionButton: true, onPressed: () => Get.to(() => const AllProductsScreen())),
               const SizedBox(height: ADSizes.spaceBtwItems),

@@ -1,9 +1,10 @@
-import 'package:ebazaar/utils/exceptions/exceptions.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/loaders/loaders.dart';
+import 'package:ebazaar/utils/exceptions/exceptions.dart';
 import 'package:ebazaar/data/models/user/user_model.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/network_manager.dart';
@@ -12,7 +13,6 @@ import 'package:ebazaar/data/repositories/user/user_repository.dart';
 import 'package:ebazaar/features/authentication/screens/login/login.dart';
 import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 import 'package:ebazaar/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
-import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
@@ -158,6 +158,10 @@ class UserController extends GetxController {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery, imageQuality: 70, maxHeight: 512, maxWidth: 512);
       if (image != null) {
         imageUploading.value = true;
+
+        // Remove previous image
+        userRepository.removeUserImage();
+
         // Upload image
         final imageUrl = await userRepository.uploadImage("Users/Images/Profile", image);
 
