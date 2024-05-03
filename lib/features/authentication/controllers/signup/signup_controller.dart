@@ -14,7 +14,7 @@ class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
   /// Variables
-  final hidePassword = true.obs;
+  final hidePassword = false.obs;
   final privacyPolicy = false.obs;
   final email = TextEditingController();
   final lastName = TextEditingController();
@@ -69,7 +69,7 @@ class SignupController extends GetxController {
       await userRepository.saveUserRecord(newUser);
 
       // Show success message
-      ADLoaders.successSnackBar(title: "Tabriklaymiz", message: "Hisobingiz yaratildi!");
+      ADLoaders.successSnackBar(title: "Tabriklaymiz!", message: "Hisobingiz yaratildi! Davom etish uchun elektron pochtangizni tasdiqlang.");
 
       // Remove loader
       FullScreenLoader.stopLoading();

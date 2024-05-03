@@ -18,8 +18,7 @@ class ProductVariationModel {
     this.stock = 0,
     required this.attributeValues,
   });
-  static ProductVariationModel empty() =>
-      ProductVariationModel(id: '', attributeValues: {});
+  static ProductVariationModel empty() => ProductVariationModel(id: '', attributeValues: {});
 
   toJson() => {
         'Id': id,

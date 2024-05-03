@@ -12,9 +12,8 @@ import 'package:ebazaar/features/shop/screens/order/order.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:ebazaar/common/widgets/list_tiles/settings_menu_tile.dart';
+import 'package:ebazaar/data/repositories/product/product_repository.dart';
 import 'package:ebazaar/features/personalization/screens/address/address.dart';
-import 'package:ebazaar/data/repositories/categories/category_repository.dart';
-// import 'package:ebazaar/features/shop/controllers/category_controller.dart';
 import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 import 'package:ebazaar/features/personalization/controllers/theme_mode_controller.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -24,7 +23,6 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(children: [
@@ -68,14 +66,20 @@ class SettingsScreen extends StatelessWidget {
               SettingsMenuTile(icon: Iconsax.bag_tick, title: "Buyurtmalarim", subTitle: "Jarayondagi va tugallangan buyurtmalar", onTap: () => Get.to(() => const OrderScreen())),
               SettingsMenuTile(icon: Iconsax.bank, title: "Bank hisobi", subTitle: "Bank hisobi balansi", onTap: () => Get.to(() => const UserAddressScreen())),
               SettingsMenuTile(icon: Iconsax.discount_shape, title: "Kuponlarim", subTitle: "Chegirma kuponlar ro'yxati", onTap: () => Get.to(() => const UserAddressScreen())),
-              SettingsMenuTile(icon: Iconsax.notification, title: "Bildirishnomalar", subTitle: "Har qanday turdagi bildirishnoma xabarini belgilang", onTap: () => Get.to(() => const UserAddressScreen())),
-              SettingsMenuTile(icon: Iconsax.security_card, title: "Hisob maxfiyligi", subTitle: "Ma'lumotdan foydalanish va ulangan hisoblarni boshqaring", onTap: () => Get.to(() => const UserAddressScreen())),
+              SettingsMenuTile(
+                  icon: Iconsax.notification, title: "Bildirishnomalar", subTitle: "Har qanday turdagi bildirishnoma xabarini belgilang", onTap: () => Get.to(() => const UserAddressScreen())),
+              SettingsMenuTile(
+                  icon: Iconsax.security_card, title: "Hisob maxfiyligi", subTitle: "Ma'lumotdan foydalanish va ulangan hisoblarni boshqaring", onTap: () => Get.to(() => const UserAddressScreen())),
 
               /// App Settings
               const SizedBox(height: ADSizes.spaceBtwSections),
               const SectionHeading(title: "Ilova sozlamalari", showActionButton: false),
               const SizedBox(height: ADSizes.spaceBtwItems),
-              SettingsMenuTile(icon: Iconsax.document_upload, title: "Ma'lumot yuklang", subTitle: "Cloud Firebasega ma'lumot yuklang", onTap: () => CategoryRepository.instance.uploadDummyData(ADDummyData.categories)),
+              SettingsMenuTile(
+                  icon: Iconsax.document_upload,
+                  title: "Ma'lumot yuklang",
+                  subTitle: "Cloud Firebasega ma'lumot yuklang",
+                  onTap: () => ProductRepository.instance.uploadDummyData(ADDummyData.products)),
               SettingsMenuTile(icon: Iconsax.location, title: "Geojoylashuv", subTitle: "Joylashuvga moslangan tavsiyalar", trailing: Switch(value: true, onChanged: (value) {})),
               SettingsMenuTile(icon: Iconsax.security_user, title: "Xavfsiz rejim", subTitle: "Barcha yoshdagilar uchun xavfsiz maxsulotlar", trailing: Switch(value: false, onChanged: (value) {})),
               SettingsMenuTile(icon: Iconsax.image, title: "HD sifatli rasmlar", subTitle: "Rasmlar sifatini belgilang", trailing: Switch(value: false, onChanged: (value) {})),

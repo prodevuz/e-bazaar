@@ -11,7 +11,7 @@ class ADTabBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
-    
+
     return Material(
       color: dark ? ADColors.black : ADColors.white,
       child: TabBar(

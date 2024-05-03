@@ -101,7 +101,7 @@ class UserController extends GetxController {
   void deleteUserAccount() async {
     try {
       /// Start loading
-      FullScreenLoader.openLoadingDialog("Jarayonda", ADImages.docerAnimation);
+      FullScreenLoader.openLoadingDialog("Jarayonda...", ADImages.docerAnimation);
 
       /// First ReAuthenticate User
       final auth = AuthenticationRepository.instance;
@@ -127,7 +127,7 @@ class UserController extends GetxController {
   /// ReAuthenticate before deleting
   Future<void> reAuthenticateEmailAndPasswordUser() async {
     try {
-      FullScreenLoader.openLoadingDialog("Jarayonda", ADImages.docerAnimation);
+      FullScreenLoader.openLoadingDialog("Jarayonda...", ADImages.docerAnimation);
 
       // Check Internte
       final isConnected = await NetworkManager.instance.isConnected();

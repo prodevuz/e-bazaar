@@ -40,7 +40,7 @@ class BrandShowcase extends StatelessWidget {
         margin: const EdgeInsets.only(right: ADSizes.sm),
         padding: const EdgeInsets.all(ADSizes.md),
         child: Image(
-          fit: BoxFit.contain,
+          fit: BoxFit.cover,
           image: AssetImage(image),
         ),
       ),

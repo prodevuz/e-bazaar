@@ -76,7 +76,6 @@ class AuthenticationRepository extends GetxController {
         return;
       }
       await _auth.currentUser?.sendEmailVerification();
-      ADLoaders.successSnackBar(title: "Email jo'natildi", message: "Pochtangizni tekshiring va emailingizni tasdiqlang.");
     } catch (e) {
       FullScreenLoader.stopLoading();
       rethrow;

@@ -1,8 +1,8 @@
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
+import 'package:ebazaar/features/shop/controllers/product_controller.dart';
 import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 
 class SortableProducts extends StatelessWidget {
@@ -27,7 +27,7 @@ class SortableProducts extends StatelessWidget {
       const SizedBox(height: ADSizes.spaceBtwSections),
 
       /// Products
-      GridLayout(itemCount: 8, itemBuilder: (_, index) => ProductCardVertical(image: ADImages.productImages[index])),
+      GridLayout(itemCount: 8, itemBuilder: (_, index) => ProductCardVertical(product: ProductController.instance.featuredProducts[index])),
     ]);
   }
 }

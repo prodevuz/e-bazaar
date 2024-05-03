@@ -16,7 +16,7 @@ class ADElevatedButtonTheme {
       textStyle: const TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),
     ),
   );
-  
+
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,

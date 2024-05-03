@@ -60,6 +60,7 @@ class ProductModel {
       };
 
   factory ProductModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() == null) return ProductModel.empty();
     final data = document.data()!;
     return ProductModel(
       id: document.id,
@@ -68,7 +69,7 @@ class ProductModel {
       stock: data['Stock'] ?? 0,
       isFeatured: data['IsFeatured'] ?? false,
       price: double.parse((data['Price'] ?? 0.0).toString()),
-      salePrice: double.parse((data['salePrice'] ?? 0.0).toString()),
+      salePrice: double.parse((data['SalePrice'] ?? 0.0).toString()),
       thumbnail: data['Thumbnail'] ?? '',
       categoryId: data['CategoryId'] ?? '',
       description: data['Description'] ?? '',
@@ -89,7 +90,7 @@ class ProductModel {
       stock: data['Stock'] ?? 0,
       isFeatured: data['IsFeatured'] ?? false,
       price: double.parse((data['Price'] ?? 0.0).toString()),
-      salePrice: double.parse((data['salePrice'] ?? 0.0).toString()),
+      salePrice: double.parse((data['SalePrice'] ?? 0.0).toString()),
       thumbnail: data['Thumbnail'] ?? '',
       categoryId: data['CategoryId'] ?? '',
       description: data['Description'] ?? '',

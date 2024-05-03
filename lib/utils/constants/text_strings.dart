@@ -55,7 +55,7 @@ class ADTexts {
   static const String changeYourPasswordTitle = "Parolni tiklash emaili jo'natildi";
   static const String changeYourPasswordSubTitle = "Hisobingiz xavfsizligi bizni Ustuvorligimiz! Biz sizga parolingizni o'zgartirish uchun havola jo'natdik va hisobingiz ximoyalandi.";
   static const String confirmEmail = "Elektron po'chtangizni tasdiqlang!";
-  static const String confirmEmailSubTitle = "Tabriklaymiz!, Hisobingiz Sizni Kutyapti: Xaridni Boshlash va Maxsus Takliflarni Qabul Qilish Uchun Elektron Po'chtangizni Tasdiqlang.";
+  static const String confirmEmailSubTitle = "Tabriklaymiz!, Hisobingiz sizni kutyapdi. Xaridni boshlash va maxsus takliflarni qabul qilish uchun elektron po'chtangizni tasdiqlang.";
   static const String emailNotReceivedMessage = "Emailni olmadingizmi? Spam jildini tekshiring yoki emailni qayta jo'nating.";
   static const String yourAccountCreatedTitle = "Hisobingiz muvoffaqiyatli yaratildi!";
   static const String yourAccountCreatedSubTitle = "Cheksiz xaridlar manzilingizga xush kelibsiz: Hisobingiz yaratildi, Uzluksiz onlayn xarid qilish zavqini his qiling!";

@@ -16,7 +16,7 @@ class UserReviewCard extends StatelessWidget {
     return Column(children: [
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Row(children: [
-          const CircleAvatar(backgroundImage: AssetImage(ADImages.user)),
+          const CircleAvatar(backgroundImage: AssetImage(ADImages.localUser)),
           const SizedBox(width: ADSizes.spaceBtwItems),
           Text("AbdurRohman Davron", style: Theme.of(context).textTheme.titleLarge),
         ]),

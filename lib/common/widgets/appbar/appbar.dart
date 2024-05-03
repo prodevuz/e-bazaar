@@ -25,7 +25,7 @@ class ADAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
-    
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: ADSizes.md),
       child: AppBar(

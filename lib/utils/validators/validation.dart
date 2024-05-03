@@ -2,7 +2,6 @@ class Validator {
   static String? validateEmptyText(String? fieldName, String? value) => value == null || value.isEmpty ? "$fieldName yozilishi shart." : null;
 
   static String? validateEmail(String? value) {
-
     String? result;
     value == null || value.isEmpty ? result = "Email yozilishi shart." : null;
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');

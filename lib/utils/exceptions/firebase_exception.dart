@@ -1,6 +1,6 @@
 class ADFirebaseException implements Exception {
   ADFirebaseException(this.code);
-  
+
   final String code;
 
   String get message {

@@ -30,14 +30,14 @@ class ProfileScreen extends StatelessWidget {
               child: Column(children: [
                 Obx(() {
                   final networkImage = controller.user.value.profilePicture;
-                  final image = networkImage.isNotEmpty ? networkImage : ADImages.user;
+                  final image = networkImage.isNotEmpty ? networkImage : ADImages.localUser;
                   return controller.imageUploading.value
                       ? const ADShimmerEffect(
                           width: 80,
                           height: 80,
                           radius: 80,
                         )
-                      : CircularImage(image: image, width: 80, height: 80, isNetworkImage: networkImage.isNotEmpty);
+                      : CircularImage(image: image, fit: BoxFit.cover, width: 80, height: 80, padding: 0, isNetworkImage: networkImage.isNotEmpty);
                 }),
                 TextButton(onPressed: () => controller.uploadUserProfilePicture(), child: const Text("Profil rasmini o'zgartiring")),
               ]),
@@ -72,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
             const Divider(),
             const SizedBox(height: ADSizes.spaceBtwItems),
 
-            /// Accound Delete Button
+            /// Account Delete Button
             Center(
               child: TextButton(
                 onPressed: () => UserController.instance.deleteAccountWarningPopup(),

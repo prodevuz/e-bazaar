@@ -60,7 +60,8 @@ class ADImages {
 
   // Profile
 
-  static const String user = "assets/images/user/user.png";
+  static const String user = "https://firebasestorage.googleapis.com/v0/b/ghausshop.appspot.com/o/Users%2FImages%2FProfile%2Fuser.png?alt=media&token=016cba53-70bf-4739-b695-131eb76904f4";
+  static const String localUser = "assets/images/user/user.png";
 
   // System
   static const String sun = "assets/icons/system/sun.png";

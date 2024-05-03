@@ -13,7 +13,7 @@ class OnBoardingDotNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = OnBoardingController.instance;
     final dark = HelperFunctions.isDarkMode(context);
-    
+
     return Positioned(
       bottom: ADDeviceUtils.getBottomNavigationBarHeight() + 25,
       left: ADSizes.defaultSpace,

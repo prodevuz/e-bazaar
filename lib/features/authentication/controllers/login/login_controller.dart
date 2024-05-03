@@ -11,7 +11,7 @@ import 'package:ebazaar/data/repositories/authentication/authentication_reposito
 class LoginController extends GetxController {
   /// Variables
   final rememberMe = false.obs;
-  final hidePassword = true.obs;
+  final hidePassword = false.obs;
   final localStorage = GetStorage();
   final email = TextEditingController();
   final password = TextEditingController();
@@ -68,7 +68,7 @@ class LoginController extends GetxController {
   Future<void> googleSignIn() async {
     try {
       // Start Loading
-      FullScreenLoader.openLoadingDialog("Hisobingizga kirilmoqda", ADImages.docerAnimation);
+      FullScreenLoader.openLoadingDialog("Hisobingizga kirilmoqda...", ADImages.docerAnimation);
 
       // Check Internet Connectivity
       bool isConnected = await NetworkManager.instance.isConnected();

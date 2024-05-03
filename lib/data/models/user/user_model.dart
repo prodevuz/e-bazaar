@@ -43,7 +43,7 @@ class UserModel {
         username: data["Username"] ?? '',
         email: data["Email"] ?? '',
         phoneNumber: data["PhoneNumber"] ?? '',
-        profilePicture: data["ProfilePicture"] ??  ADImages.user,
+        profilePicture: data["ProfilePicture"] ?? ADImages.user,
       );
     } else {
       return empty();
