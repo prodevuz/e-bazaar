@@ -4,7 +4,7 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
-import 'package:ebazaar/features/shop/controllers/product_controller.dart';
+import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ebazaar/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ebazaar/features/shop/screens/all_products/all_products.dart';

@@ -1,10 +1,10 @@
-import 'package:ebazaar/common/widgets/shimmers/shimmer.dart';
-import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
+import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:ebazaar/common/widgets/shimmers/shimmer.dart';
 import 'package:ebazaar/common/widgets/images/circular_image.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/features/personalization/controllers/user_controller.dart';
@@ -32,11 +32,7 @@ class ProfileScreen extends StatelessWidget {
                   final networkImage = controller.user.value.profilePicture;
                   final image = networkImage.isNotEmpty ? networkImage : ADImages.localUser;
                   return controller.imageUploading.value
-                      ? const ADShimmerEffect(
-                          width: 80,
-                          height: 80,
-                          radius: 80,
-                        )
+                      ? const ADShimmerEffect(width: 80, height: 80, radius: 80)
                       : CircularImage(image: image, fit: BoxFit.cover, width: 80, height: 80, padding: 0, isNetworkImage: networkImage.isNotEmpty);
                 }),
                 TextButton(onPressed: () => controller.uploadUserProfilePicture(), child: const Text("Profil rasmini o'zgartiring")),

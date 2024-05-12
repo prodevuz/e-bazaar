@@ -5,7 +5,7 @@ import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/features/shop/models/category_model.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/common/widgets/brands/brand_show_case.dart';
-import 'package:ebazaar/features/shop/controllers/product_controller.dart';
+import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
 import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 
 class CategoryTab extends StatelessWidget {
@@ -28,7 +28,7 @@ class CategoryTab extends StatelessWidget {
           SectionHeading(title: "Sizga yoqishi mumkin", onPressed: () {}),
           const SizedBox(height: ADSizes.spaceBtwItems),
 
-          GridLayout(itemCount: ADImages.productImages.length, itemBuilder: (_, index) => ProductCardVertical(product: ProductController.instance.featuredProducts[index])),
+          GridLayout(itemCount: ProductController.instance.featuredProducts.length, itemBuilder: (_, index) => ProductCardVertical(product: ProductController.instance.featuredProducts[index])),
           const SizedBox(height: ADSizes.spaceBtwSections),
         ]),
       ),

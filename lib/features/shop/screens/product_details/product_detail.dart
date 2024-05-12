@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
+import 'package:ebazaar/utils/constants/enums.dart';
 import 'package:ebazaar/features/shop/models/product_model.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/features/shop/screens/product_reviews/product_reviews.dart';
@@ -24,7 +25,7 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(children: [
           /// Product Image Slider
-          const ProductImageSlider(),
+          ProductImageSlider(product: product),
 
           /// Product Details
           Padding(
@@ -34,11 +35,11 @@ class ProductDetailScreen extends StatelessWidget {
               const RatingAndShare(),
 
               /// Price, Title, Stock & Brand
-              const ProductMetaData(),
+              ProductMetaData(product: product),
 
               /// Attributes
-              const ProductAttributes(),
-              const SizedBox(height: ADSizes.spaceBtwSections),
+              if (product.productType == ProductType.variable.toString()) ProductAttributes(product: product),
+              if (product.productType == ProductType.variable.toString()) const SizedBox(height: ADSizes.spaceBtwSections),
 
               /// Checkout Button
               SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text("Rasmiylashtirish"))),
@@ -47,7 +48,7 @@ class ProductDetailScreen extends StatelessWidget {
               /// Description
               const SectionHeading(title: "Tavsif", showActionButton: false),
               const SizedBox(height: ADSizes.spaceBtwItems),
-              const ProductDescriptionText(),
+              ProductDescriptionText(text: product.description ?? ''),
 
               /// Reviews
               const Divider(),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class VerticalImageText extends StatelessWidget {
   const VerticalImageText({
@@ -34,7 +35,9 @@ class VerticalImageText extends StatelessWidget {
             height: 56,
             padding: const EdgeInsets.all(ADSizes.sm),
             decoration: BoxDecoration(color: backgroundColor ?? (dark ? ADColors.black : ADColors.white), borderRadius: BorderRadius.circular(100)),
-            child: Image(image: isNetworkImage ? NetworkImage(image) : AssetImage(image) as ImageProvider, fit: BoxFit.cover, color: dark ? ADColors.light : ADColors.dark),
+            child: isNetworkImage
+                ? CachedNetworkImage(imageUrl: image, color: dark ? ADColors.light : ADColors.dark)
+                : Image(fit: BoxFit.cover, image: AssetImage(image), color: dark ? ADColors.light : ADColors.dark),
           ),
           const SizedBox(height: ADSizes.spaceBtwItems / 2),
           SizedBox(width: 55, child: Text(title, style: Theme.of(context).textTheme.labelMedium!.apply(color: textColor), maxLines: 1, overflow: TextOverflow.ellipsis)),

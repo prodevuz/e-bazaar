@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 class ProductDescriptionText extends StatelessWidget {
-  const ProductDescriptionText({super.key, this.text = "Bu yerda maxsulotning tavsifi bo'lishi kerak edi. Bu yerda maxsulotning tavsifi bo'lishi kerak edi. Bu yerda maxsulotning tavsifi bo'lishi kerak edi."});
+  const ProductDescriptionText({super.key, required this.text});
 
   final String text;
 

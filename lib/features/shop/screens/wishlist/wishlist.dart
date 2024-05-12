@@ -6,7 +6,7 @@ import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/features/shop/screens/home/home.dart';
 import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
-import 'package:ebazaar/features/shop/controllers/product_controller.dart';
+import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
 import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 
 class FavouriteScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class FavouriteScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
           child: Column(children: [
-            GridLayout(itemCount: 6, itemBuilder: (_, index) => ProductCardVertical(product: ProductController.instance.featuredProducts[index])),
+            GridLayout(itemCount: ProductController.instance.featuredProducts.length, itemBuilder: (_, index) => ProductCardVertical(product: ProductController.instance.featuredProducts[index])),
           ]),
         ),
       ),

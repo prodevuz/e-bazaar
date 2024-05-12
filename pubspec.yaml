@@ -1,5 +1,5 @@
 name: ebazaar
-description: "A new Flutter project."
+description: "Flutter E-commerce application"
 publish_to: 'none' 
 version: 1.0.0+1
 environment:
@@ -17,6 +17,7 @@ dependencies:
   shimmer: ^3.0.0
   url_launcher: ^6.2.4
   image_picker: ^1.0.7
+  image_cropper: ^6.0.0
   connectivity_plus: ^6.0.1
   smooth_page_indicator: ^1.1.0
   flutter_native_splash: ^2.3.10
@@ -43,7 +44,6 @@ dependencies:
   firebase_storage: ^11.6.9
   cached_network_image: ^3.3.1
   firebase_app_check: ^0.2.2+2
-  image_cropper: ^6.0.0
 
 
 #--------------- ./ PACKAGES END ---------------#

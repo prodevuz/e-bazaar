@@ -40,15 +40,15 @@ class CircularImage extends StatelessWidget {
           child: isNetworkImage
               ? CachedNetworkImage(
                   fit: fit,
-                  color: overlayColor,
                   imageUrl: image,
-                  progressIndicatorBuilder: (context, url, downloadProgress) => const ADShimmerEffect(height: 55, width: 55),
+                  color: overlayColor,
                   errorWidget: (context, url, error) => const Icon(Icons.error),
+                  progressIndicatorBuilder: (context, url, downloadProgress) => const ADShimmerEffect(height: 55, width: 55),
                 )
               : Image(
                   fit: fit,
-                  image: AssetImage(image),
                   color: overlayColor,
+                  image: AssetImage(image),
                 ),
         ),
       ),

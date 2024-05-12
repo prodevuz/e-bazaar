@@ -2,7 +2,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
-import 'package:ebazaar/features/shop/controllers/product_controller.dart';
+import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
 import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 
 class SortableProducts extends StatelessWidget {
