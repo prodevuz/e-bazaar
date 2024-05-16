@@ -36,6 +36,19 @@ class ProductController extends GetxController {
     }
   }
 
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try {
+      // Fetch Products
+      final products = await productRepository.getAllFeaturedProducts();
+
+      return products;
+    } catch (e) {
+      // Handle Error
+      ADException(e);
+      return [];
+    }
+  }
+
   /// Get product price or price range for variatons
   String getProductPrice(ProductModel product) {
     double smallestPrice = double.infinity;

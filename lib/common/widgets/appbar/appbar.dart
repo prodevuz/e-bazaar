@@ -31,10 +31,7 @@ class ADAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
-            ? IconButton(
-                onPressed: () => Get.back(),
-                icon: Icon(Iconsax.arrow_left, color: dark ? ADColors.white : ADColors.dark),
-              )
+            ? IconButton(onPressed: () => Get.back(), icon: Icon(Iconsax.arrow_left, color: dark ? ADColors.white : ADColors.dark))
             : leadingIcon != null
                 ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon))
                 : null,

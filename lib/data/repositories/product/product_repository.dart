@@ -18,6 +18,25 @@ class ProductRepository extends GetxController {
     }
   }
 
+  Future<List<ProductModel>> getAllFeaturedProducts() async {
+    try {
+      final snapshot = await _db.collection("Products").where("IsFeatured", isEqualTo: true).get();
+      return snapshot.docs.map((e) => ProductModel.fromSnapshot(e)).toList();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<List<ProductModel>> fetchProductsByQuery(Query query) async {
+    try {
+      final querySnapshot = await query.get();
+      final List<ProductModel> productList = querySnapshot.docs.map((doc) => ProductModel.fromQuerySnapshot(doc)).toList();
+      return productList;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   Future<void> uploadDummyData(List<ProductModel> products) async {
     try {
       final storage = Get.put(ADFirebaseStorageService());
