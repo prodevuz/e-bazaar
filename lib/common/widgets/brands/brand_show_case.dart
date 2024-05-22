@@ -3,12 +3,13 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:ebazaar/common/widgets/brands/brand_card.dart';
+import 'package:ebazaar/features/shop/models/brand_model.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
 
 class BrandShowcase extends StatelessWidget {
-  const BrandShowcase({super.key, this.brand = "Nike", required this.images});
+  const BrandShowcase({super.key, required this.brand, required this.images});
 
-  final String brand;
+  final BrandModel brand;
   final List<String> images;
 
   @override
@@ -23,7 +24,7 @@ class BrandShowcase extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: ADSizes.spaceBtwItems),
       child: Column(children: [
         /// Brand with Products Count
-        BrandCard(name: brand, showBorder: false),
+        BrandCard(brand: brand, showBorder: false),
         const SizedBox(height: ADSizes.spaceBtwItems),
 
         /// Brand Top 3 Product Images
@@ -36,13 +37,10 @@ class BrandShowcase extends StatelessWidget {
     return Expanded(
       child: RoundedContainer(
         height: 100,
-        backgroundColor: dark ? ADColors.darkerGrey : ADColors.light,
-        margin: const EdgeInsets.only(right: ADSizes.sm),
         padding: const EdgeInsets.all(ADSizes.md),
-        child: Image(
-          fit: BoxFit.cover,
-          image: AssetImage(image),
-        ),
+        margin: const EdgeInsets.only(right: ADSizes.sm),
+        backgroundColor: dark ? ADColors.darkerGrey : ADColors.light,
+        child: Image(fit: BoxFit.cover, image: AssetImage(image)),
       ),
     );
   }

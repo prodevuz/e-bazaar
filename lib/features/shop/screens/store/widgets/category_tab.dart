@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
+import 'package:ebazaar/features/shop/models/brand_model.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/features/shop/models/category_model.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
@@ -9,9 +10,10 @@ import 'package:ebazaar/features/shop/controllers/products/product_controller.da
 import 'package:ebazaar/common/widgets/products/product_cards/product_card_vertical.dart';
 
 class CategoryTab extends StatelessWidget {
-  const CategoryTab({super.key, required this.category});
+  const CategoryTab({super.key, required this.category, required this.brands});
 
   final CategoryModel category;
+  final List<BrandModel> brands;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +22,8 @@ class CategoryTab extends StatelessWidget {
         padding: const EdgeInsets.all(ADSizes.defaultSpace),
         child: Column(children: [
           /// Brands
-          const BrandShowcase(brand: "Gucci", images: [ADImages.productImage6, ADImages.productImage3, ADImages.productImage1]),
-          const BrandShowcase(images: [ADImages.productImage4, ADImages.productImage2, ADImages.productImage5]),
+          BrandShowcase(brand: brands[0], images: const [ADImages.productImage6, ADImages.productImage3, ADImages.productImage1]),
+          BrandShowcase(brand: brands[1], images: const [ADImages.productImage4, ADImages.productImage2, ADImages.productImage5]),
           const SizedBox(height: ADSizes.spaceBtwItems),
 
           /// Products

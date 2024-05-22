@@ -1,0 +1,26 @@
+{
+    "editor.suggest.showStatusBar": false,
+    "zenMode.hideStatusBar": true,
+    "zenMode.showTabs": "none",
+    "zenMode.hideActivityBar": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+
+        "**/.*": true,
+        "**/ios": true,
+        "**/web": true,
+        "**/build": true,
+        "**/**.iml": true,
+        "**/**.lock": true,
+        "**/analysis_options.yaml": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always"
+    },
+    "dart.enableSdkFormatter": true
+}

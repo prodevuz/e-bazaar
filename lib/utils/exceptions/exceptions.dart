@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,7 +27,7 @@ class ADException {
     } else {
       message = "Noma'lum xatolik yuz berdi.";
     }
-    if (kDebugMode) LoggerHelper.error(message + code);
+    if (kDebugMode) log(message + code);
     ADLoaders.errorSnackBar(title: "Xato", message: message);
   }
 }

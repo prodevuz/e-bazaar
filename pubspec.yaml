@@ -68,3 +68,17 @@ flutter:
     - assets/icons/categories/
     - assets/images/animations/
     - assets/images/on_boarding_images/
+
+  flutter_native_splash:
+    color: "#FFFFFF"
+    color_dark: "#272727"
+    image: assets/logos/e-bazaar-logo-black.png
+    image_dark: assets/logos/e-bazaar-logo-white.png
+
+    android_12:
+      color: "#FFFFFF"
+      color_dark: "#272727"
+      image: assets/logos/e-bazaar-logo-black.png
+      image_dark: assets/logos/e-bazaar-logo-white.png
+
+    web: false
