@@ -15,12 +15,12 @@ class App extends StatelessWidget {
 
     return Obx(
       () => GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: controller.themeMode.value,
-        initialBinding: GeneralBindings(),
+        getPages: AppRoutes.pages,
         theme: ADTheme.lightTheme,
         darkTheme: ADTheme.darkTheme,
-        getPages: AppRoutes.pages,
+        initialBinding: GeneralBindings(),
+        debugShowCheckedModeBanner: false,
+        themeMode: controller.themeMode.value,
         home: const Scaffold(
           backgroundColor: ADColors.primary,
           body: Center(child: CircularProgressIndicator(color: ADColors.white)),

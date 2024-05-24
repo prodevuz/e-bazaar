@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:ebazaar/utils/logging/logger.dart';
 import 'package:ebazaar/utils/loaders/loaders.dart';
 import 'package:ebazaar/utils/exceptions/format_exception.dart';
 import 'package:ebazaar/utils/exceptions/firebase_exception.dart';

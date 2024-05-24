@@ -1,4 +1,3 @@
-import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:get/get.dart';
 import 'package:ebazaar/app.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +19,8 @@ Future<void> main() async {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   /// Initialize Firebase
-  await Firebase.initializeApp(options: DefaultFirebaseOptions().androidOptions).then((FirebaseApp value) => Get.put(AuthenticationRepository()));
-  await FirebaseAppCheck.instance.activate(androidProvider: AndroidProvider.debug);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  Get.put(AuthenticationRepository());
 
   /// Initialize Authentication
   FirebaseAuth.instance.authStateChanges().listen((User? user) {});
