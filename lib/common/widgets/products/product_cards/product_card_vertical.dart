@@ -11,9 +11,9 @@ import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 import 'package:ebazaar/common/widgets/images/rounded_image.dart';
 import 'package:ebazaar/common/widgets/texts/product_price_text.dart';
 import 'package:ebazaar/common/widgets/texts/product_title_text.dart';
-import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
 import 'package:ebazaar/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:ebazaar/features/shop/screens/product_details/product_detail.dart';
+import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
 
 class ProductCardVertical extends StatelessWidget {

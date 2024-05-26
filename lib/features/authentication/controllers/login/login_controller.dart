@@ -11,7 +11,7 @@ import 'package:ebazaar/data/repositories/authentication/authentication_reposito
 class LoginController extends GetxController {
   /// Variables
   final rememberMe = false.obs;
-  final hidePassword = false.obs;
+  final hidePassword = true.obs;
   final localStorage = GetStorage();
   final email = TextEditingController();
   final password = TextEditingController();

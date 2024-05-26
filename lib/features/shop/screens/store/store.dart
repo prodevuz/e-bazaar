@@ -1,4 +1,4 @@
-import 'package:ebazaar/common/widgets/shimmers/brands_shimmer.dart';
+import 'package:ebazaar/features/shop/screens/brands/brand_products.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -9,6 +9,7 @@ import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:ebazaar/common/widgets/brands/brand_card.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/common/widgets/texts/section_heading.dart';
+import 'package:ebazaar/common/widgets/shimmers/brands_shimmer.dart';
 import 'package:ebazaar/features/shop/screens/brands/all_brands.dart';
 import 'package:ebazaar/features/shop/controllers/brand_controller.dart';
 import 'package:ebazaar/common/widgets/products/cart/cart_menu_icon.dart';
@@ -63,7 +64,7 @@ class StoreScreen extends StatelessWidget {
                           itemCount: brandController.featuredBrands.length,
                           itemBuilder: (_, index) {
                             final brand = brandController.featuredBrands[index];
-                            return BrandCard(brand: brand, showBorder: true);
+                            return BrandCard(brand: brand, showBorder: true, onTap: () => Get.to(() => BrandProducts(brand: brand)));
                           },
                         );
                       },
@@ -78,7 +79,7 @@ class StoreScreen extends StatelessWidget {
           },
 
           /// Body
-          body: TabBarView(children: categories.map((category) => CategoryTab(brands: [brandController.featuredBrands[0], brandController.featuredBrands[1]], category: category)).toList()),
+          body: TabBarView(children: categories.map((category) => CategoryTab(category: category)).toList()),
         ),
       ),
     );

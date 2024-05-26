@@ -32,7 +32,7 @@ class BrandCard extends StatelessWidget {
         backgroundColor: Colors.transparent,
         child: Row(children: [
           /// Icon
-          Flexible(child: CircularImage(image: brand.image, backgroundColor: Colors.transparent, overlayColor: dark ? ADColors.white : ADColors.black)),
+          Flexible(child: CircularImage(image: brand.image, backgroundColor: Colors.transparent, overlayColor: dark ? ADColors.white : ADColors.black, isNetworkImage: true)),
           const SizedBox(width: ADSizes.spaceBtwItems / 2),
 
           /// Text
