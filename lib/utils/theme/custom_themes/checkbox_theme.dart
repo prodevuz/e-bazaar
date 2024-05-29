@@ -5,13 +5,13 @@ class ADCheckboxTheme {
 
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.selected) ? Colors.white : Colors.black), // Todo: return with if else
-    fillColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.selected) ? Colors.blue : Colors.transparent), // Todo: return with if else
+    checkColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? Colors.white : Colors.black), // Todo: return with if else
+    fillColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? Colors.blue : Colors.transparent), // Todo: return with if else
   );
 
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-    checkColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.selected) ? Colors.white : Colors.black), // Todo: return with if else
-    fillColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.selected) ? Colors.blue : Colors.transparent), // Todo: return with if else
+    checkColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? Colors.white : Colors.black), // Todo: return with if else
+    fillColor: WidgetStateProperty.resolveWith((states) => states.contains(WidgetState.selected) ? Colors.blue : Colors.transparent), // Todo: return with if else
   );
 }
