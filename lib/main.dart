@@ -1,3 +1,4 @@
+import 'package:ebazaar/data/services/dummy_upload_service.dart';
 import 'package:get/get.dart';
 import 'package:ebazaar/app.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,9 @@ Future<void> main() async {
 
   /// Initialize Authentication
   FirebaseAuth.instance.authStateChanges().listen((User? user) {});
+
+  /// Upload Dummy Data
+  ADDummyUpload().uploadDummyData();
 
   runApp(const App());
 }

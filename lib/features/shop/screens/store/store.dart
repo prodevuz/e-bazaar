@@ -1,4 +1,3 @@
-import 'package:ebazaar/features/shop/screens/brands/brand_products.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -12,6 +11,7 @@ import 'package:ebazaar/common/widgets/texts/section_heading.dart';
 import 'package:ebazaar/common/widgets/shimmers/brands_shimmer.dart';
 import 'package:ebazaar/features/shop/screens/brands/all_brands.dart';
 import 'package:ebazaar/features/shop/controllers/brand_controller.dart';
+import 'package:ebazaar/features/shop/screens/brands/brand_products.dart';
 import 'package:ebazaar/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:ebazaar/features/shop/controllers/category_controller.dart';
 import 'package:ebazaar/features/shop/screens/store/widgets/category_tab.dart';
@@ -52,12 +52,12 @@ class StoreScreen extends StatelessWidget {
                     SectionHeading(title: "Mashxur brendlar", onPressed: () => Get.to(() => const AllBrandsScreen())),
                     const SizedBox(height: ADSizes.spaceBtwItems / 1.5),
 
-                    /// Brand Cards
+                    /// Brands Grid
                     Obx(
                       () {
                         if (brandController.isLoading.value) return const ADBrandsShimmer();
 
-                        if (brandController.featuredBrands.isEmpty) return Center(child: Text("Ma'lumot topilmadi!", style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+                        if (brandController.featuredBrands.isEmpty) return Center(child: Text("Brandlar mavjud emas!", style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
 
                         return GridLayout(
                           mainAxisExtent: 80,

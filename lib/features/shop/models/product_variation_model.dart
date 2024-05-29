@@ -1,3 +1,5 @@
+import 'package:ebazaar/utils/logging/logger.dart';
+
 class ProductVariationModel {
   final String id;
   String sku;
@@ -18,7 +20,29 @@ class ProductVariationModel {
     this.stock = 0,
     required this.attributeValues,
   });
+
   static ProductVariationModel empty() => ProductVariationModel(id: '', attributeValues: {});
+
+  ProductVariationModel copyWith({
+    String? id,
+    int? stock,
+    double? price,
+    double? salePrice,
+    String? image,
+    String? description,
+    Map<String, String>? attributeValues,
+  }) {
+    LoggerHelper.info("Called ProductVariationModel.copyWith()");
+    return ProductVariationModel(
+      id: id ?? this.id,
+      stock: stock ?? this.stock,
+      price: price ?? this.price,
+      salePrice: salePrice ?? this.salePrice,
+      image: image ?? this.image,
+      description: description ?? this.description,
+      attributeValues: attributeValues ?? this.attributeValues,
+    );
+  }
 
   toJson() => {
         'Id': id,

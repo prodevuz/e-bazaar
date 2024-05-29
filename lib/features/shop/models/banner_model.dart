@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ebazaar/utils/logging/logger.dart';
 
 class BannerModel {
   final String imageUrl;
@@ -6,6 +7,15 @@ class BannerModel {
   final bool active;
 
   BannerModel({required this.imageUrl, required this.targetScreen, required this.active});
+
+  BannerModel copyWith({String? imageUrl, String? targetScreen, bool? active}) {
+    LoggerHelper.info("Called BannerModel.copyWith()");
+    return BannerModel(
+      imageUrl: imageUrl ?? this.imageUrl,
+      targetScreen: targetScreen ?? this.targetScreen,
+      active: active ?? this.active,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "ImageUrl": imageUrl,

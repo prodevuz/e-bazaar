@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ebazaar/utils/logging/logger.dart';
 
 class CategoryModel {
   String id;
@@ -17,6 +18,18 @@ class CategoryModel {
 
   /// Empty helper function
   static CategoryModel empty() => CategoryModel(id: '', name: '', image: '', isFeatured: false);
+
+  /// Copy With new data
+  CategoryModel copyWith({String? id, String? name, String? image, bool? isFeatured, String? parentId}) {
+    LoggerHelper.info("Called CategoryModel.copyWith()");
+    return CategoryModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      image: image ?? this.image,
+      isFeatured: isFeatured ?? this.isFeatured,
+      parentId: parentId ?? this.parentId,
+    );
+  }
 
   /// Convert model to json structure
   Map<String, dynamic> toJson() {

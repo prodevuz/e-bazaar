@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebazaar/features/shop/models/brand_model.dart';
 import 'package:ebazaar/features/shop/models/product_attribute_model.dart';
 import 'package:ebazaar/features/shop/models/product_variation_model.dart';
+import 'package:ebazaar/utils/logging/logger.dart';
 
 class ProductModel {
   String id;
@@ -41,6 +42,43 @@ class ProductModel {
   });
 
   static ProductModel empty() => ProductModel(id: '', title: '', stock: 0, price: 0.0, thumbnail: '', productType: '');
+
+  ProductModel copyWith({
+    String? id,
+    String? title,
+    int? stock,
+    double? price,
+    bool? isFeatured,
+    String? thumbnail,
+    String? description,
+    BrandModel? brand,
+    List<String>? images,
+    double? salePrice,
+    String? sku,
+    String? categoryId,
+    List<ProductAttributeModel>? productAttributes,
+    List<ProductVariationModel>? productVariations,
+    String? productType,
+  }) {
+    LoggerHelper.info("Called ProductModel.copyWith()");
+    return ProductModel(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      stock: stock ?? this.stock,
+      price: price ?? this.price,
+      isFeatured: isFeatured ?? this.isFeatured,
+      thumbnail: thumbnail ?? this.thumbnail,
+      description: description ?? this.description,
+      brand: brand ?? this.brand,
+      images: images ?? this.images,
+      salePrice: salePrice ?? this.salePrice,
+      sku: sku ?? this.sku,
+      categoryId: categoryId ?? this.categoryId,
+      productAttributes: productAttributes ?? this.productAttributes,
+      productVariations: productVariations ?? this.productVariations,
+      productType: productType ?? this.productType,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'SKU': sku,

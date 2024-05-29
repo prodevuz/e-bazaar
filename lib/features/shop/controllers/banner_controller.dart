@@ -1,7 +1,7 @@
-import 'package:ebazaar/data/repositories/banners/banner_repository.dart';
 import 'package:get/get.dart';
 import 'package:ebazaar/utils/exceptions/exceptions.dart';
 import 'package:ebazaar/features/shop/models/banner_model.dart';
+import 'package:ebazaar/data/repositories/banners/banner_repository.dart';
 
 class BannerController extends GetxController {
   static BannerController get instance => Get.find();

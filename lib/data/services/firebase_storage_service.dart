@@ -1,21 +1,32 @@
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class ADFirebaseStorageService extends GetxController {
   static ADFirebaseStorageService get instance => Get.find();
 
   final _firebaseStorage = FirebaseStorage.instance;
 
-  /// Upload Local Assets from IDE
+  /// Upload Local Assets or Image URLs from IDE
   /// Returns a Uint8List containing image date
-  Future<Uint8List> getImageDataFromAssets(String path) async {
+  Future<Uint8List> getImageData(String pathOrUrl) async {
     try {
-      final byteData = await rootBundle.load(path);
-      final imageData = byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
-      return imageData;
+      if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
+        // If it's a URL, fetch the image data from the web
+        final response = await http.get(Uri.parse(pathOrUrl));
+        if (response.statusCode == 200) {
+          return response.bodyBytes;
+        } else {
+          throw Exception('Failed to load image from URL: ${response.statusCode}');
+        }
+      } else {
+        // Otherwise, assume it's a local asset path and load the image data from assets
+        final byteData = await rootBundle.load(pathOrUrl);
+        return byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
+      }
     } catch (e) {
       rethrow;
     }

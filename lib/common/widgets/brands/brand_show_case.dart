@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ebazaar/common/widgets/shimmers/shimmer.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -18,32 +20,40 @@ class BrandShowcase extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
 
-    return RoundedContainer(
-      showBorder: true,
-      borderColor: ADColors.darkGrey,
-      backgroundColor: Colors.transparent,
-      padding: const EdgeInsets.all(ADSizes.md),
-      margin: const EdgeInsets.only(bottom: ADSizes.spaceBtwItems),
-      child: Column(children: [
-        /// Brand with Products Count
-        BrandCard(brand: brand, showBorder: false, onTap: () => Get.to(() => BrandProducts(brand: brand))),
-        const SizedBox(height: ADSizes.spaceBtwItems),
+    return InkWell(
+      onTap: () => Get.to(() => BrandProducts(brand: brand)),
+      child: RoundedContainer(
+        showBorder: true,
+        borderColor: ADColors.darkGrey,
+        backgroundColor: Colors.transparent,
+        padding: const EdgeInsets.all(ADSizes.md),
+        margin: const EdgeInsets.only(bottom: ADSizes.spaceBtwItems),
+        child: Column(children: [
+          /// Brand with Products Count
+          BrandCard(brand: brand, showBorder: false),
+          const SizedBox(height: ADSizes.spaceBtwItems),
 
-        /// Brand Top 3 Product Images
-        Row(
-          children: images.map((image) {
-            return Expanded(
-              child: RoundedContainer(
-                height: 100,
-                padding: const EdgeInsets.all(ADSizes.md),
-                margin: const EdgeInsets.only(right: ADSizes.sm),
-                backgroundColor: dark ? ADColors.darkerGrey : ADColors.light,
-                child: Image(fit: BoxFit.cover, image: NetworkImage(image)),
-              ),
-            );
-          }).toList(),
-        ),
-      ]),
+          /// Brand Top 3 Product Images
+          Row(
+            children: images.map((image) {
+              return Expanded(
+                child: RoundedContainer(
+                  height: 100,
+                  padding: const EdgeInsets.all(ADSizes.md),
+                  margin: const EdgeInsets.only(right: ADSizes.sm),
+                  backgroundColor: dark ? ADColors.darkerGrey : ADColors.light,
+                  child: CachedNetworkImage(
+                    imageUrl: image,
+                    fit: BoxFit.contain,
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
+                    progressIndicatorBuilder: (context, url, downloadProgress) => const ADShimmerEffect(width: 100, height: 100),
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ]),
+      ),
     );
   }
 }

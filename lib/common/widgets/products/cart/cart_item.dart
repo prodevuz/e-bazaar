@@ -18,7 +18,7 @@ class CartItem extends StatelessWidget {
 
     return Row(children: [
       /// Image
-      RoundedImage(imageUrl: ADImages.productImages[index], width: 60, height: 60, padding: const EdgeInsets.all(ADSizes.sm), backgroundColor: dark ? ADColors.darkerGrey : ADColors.light),
+      RoundedImage(imageUrl: ADImages.productImage19, width: 60, height: 60, padding: const EdgeInsets.all(ADSizes.sm), backgroundColor: dark ? ADColors.darkerGrey : ADColors.light),
       const SizedBox(width: ADSizes.spaceBtwItems),
 
       /// Title, Price & Size
