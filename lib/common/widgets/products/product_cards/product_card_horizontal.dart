@@ -30,7 +30,7 @@ class ProductCardHorizontal extends StatelessWidget {
           backgroundColor: dark ? ADColors.dark : ADColors.white,
           child: Stack(children: [
             /// Thumbnail Image
-            const SizedBox(height: 120, width: 120, child: RoundedImage(imageUrl: ADImages.productImage1, applyImageRadius: true, backgroundColor: ADColors.white)),
+            const SizedBox(height: 120, width: 120, child: RoundedImage(imageUrl: ADImages.productImage1, applyImageRadius: true, backgroundColor: ADColors.white, isNetworkImage: true)),
 
             /// Sale Tag
             Positioned(

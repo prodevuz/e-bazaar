@@ -19,11 +19,11 @@ class ADDummyUpload extends GetxController {
     if (banners) BannerRepository().uploadDummyBanners(ADDummyData.banners);
 
     if (brands) BrandRepository().uploadDummyBrands(ADDummyData.brands);
-    if (brandCategories) BrandRepository().uploadDummyBrandCategories(ADDummyData.brandCategories);
+    if (brandCategories) BrandRepository().uploadDummyBrandCategory(ADDummyData.brandCategories);
 
     if (categories) CategoryRepository().uploadDummyCategories(ADDummyData.categories);
 
     if (products) ProductRepository().uploadDummyProducts(ADDummyData.products);
-    if (productCategories) ProductRepository().uploadDummyProductCategories(ADDummyData.productCategories);
+    if (productCategories) ProductRepository().uploadDummyProductCategory(ADDummyData.productCategories);
   }
 }

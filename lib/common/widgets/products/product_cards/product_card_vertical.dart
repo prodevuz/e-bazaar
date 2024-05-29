@@ -32,6 +32,7 @@ class ProductCardVertical extends StatelessWidget {
       onTap: () => Get.to(() => ProductDetailScreen(product: product)),
       child: Container(
         width: 180,
+        height: 288,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [ShadowStyle.verticalProductShadow],

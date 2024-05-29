@@ -16,7 +16,7 @@ class ADDummyData {
   ];
 
   static final List<BrandModel> brands = [
-    BrandModel(id: '1', image: ADImages.cosco, name: 'Costco', productsCount: 13, isFeatured: true),
+    BrandModel(id: '1', image: ADImages.cosco, name: 'Cosco', productsCount: 13, isFeatured: true),
     BrandModel(id: '2', image: ADImages.bellona, name: 'Bellona', productsCount: 19, isFeatured: true),
     BrandModel(id: '3', image: ADImages.apple, name: 'Apple', productsCount: 34, isFeatured: true),
     BrandModel(id: '4', image: ADImages.nike, name: 'Nike', productsCount: 27, isFeatured: true),
@@ -216,7 +216,7 @@ Og'irligi funt. O'sish (5/10/15/20/25 yoki 11/22/33/44/55)
 Olti burchakli Plitalar aylanishdan saqlaydi
 Xavfsiz va qulay foydalanish uchun o'ralgan va konturli tijorat uslubidagi tutqich
 Ixtiyoriy XTERRA sozlanishi gantel stend""",
-      brand: BrandModel(id: '1', image: ADImages.bellona, name: 'Costco', productsCount: 19, isFeatured: true),
+      brand: BrandModel(id: '1', image: ADImages.bellona, name: 'Cosco', productsCount: 19, isFeatured: true),
       images: [ADImages.productImage26],
       sku: 'DMBL23',
       categoryId: '10',

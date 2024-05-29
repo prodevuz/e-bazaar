@@ -21,7 +21,7 @@ class SubCategoriesScreen extends StatelessWidget {
           padding: const EdgeInsets.all(ADSizes.defaultSpace),
           child: Column(children: [
             /// Banner
-            const RoundedImage(width: double.infinity, imageUrl: ADImages.promoBanner3, applyImageRadius: true),
+            const RoundedImage(width: double.infinity, imageUrl: ADImages.promoBanner3, applyImageRadius: true, isNetworkImage: true),
             const SizedBox(height: ADSizes.spaceBtwSections),
 
             /// Sub-Categories

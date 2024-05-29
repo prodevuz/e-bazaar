@@ -31,7 +31,7 @@ class ProductAttributes extends StatelessWidget {
             child: Column(children: [
               /// Title, Price & Stock Status
               Row(children: [
-                const SectionHeading(title: "Turlar", showActionButton: false),
+                const SectionHeading(title: "Tur:", showActionButton: false),
                 const SizedBox(width: ADSizes.spaceBtwItems),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(children: [

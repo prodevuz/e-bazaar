@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:flutter/foundation.dart';
-import 'package:ebazaar/utils/logging/logger.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebazaar/features/shop/models/brand_model.dart';
 import 'package:ebazaar/data/services/firebase_storage_service.dart';
@@ -28,23 +26,13 @@ class BrandRepository extends GetxController {
   /// Get Brands For Category
   Future<List<BrandModel>> getBrandsForCategory(String categoryId) async {
     try {
-      if (kDebugMode) LoggerHelper.debug("Getting BrandCategory with categoryId");
-      QuerySnapshot brandCategoryQuery = await _db.collection("BrandCategory").where('categoryId', isEqualTo: categoryId).get();
-      if (kDebugMode) LoggerHelper.debug("Assigned!");
+      QuerySnapshot brandCategoryQuery = await _db.collection("BrandCategories").where('categoryId', isEqualTo: categoryId).get(); // collection should be BrandCategory
 
-      if (kDebugMode) LoggerHelper.debug("Assigning brandIds");
       List<String> brandIds = brandCategoryQuery.docs.map((doc) => doc['brandId'] as String).toList();
-      if (kDebugMode) LoggerHelper.debug(brandIds.toString());
-      if (kDebugMode) LoggerHelper.debug("Assigned!");
 
-      if (kDebugMode) LoggerHelper.debug("Assigning brandsQuery with brandIds");
       final brandsQuery = await _db.collection('Brands').where(FieldPath.documentId, whereIn: brandIds).limit(2).get();
-      if (kDebugMode) LoggerHelper.debug("Fetched brands into query with brandIds!");
 
-      if (kDebugMode) LoggerHelper.debug("Assigning brands");
       List<BrandModel> brands = brandsQuery.docs.map((doc) => BrandModel.fromSnapshot(doc)).toList();
-      if (kDebugMode) LoggerHelper.debug("Successful! | Completed work of getBrandsForCategory!");
-
       return brands;
     } catch (e) {
       rethrow;
@@ -70,10 +58,10 @@ class BrandRepository extends GetxController {
     } finally {}
   }
 
-  Future<void> uploadDummyBrandCategories(List<BrandCategoryModel> brandCategories) async {
+  Future<void> uploadDummyBrandCategory(List<BrandCategoryModel> brandCategories) async {
     try {
       for (var brandCategory in brandCategories) {
-        await _db.collection("BrandCategories").add(brandCategory.toJson());
+        await _db.collection("BrandCategory").add(brandCategory.toJson());
       }
     } catch (e) {
       rethrow;
