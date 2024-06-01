@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/common/styles/shadows.dart';
-import 'package:ebazaar/utils/constants/enums.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
@@ -35,36 +34,51 @@ class ProductCardVertical extends StatelessWidget {
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [ShadowStyle.verticalProductShadow],
-          borderRadius: BorderRadius.circular(ADSizes.productImageRadius),
           color: dark ? ADColors.darkerGrey : ADColors.white,
+          borderRadius: BorderRadius.circular(ADSizes.productImageRadius),
         ),
         child: Column(children: [
           /// Thumbnail Image
           RoundedContainer(
-            height: 180,
             width: 180,
-            padding: const EdgeInsets.all(ADSizes.sm),
-            margin: const EdgeInsets.only(top: ADSizes.xs),
+            height: 180,
             backgroundColor: dark ? ADColors.dark : ADColors.light,
             child: Stack(children: [
               /// Thumbnail Image
-              Center(child: RoundedImage(isNetworkImage: true, applyImageRadius: true, imageUrl: product.thumbnail, backgroundColor: dark ? ADColors.dark : ADColors.light)),
-
-              /// Sale Tag
-              if (salePercentage != null)
-                Positioned(
-                  top: 12,
-                  left: 0,
-                  child: RoundedContainer(
-                    radius: ADSizes.sm,
-                    backgroundColor: ADColors.secondary.withOpacity(0.8),
-                    padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
-                    child: Text("$salePercentage%", style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)),
-                  ),
+              Center(
+                child: RoundedImage(
+                  isNetworkImage: true,
+                  applyImageRadius: true,
+                  imageUrl: product.thumbnail,
+                  backgroundColor: dark ? ADColors.dark : ADColors.light,
                 ),
+              ),
 
-              /// Favorite Button
-              const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
+              /// Sale Tag & Favourite Row
+              Padding(
+                padding: const EdgeInsets.all(ADSizes.sm),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    /// Sale Tag
+                    if (salePercentage != null)
+                      RoundedContainer(
+                        radius: ADSizes.sm,
+                        backgroundColor: ADColors.secondary.withOpacity(0.8),
+                        padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
+                        child: Text(
+                          "$salePercentage%",
+                          style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black),
+                        ),
+                      ),
+
+                    const Spacer(),
+
+                    /// Favorite Button
+                    const CircularIcon(icon: Iconsax.heart5, color: Colors.red),
+                  ],
+                ),
+              ),
             ]),
           ),
           const SizedBox(height: ADSizes.spaceBtwItems / 2),
@@ -89,24 +103,24 @@ class ProductCardVertical extends StatelessWidget {
             /// Price
             Flexible(
               child: Padding(
-                padding: const EdgeInsets.only(left: ADSizes.sm),
-                child: ProductPriceText(price: controller.getProductPrice(product), isLarge: true),
-              ),
+                  padding: const EdgeInsets.only(left: ADSizes.sm),
+                  child: ProductPriceText(price: controller.getProductPrice(product), isLarge: true)),
             ),
-
-            if (product.productType == ProductType.single.toString() && product.salePrice > 0)
-              Padding(
-                padding: const EdgeInsets.only(left: ADSizes.sm),
-                child: ProductPriceText(price: product.price.toString(), isLarge: false, lineThrough: true),
-              ),
 
             /// Add to Cart Button
             Container(
               decoration: const BoxDecoration(
                 color: ADColors.dark,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusMd), bottomRight: Radius.circular(ADSizes.productImageRadius)),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(ADSizes.cardRadiusMd),
+                  bottomRight: Radius.circular(ADSizes.productImageRadius),
+                ),
               ),
-              child: const SizedBox(width: ADSizes.iconLg * 1.2, height: ADSizes.iconLg * 1.2, child: Center(child: Icon(Iconsax.add, color: ADColors.white))),
+              child: const SizedBox(
+                width: ADSizes.iconLg * 1.2,
+                height: ADSizes.iconLg * 1.2,
+                child: Center(child: Icon(Iconsax.add, color: ADColors.white)),
+              ),
             ),
           ]),
         ]),

@@ -30,6 +30,7 @@ class ProductImageSlider extends StatelessWidget {
           /// Main Large Image
           SizedBox(
             height: 400,
+            width: double.infinity,
             child: Obx(
               () {
                 final image = controller.selectedProductImage.value;
@@ -38,9 +39,8 @@ class ProductImageSlider extends StatelessWidget {
                   child: CachedNetworkImage(
                     fit: BoxFit.cover,
                     imageUrl: controller.selectedProductImage.value,
-                    progressIndicatorBuilder: (_, __, downloadProgress) => CircularProgressIndicator(
-                      color: ADColors.primary,
-                      value: downloadProgress.progress,
+                    progressIndicatorBuilder: (_, __, downloadProgress) => Center(
+                      child: CircularProgressIndicator(color: ADColors.primary, value: downloadProgress.progress),
                     ),
                   ),
                 );
@@ -79,7 +79,11 @@ class ProductImageSlider extends StatelessWidget {
           ),
 
           /// AppBar Icons
-          const ADAppBar(showBackArrow: true, actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)], arrowColor: ADColors.dark),
+          const ADAppBar(
+            showBackArrow: true,
+            arrowColor: ADColors.dark,
+            actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)],
+          ),
         ]),
       ),
     );

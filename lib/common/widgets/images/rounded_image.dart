@@ -10,6 +10,7 @@ class RoundedImage extends StatelessWidget {
     this.border,
     this.padding,
     this.onPressed,
+    this.overlayColor,
     this.height = 200,
     required this.imageUrl,
     this.fit = BoxFit.cover,
@@ -25,6 +26,7 @@ class RoundedImage extends StatelessWidget {
   final BoxBorder? border;
   final double borderRadius;
   final bool isNetworkImage;
+  final Color? overlayColor;
   final double width, height;
   final bool applyImageRadius;
   final Color backgroundColor;
@@ -39,17 +41,20 @@ class RoundedImage extends StatelessWidget {
         width: width,
         height: height,
         padding: padding,
-        decoration: BoxDecoration(border: border, color: backgroundColor, borderRadius: BorderRadius.circular(borderRadius)),
+        decoration:
+            BoxDecoration(border: border, color: backgroundColor, borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
           borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero,
           child: isNetworkImage
               ? CachedNetworkImage(
                   fit: fit,
                   imageUrl: imageUrl,
-                  progressIndicatorBuilder: (context, url, downloadProgress) => ADShimmerEffect(width: width, height: height),
+                  color: overlayColor,
+                  progressIndicatorBuilder: (context, url, downloadProgress) =>
+                      ADShimmerEffect(width: width, height: height),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 )
-              : Image(fit: fit, image: AssetImage(imageUrl)),
+              : Image(fit: fit, color: overlayColor, image: AssetImage(imageUrl)),
         ),
       ),
     );

@@ -33,7 +33,10 @@ class CircularImage extends StatelessWidget {
       width: width,
       height: height,
       padding: EdgeInsets.all(padding),
-      decoration: BoxDecoration(color: backgroundColor ?? (dark ? ADColors.black : ADColors.white), borderRadius: BorderRadius.circular(100)),
+      decoration: BoxDecoration(
+        color: backgroundColor ?? (dark ? ADColors.black : ADColors.white),
+        borderRadius: BorderRadius.circular(100),
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100),
         child: Center(
@@ -43,13 +46,11 @@ class CircularImage extends StatelessWidget {
                   imageUrl: image,
                   color: overlayColor,
                   errorWidget: (context, url, error) => const Icon(Icons.error),
-                  progressIndicatorBuilder: (context, url, downloadProgress) => const ADShimmerEffect(height: 55, width: 55),
+                  progressIndicatorBuilder: (context, url, downloadProgress) {
+                    return const ADShimmerEffect(height: 55, width: 55);
+                  },
                 )
-              : Image(
-                  fit: fit,
-                  color: overlayColor,
-                  image: AssetImage(image),
-                ),
+              : Image(fit: fit, color: overlayColor, image: AssetImage(image)),
         ),
       ),
     );

@@ -68,13 +68,39 @@ class ADDummyData {
       description:
           "Structure 25 sizga kerak bo'lgan joyda barqarorlik bilan, sizni xohlagan joyda yostiq bilan qoplaydi, Structure 25 sizni uzoq millarda, qisqa mashg'ulotlarda va hatto kun tugashidan oldin pastga va orqada qo'llab-quvvatlaydi. Bu siz izlayotgan barqarorlik, birinchi bog'lanishdanoq sodiq, sinab ko'rilgan va ishonchli, o'rta oyoq tizimi oldingidan ko'ra to'liq qo'llab-quvvatlovchi va qulayroq tamponlama.",
       brand: BrandModel(id: '4', image: ADImages.nike, name: 'Nike', productsCount: 27, isFeatured: true),
-      images: [ADImages.productImage2, ADImages.productImage3, ADImages.productImage4, ADImages.productImage5, ADImages.productImage6, ADImages.productImage7, ADImages.productImage8],
+      images: [
+        ADImages.productImage2,
+        ADImages.productImage3,
+        ADImages.productImage4,
+        ADImages.productImage5,
+        ADImages.productImage6,
+        ADImages.productImage7,
+        ADImages.productImage8
+      ],
       salePrice: 30,
       sku: 'HF4913',
       categoryId: '17',
       productAttributes: [
         ProductAttributeModel(name: 'Rang', values: ['Green', 'Black', 'Blue']),
-        ProductAttributeModel(name: "O'lchamlar", values: ['6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '13', '14', '15']),
+        ProductAttributeModel(name: "O'lchamlar", values: [
+          '6',
+          '6.5',
+          '7',
+          '7.5',
+          '8',
+          '8.5',
+          '9',
+          '9.5',
+          '10',
+          '10.5',
+          '11',
+          '11.5',
+          '12',
+          '12.5',
+          '13',
+          '14',
+          '15'
+        ]),
       ],
       productVariations: [
         ProductVariationModel(
@@ -197,7 +223,13 @@ Audio: U immersiv ovoz tajribasi uchun yuqori sifatli stereo dinamiklar va fazov
       description:
           """Haqiqatan ham zamonaviy klassik, bu baland orqa boshqaruvchilar kreslosi zamonaviy va zamonaviy estetikani hamda boy xususiyatlar ro'yxatini taqdim etadi - professional va uy foydalanuvchilari uchun ideal. O‘rindiq va orqa o‘rindiqning bir-biriga mos ravishda mutanosib bo‘lgan bosh suyagi va talaffuz qilingan bel tayanchi zamonaviy tarzda tikilgan va teridan tikilgan qoplama bilan bezatilgan. Kreslo mexanizmi foydalanuvchiga stulni toʻliq yonboshlab qoʻyish imkonini beradi – individual tana vazniga qarab sozlanishi (taranglikni nazorat qilish), uni tik holatda qulflash mumkin va mustahkam gazli lift orqali oʻrindiq balandligini oson sozlash imkonini beradi. Zamonaviy xromli qo'llar, mos keladigan yostiqli va yumshoq qo'l yostiqlari bilan to'ldiruvchi sayqallangan xrom tagliklari ushbu mashhur jihozni to'ldiradi.""",
       brand: BrandModel(id: '2', image: ADImages.bellona, name: 'Bellona', productsCount: 19, isFeatured: true),
-      images: [ADImages.productImage14, ADImages.productImage5, ADImages.productImage16, ADImages.productImage17, ADImages.productImage18, ADImages.productImage19],
+      images: [
+        ADImages.productImage20,
+        ADImages.productImage21,
+        ADImages.productImage22,
+        ADImages.productImage23,
+        ADImages.productImage24,
+      ],
       salePrice: 100,
       sku: 'ARMC734',
       categoryId: '11',
