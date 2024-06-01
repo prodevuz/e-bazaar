@@ -32,7 +32,8 @@ class CategoryController extends GetxController {
       allCategories.assignAll(categories);
 
       // Filter featured categories
-      featuredCategories.assignAll(allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
+      featuredCategories.assignAll(
+          allCategories.where((category) => category.isFeatured && category.parentId.isEmpty).take(8).toList());
     } catch (e) {
       ADException(e);
     } finally {
@@ -42,6 +43,15 @@ class CategoryController extends GetxController {
   }
 
   /// Load selected Category data
+  Future<List<CategoryModel>> getSubCategories(String categoryId) async {
+    try {
+      final subCategories = await _categoryRepository.getSubCategories(categoryId);
+      return subCategories;
+    } catch (e) {
+      ADException(e);
+      return [];
+    }
+  }
 
   /// Get Category or Sub Category products
   Future<List<ProductModel>> getCategoryProducts({required String categoryId, int limit = 4}) async {
