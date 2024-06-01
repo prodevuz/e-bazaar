@@ -19,5 +19,11 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": "always"
     },
-    "dart.enableSdkFormatter": true
+    "dart.enableSdkFormatter": true,
+    "dart.lineLength": 120,
+    "[dart]": {
+        "editor.rulers": [
+            120
+        ],
+    }
 }
