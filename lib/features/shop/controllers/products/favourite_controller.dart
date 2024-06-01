@@ -1,10 +1,9 @@
 import 'dart:convert';
-
-import 'package:ebazaar/data/repositories/product/product_repository.dart';
-import 'package:ebazaar/features/shop/models/product_model.dart';
-import 'package:ebazaar/utils/loaders/loaders.dart';
-import 'package:ebazaar/utils/local_storage/storage_utility.dart';
 import 'package:get/get.dart';
+import 'package:ebazaar/utils/loaders/loaders.dart';
+import 'package:ebazaar/features/shop/models/product_model.dart';
+import 'package:ebazaar/utils/local_storage/storage_utility.dart';
+import 'package:ebazaar/data/repositories/product/product_repository.dart';
 
 class FavouriteController extends GetxController {
   static FavouriteController get instance => Get.find();
@@ -51,6 +50,10 @@ class FavouriteController extends GetxController {
   }
 
   Future<List<ProductModel>> favouriteProducts() async {
-    return await ProductRepository.instance.getFavouriteProducts(favourites.keys.toList());
+    try {
+      return await ProductRepository.instance.getFavouriteProducts(favourites.keys.toList());
+    } catch (e) {
+      return [];
+    }
   }
 }

@@ -5,7 +5,6 @@ import 'package:ebazaar/navigation_menu.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
-import 'package:ebazaar/features/shop/screens/home/home.dart';
 import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 import 'package:ebazaar/common/widgets/layouts/grid_layout.dart';
 import 'package:ebazaar/utils/helpers/cloud_helper_functions.dart';
@@ -24,7 +23,7 @@ class FavouriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: ADAppBar(
         title: Text('Yoqtirilgan', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [CircularIcon(icon: Iconsax.add, onPressed: () => Get.to(const HomeScreen()))],
+        actions: [CircularIcon(icon: Iconsax.add, onPressed: () => Get.to(const NavigationMenu()))],
       ),
       body: SingleChildScrollView(
         child: Padding(
