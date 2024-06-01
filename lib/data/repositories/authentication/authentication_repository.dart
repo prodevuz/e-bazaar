@@ -1,3 +1,4 @@
+import 'package:ebazaar/utils/local_storage/storage_utility.dart';
 import 'package:get/get.dart';
 import 'package:ebazaar/navigation_menu.dart';
 import 'package:get_storage/get_storage.dart';
@@ -34,6 +35,7 @@ class AuthenticationRepository extends GetxController {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
+        await LocalStorage.init(user.uid);
         Get.offAll(() => const NavigationMenu());
       } else {
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
@@ -41,7 +43,9 @@ class AuthenticationRepository extends GetxController {
     } else {
       /// Local Storage
       deviceStorage.writeIfNull("IsFirstTime", true);
-      deviceStorage.read("IsFirstTime") != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(const OnBoardingScreen());
+      deviceStorage.read("IsFirstTime") != true
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(const OnBoardingScreen());
     }
   }
 
@@ -111,7 +115,8 @@ class AuthenticationRepository extends GetxController {
     try {
       final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication? googleAuth = await userAccount?.authentication;
-      final credentials = GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+      final credentials =
+          GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
       return await _auth.signInWithCredential(credentials);
     } catch (e) {
       rethrow;

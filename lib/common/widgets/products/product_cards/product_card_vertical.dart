@@ -6,13 +6,13 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:ebazaar/features/shop/models/product_model.dart';
-import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 import 'package:ebazaar/common/widgets/images/rounded_image.dart';
 import 'package:ebazaar/common/widgets/texts/product_price_text.dart';
 import 'package:ebazaar/common/widgets/texts/product_title_text.dart';
 import 'package:ebazaar/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:ebazaar/features/shop/screens/product_details/product_detail.dart';
 import 'package:ebazaar/features/shop/controllers/products/product_controller.dart';
+import 'package:ebazaar/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
 
 class ProductCardVertical extends StatelessWidget {
@@ -75,7 +75,7 @@ class ProductCardVertical extends StatelessWidget {
                     const Spacer(),
 
                     /// Favorite Button
-                    const CircularIcon(icon: Iconsax.heart5, color: Colors.red),
+                    ADFavouriteIcon(productId: product.id),
                   ],
                 ),
               ),

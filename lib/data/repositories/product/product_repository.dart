@@ -31,8 +31,18 @@ class ProductRepository extends GetxController {
   Future<List<ProductModel>> fetchProductsByQuery(Query query) async {
     try {
       final querySnapshot = await query.get();
-      final List<ProductModel> productList = querySnapshot.docs.map((doc) => ProductModel.fromQuerySnapshot(doc)).toList();
+      final List<ProductModel> productList =
+          querySnapshot.docs.map((doc) => ProductModel.fromQuerySnapshot(doc)).toList();
       return productList;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<List<ProductModel>> getFavouriteProducts(List<String> productIds) async {
+    try {
+      final snapshot = await _db.collection('Products').where(FieldPath.documentId, whereIn: productIds).get();
+      return snapshot.docs.map((querySnapshot) => ProductModel.fromSnapshot(querySnapshot)).toList();
     } catch (e) {
       rethrow;
     }
@@ -40,8 +50,9 @@ class ProductRepository extends GetxController {
 
   Future<List<ProductModel>> getProductsForBrand({required String brandId, int limit = 4}) async {
     try {
-      final productsQuery =
-          limit != -1 ? await _db.collection('Products').where('Brand.Id', isEqualTo: brandId).limit(limit).get() : await _db.collection('Products').where('Brand.Id', isEqualTo: brandId).get();
+      final productsQuery = limit != -1
+          ? await _db.collection('Products').where('Brand.Id', isEqualTo: brandId).limit(limit).get()
+          : await _db.collection('Products').where('Brand.Id', isEqualTo: brandId).get();
 
       List<ProductModel> products = productsQuery.docs.map((doc) => ProductModel.fromSnapshot(doc)).toList();
 
@@ -54,12 +65,20 @@ class ProductRepository extends GetxController {
   Future<List<ProductModel>> getProductsForCategory({required String categoryId, int limit = 4}) async {
     try {
       QuerySnapshot productCategoryQuery = limit != -1
-          ? await _db.collection("ProductCategories").where('categoryId', isEqualTo: categoryId).get() // collection should be ProductCategory
-          : await _db.collection("ProductCategories").where('categoryId', isEqualTo: categoryId).limit(limit).get(); // collection should be ProductCategory
+          ? await _db
+              .collection("ProductCategories")
+              .where('categoryId', isEqualTo: categoryId)
+              .get() // collection should be ProductCategory
+          : await _db
+              .collection("ProductCategories")
+              .where('categoryId', isEqualTo: categoryId)
+              .limit(limit)
+              .get(); // collection should be ProductCategory
 
       List<String> productIds = productCategoryQuery.docs.map((doc) => doc['productId'] as String).toList();
 
-      final productsQuery = await _db.collection('Products').where(FieldPath.documentId, whereIn: productIds).limit(2).get();
+      final productsQuery =
+          await _db.collection('Products').where(FieldPath.documentId, whereIn: productIds).limit(2).get();
 
       List<ProductModel> products = productsQuery.docs.map((doc) => ProductModel.fromSnapshot(doc)).toList();
 

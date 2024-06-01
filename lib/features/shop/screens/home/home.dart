@@ -60,7 +60,12 @@ class HomeScreen extends StatelessWidget {
               SectionHeading(
                 title: "Mashxur Maxsulotlar",
                 showActionButton: true,
-                onPressed: () => Get.to(() => AllProductsScreen(title: "Mashxur Maxsulotlar", futureMethod: controller.fetchAllFeaturedProducts())),
+                onPressed: () => Get.to(
+                  () => AllProductsScreen(
+                      title: "Mashxur Maxsulotlar",
+                      futureMethod: controller.fetchAllFeaturedProducts(),
+                    ),
+                ),
               ),
               const SizedBox(height: ADSizes.spaceBtwItems),
 
@@ -68,9 +73,13 @@ class HomeScreen extends StatelessWidget {
               Obx(() {
                 if (controller.isLoading.value) return const ADVerticalProductShimmer();
 
-                if (controller.featuredProducts.isEmpty) return Center(child: Text("Ma'lumot topilmadi", style: Theme.of(context).textTheme.bodyMedium));
+                if (controller.featuredProducts.isEmpty)
+                  return Center(child: Text("Ma'lumot topilmadi", style: Theme.of(context).textTheme.bodyMedium));
 
-                return GridLayout(itemCount: controller.featuredProducts.length, itemBuilder: (_, index) => ProductCardVertical(product: controller.featuredProducts[index]));
+                return GridLayout(
+                  itemCount: controller.featuredProducts.length,
+                  itemBuilder: (_, index) => ProductCardVertical(product: controller.featuredProducts[index]),
+                );
               }),
             ]),
           ),

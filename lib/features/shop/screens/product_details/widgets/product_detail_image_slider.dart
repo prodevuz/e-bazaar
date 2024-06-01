@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
@@ -7,8 +6,8 @@ import 'package:ebazaar/common/widgets/appbar/appbar.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ebazaar/features/shop/models/product_model.dart';
-import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 import 'package:ebazaar/common/widgets/images/rounded_image.dart';
+import 'package:ebazaar/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:ebazaar/features/shop/controllers/products/images_controller.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 
@@ -79,10 +78,10 @@ class ProductImageSlider extends StatelessWidget {
           ),
 
           /// AppBar Icons
-          const ADAppBar(
+          ADAppBar(
             showBackArrow: true,
             arrowColor: ADColors.dark,
-            actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)],
+            actions: [ADFavouriteIcon(productId: product.id)],
           ),
         ]),
       ),

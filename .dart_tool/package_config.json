@@ -15,7 +15,7 @@
     },
     {
       "name": "archive",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/archive-3.6.0",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/archive-3.6.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -267,9 +267,9 @@
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.19",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.20",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     },
     {
       "name": "flutter_rating_bar",
@@ -315,9 +315,9 @@
     },
     {
       "name": "google_sign_in_android",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_android-6.1.23",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_android-6.1.24",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     },
     {
       "name": "google_sign_in_ios",
@@ -387,15 +387,15 @@
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.1.1",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "image_picker_android",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+1",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.12+3",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "image_picker_for_web",
@@ -405,7 +405,7 @@
     },
     {
       "name": "image_picker_ios",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_ios-0.8.11+2",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_ios-0.8.12",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -531,9 +531,9 @@
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_android-2.2.4",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_android-2.2.5",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     },
     {
       "name": "path_provider_foundation",
@@ -687,9 +687,9 @@
     },
     {
       "name": "url_launcher_android",
-      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_android-6.3.2",
+      "rootUri": "file:///C:/Users/davro/AppData/Local/Pub/Cache/hosted/pub.dev/url_launcher_android-6.3.3",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.4"
     },
     {
       "name": "url_launcher_ios",
@@ -782,7 +782,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-06-01T14:23:31.429545Z",
+  "generated": "2024-06-01T14:26:50.723098Z",
   "generator": "pub",
   "generatorVersion": "3.4.1",
   "flutterRoot": "file:///D:/Coding/SDK/flutter",

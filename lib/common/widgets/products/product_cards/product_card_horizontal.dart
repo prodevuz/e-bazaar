@@ -4,11 +4,11 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
 import 'package:ebazaar/utils/helpers/helper_functions.dart';
-import 'package:ebazaar/common/widgets/icons/circular_icon.dart';
 import 'package:ebazaar/common/widgets/images/rounded_image.dart';
 import 'package:ebazaar/common/widgets/texts/product_price_text.dart';
 import 'package:ebazaar/common/widgets/texts/product_title_text.dart';
 import 'package:ebazaar/common/widgets/texts/brand_title_with_verified_icon.dart';
+import 'package:ebazaar/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:ebazaar/common/widgets/custom_shapes/containers/rounded_container.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
@@ -21,7 +21,9 @@ class ProductCardHorizontal extends StatelessWidget {
     return Container(
       width: 310,
       padding: const EdgeInsets.all(1),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(ADSizes.productImageRadius), color: dark ? ADColors.darkerGrey : ADColors.softGrey),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(ADSizes.productImageRadius),
+          color: dark ? ADColors.darkerGrey : ADColors.softGrey),
       child: Row(children: [
         /// Thumbnail
         RoundedContainer(
@@ -30,7 +32,14 @@ class ProductCardHorizontal extends StatelessWidget {
           backgroundColor: dark ? ADColors.dark : ADColors.white,
           child: Stack(children: [
             /// Thumbnail Image
-            const SizedBox(height: 120, width: 120, child: RoundedImage(imageUrl: ADImages.productImage1, applyImageRadius: true, backgroundColor: ADColors.white, isNetworkImage: true)),
+            const SizedBox(
+                height: 120,
+                width: 120,
+                child: RoundedImage(
+                    imageUrl: ADImages.productImage1,
+                    applyImageRadius: true,
+                    backgroundColor: ADColors.white,
+                    isNetworkImage: true)),
 
             /// Sale Tag
             Positioned(
@@ -44,7 +53,7 @@ class ProductCardHorizontal extends StatelessWidget {
             ),
 
             /// Favorite Button
-            const Positioned(top: 0, right: 0, child: CircularIcon(icon: Iconsax.heart5, color: Colors.red)),
+            const Positioned(top: 0, right: 0, child: ADFavouriteIcon(productId: '')),
           ]),
         ),
 
@@ -68,7 +77,9 @@ class ProductCardHorizontal extends StatelessWidget {
                 Container(
                   decoration: const BoxDecoration(
                     color: ADColors.dark,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(ADSizes.cardRadiusMd), bottomRight: Radius.circular(ADSizes.productImageRadius)),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(ADSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(ADSizes.productImageRadius)),
                   ),
                   child: const SizedBox(
                     width: ADSizes.iconLg * 1.2,
