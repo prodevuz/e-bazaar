@@ -44,7 +44,7 @@ class BrandShowcase extends StatelessWidget {
                   backgroundColor: dark ? ADColors.darkerGrey : ADColors.light,
                   child: CachedNetworkImage(
                     imageUrl: image,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                     errorWidget: (context, url, error) => const Icon(Icons.error),
                     progressIndicatorBuilder: (context, url, downloadProgress) => const ADShimmerEffect(width: 100, height: 100),
                   ),

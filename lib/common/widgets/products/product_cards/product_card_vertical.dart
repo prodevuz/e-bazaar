@@ -32,7 +32,6 @@ class ProductCardVertical extends StatelessWidget {
       onTap: () => Get.to(() => ProductDetailScreen(product: product)),
       child: Container(
         width: 180,
-        height: 288,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [ShadowStyle.verticalProductShadow],
@@ -75,7 +74,7 @@ class ProductCardVertical extends StatelessWidget {
             padding: const EdgeInsets.only(left: ADSizes.sm),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               /// Title
-              ProductTitleText(title: product.title, smallSize: true),
+              ProductTitleText(title: product.title, smallSize: true, maxLines: 1),
               const SizedBox(height: ADSizes.spaceBtwItems / 2),
 
               /// Brand
@@ -89,18 +88,17 @@ class ProductCardVertical extends StatelessWidget {
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             /// Price
             Flexible(
-              child: Column(children: [
-                if (product.productType == ProductType.single.toString() && product.salePrice > 0)
-                  Padding(
-                    padding: const EdgeInsets.only(left: ADSizes.sm),
-                    child: Text(product.price.toString(), style: Theme.of(context).textTheme.labelMedium!.apply(decoration: TextDecoration.lineThrough)),
-                  ),
-                Padding(
-                  padding: const EdgeInsets.only(left: ADSizes.sm),
-                  child: ProductPriceText(price: controller.getProductPrice(product), isLarge: true),
-                ),
-              ]),
+              child: Padding(
+                padding: const EdgeInsets.only(left: ADSizes.sm),
+                child: ProductPriceText(price: controller.getProductPrice(product), isLarge: true),
+              ),
             ),
+
+            if (product.productType == ProductType.single.toString() && product.salePrice > 0)
+              Padding(
+                padding: const EdgeInsets.only(left: ADSizes.sm),
+                child: ProductPriceText(price: product.price.toString(), isLarge: false, lineThrough: true),
+              ),
 
             /// Add to Cart Button
             Container(

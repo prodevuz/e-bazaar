@@ -22,7 +22,7 @@ class BillingPaymentSection extends StatelessWidget {
           height: 35,
           backgroundColor: dark ? ADColors.light : ADColors.white,
           padding: const EdgeInsets.all(ADSizes.sm),
-          child: const Image(image: AssetImage(ADImages.facebook), fit: BoxFit.contain),
+          child: const Image(image: AssetImage(ADImages.facebook), fit: BoxFit.cover),
         ),
         const SizedBox(width: ADSizes.spaceBtwItems / 2),
         Text("PayPal", style: Theme.of(context).textTheme.bodyLarge),

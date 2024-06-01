@@ -30,25 +30,21 @@ class ProductImageSlider extends StatelessWidget {
           /// Main Large Image
           SizedBox(
             height: 400,
-            child: Padding(
-              padding: const EdgeInsets.all(ADSizes.productImageRadius * 2),
-              child: Center(
-                child: Obx(
-                  () {
-                    final image = controller.selectedProductImage.value;
-                    return GestureDetector(
-                      onTap: () => controller.showEnlargedImage(image),
-                      child: CachedNetworkImage(
-                        imageUrl: controller.selectedProductImage.value,
-                        progressIndicatorBuilder: (_, __, downloadProgress) => CircularProgressIndicator(
-                          color: ADColors.primary,
-                          value: downloadProgress.progress,
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
+            child: Obx(
+              () {
+                final image = controller.selectedProductImage.value;
+                return GestureDetector(
+                  onTap: () => controller.showEnlargedImage(image),
+                  child: CachedNetworkImage(
+                    fit: BoxFit.cover,
+                    imageUrl: controller.selectedProductImage.value,
+                    progressIndicatorBuilder: (_, __, downloadProgress) => CircularProgressIndicator(
+                      color: ADColors.primary,
+                      value: downloadProgress.progress,
+                    ),
+                  ),
+                );
+              },
             ),
           ),
 
@@ -72,7 +68,6 @@ class ProductImageSlider extends StatelessWidget {
                       width: 80,
                       isNetworkImage: true,
                       imageUrl: images[index],
-                      padding: const EdgeInsets.all(ADSizes.sm),
                       backgroundColor: dark ? ADColors.dark : ADColors.white,
                       onPressed: () => controller.selectedProductImage.value = images[index],
                       border: Border.all(color: imageSelected ? ADColors.primary : Colors.transparent),
@@ -84,7 +79,7 @@ class ProductImageSlider extends StatelessWidget {
           ),
 
           /// AppBar Icons
-          const ADAppBar(showBackArrow: true, actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)]),
+          const ADAppBar(showBackArrow: true, actions: [CircularIcon(icon: Iconsax.heart5, color: Colors.red)], arrowColor: ADColors.dark),
         ]),
       ),
     );

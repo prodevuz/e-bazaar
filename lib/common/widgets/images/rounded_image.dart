@@ -12,7 +12,7 @@ class RoundedImage extends StatelessWidget {
     this.onPressed,
     this.height = 200,
     required this.imageUrl,
-    this.fit = BoxFit.contain,
+    this.fit = BoxFit.cover,
     this.isNetworkImage = false,
     this.width = double.infinity,
     this.applyImageRadius = true,
