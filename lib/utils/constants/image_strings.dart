@@ -53,10 +53,10 @@ class ADImages {
 
   // Brands
 
-  static const String cosco = "assets/images/brands/cosco.png";
-  static const String bellona = "assets/images/brands/bellona.png";
-  static const String apple = "assets/images/brands/apple.png";
-  static const String nike = "assets/images/brands/nike.png";
+  static const String cosco = "assets/icons/brands/cosco.png";
+  static const String bellona = "assets/icons/brands/bellona.png";
+  static const String apple = "assets/icons/brands/apple.png";
+  static const String nike = "assets/icons/brands/nike.png";
 
   // Products
 
