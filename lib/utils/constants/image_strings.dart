@@ -20,6 +20,7 @@ class ADImages {
   // Animations
 
   static const String successfulPaymentIcon = "assets/images/animations/success.gif";
+  static const String cartAnimation = "assets/images/animations/cart-animation.json";
   static const String docerAnimation = "assets/images/animations/docer-animation.json";
   static const String pencilAnimation = "assets/images/animations/pencil-animation.json";
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";

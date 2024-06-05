@@ -1,3 +1,4 @@
+import 'package:ebazaar/utils/logging/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/enums.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -21,6 +22,8 @@ class ProductMetaData extends StatelessWidget {
     final dark = HelperFunctions.isDarkMode(context);
     final controller = ProductController.instance;
     final salePercentage = controller.calculateSalePercentage(product.price, product.salePrice);
+
+    LoggerHelper.warning(product.brand!.image);
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       /// Price $ Sale Price
       Row(children: [
@@ -29,14 +32,21 @@ class ProductMetaData extends StatelessWidget {
           radius: ADSizes.sm,
           backgroundColor: ADColors.secondary.withOpacity(0.8),
           padding: const EdgeInsets.symmetric(horizontal: ADSizes.sm, vertical: ADSizes.xs),
-          child: Text('$salePercentage%', style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black)),
+          child: Text(
+            '$salePercentage%',
+            style: Theme.of(context).textTheme.labelLarge!.apply(color: ADColors.black),
+          ),
         ),
         const SizedBox(width: ADSizes.spaceBtwItems),
 
         /// Price
         if (product.productType == ProductType.single.toString() && product.salePrice > 0)
-          Text('\$${product.price}', style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough)),
-        if (product.productType == ProductType.single.toString() && product.salePrice > 0) const SizedBox(width: ADSizes.spaceBtwItems),
+          Text(
+            '\$${product.price}',
+            style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
+          ),
+        if (product.productType == ProductType.single.toString() && product.salePrice > 0)
+          const SizedBox(width: ADSizes.spaceBtwItems),
         ProductPriceText(price: controller.getProductPrice(product), isLarge: true),
       ]),
       const SizedBox(height: ADSizes.spaceBtwItems / 1.5),
@@ -55,8 +65,17 @@ class ProductMetaData extends StatelessWidget {
 
       /// Brand
       Row(children: [
-        CircularImage(image: product.brand != null ? product.brand!.image : '', width: 32, height: 32, overlayColor: dark ? ADColors.white : ADColors.black),
-        BrandTitleWithVerifiedIcon(title: product.brand != null ? product.brand!.name : '', brandTextSize: TextSizes.medium),
+        CircularImage(
+          width: 32,
+          height: 32,
+          isNetworkImage: true,
+          image: product.brand != null ? product.brand!.image : '',
+          overlayColor: dark ? ADColors.white : ADColors.black,
+        ),
+        BrandTitleWithVerifiedIcon(
+          title: product.brand != null ? product.brand!.name : '',
+          brandTextSize: TextSizes.medium,
+        ),
       ])
     ]);
   }

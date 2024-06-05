@@ -4,7 +4,13 @@ import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:ebazaar/utils/constants/colors.dart';
 
 class AnimationLoaderWidget extends StatelessWidget {
-  const AnimationLoaderWidget({super.key, required this.text, required this.animation, this.showAction = false, this.actionText, this.onActionPressed});
+  const AnimationLoaderWidget(
+      {super.key,
+      required this.text,
+      required this.animation,
+      this.showAction = false,
+      this.actionText,
+      this.onActionPressed});
 
   final String text;
   final String animation;

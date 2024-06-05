@@ -20,7 +20,7 @@ class BrandShowcase extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
 
-    return InkWell(
+    return GestureDetector(
       onTap: () => Get.to(() => BrandProducts(brand: brand)),
       child: RoundedContainer(
         showBorder: true,

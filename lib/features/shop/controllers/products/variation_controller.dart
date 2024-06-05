@@ -1,3 +1,4 @@
+import 'package:ebazaar/features/shop/controllers/products/cart_controller.dart';
 import 'package:get/get.dart';
 import 'package:ebazaar/features/shop/models/product_model.dart';
 import 'package:ebazaar/features/shop/models/product_variation_model.dart';
@@ -27,6 +28,13 @@ class VariationController extends GetxController {
       ImagesController.instance.selectedProductImage.value = selectedVariation.image;
     }
 
+    // Show the selected variation quantity already in the cart
+    if (selectedVariation.id.isNotEmpty) {
+      final cartController = CartController.instance;
+      cartController.productQuantityInCart.value =
+          cartController.getVariationQuantityInCart(product.id, selectedVariation.id);
+    }
+
     // Assign selected variation
     this.selectedVariation.value = selectedVariation;
 
@@ -51,7 +59,9 @@ class VariationController extends GetxController {
     final availableVariationAttributeValues = variations
         .where((variation) =>
             // Check empty / Out of stock attributes
-            variation.attributeValues[attributeName] != null && variation.attributeValues[attributeName]!.isNotEmpty && variation.stock > 0)
+            variation.attributeValues[attributeName] != null &&
+            variation.attributeValues[attributeName]!.isNotEmpty &&
+            variation.stock > 0)
         // Fetch all non-empty attributes of variations
         .map((variation) => variation.attributeValues[attributeName])
         .toSet();
@@ -59,7 +69,9 @@ class VariationController extends GetxController {
     return availableVariationAttributeValues;
   }
 
-  String getVariationPrice() => (selectedVariation.value.salePrice > 0 ? selectedVariation.value.salePrice : selectedVariation.value.price).toString();
+  String getVariationPrice() =>
+      (selectedVariation.value.salePrice > 0 ? selectedVariation.value.salePrice : selectedVariation.value.price)
+          .toString();
 
   /// Check Product Variation Stock status
   void getProductVariationStockStatus() {

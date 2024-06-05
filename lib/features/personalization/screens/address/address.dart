@@ -1,3 +1,5 @@
+import 'package:ebazaar/features/personalization/controllers/address_controller.dart';
+import 'package:ebazaar/utils/helpers/cloud_helper_functions.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,8 @@ class UserAddressScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AddressController());
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: ADColors.primary,
@@ -19,13 +23,30 @@ class UserAddressScreen extends StatelessWidget {
         child: const Icon(Iconsax.add, color: ADColors.white),
       ),
       appBar: ADAppBar(showBackArrow: true, title: Text("Manzillar", style: Theme.of(context).textTheme.headlineSmall)),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(ADSizes.defaultSpace),
-          child: Column(children: [
-            SingleAddress(selectedAddress: false),
-            SingleAddress(selectedAddress: true),
-          ]),
+          child: Obx(
+            () => FutureBuilder(
+              // Use key to trigger refresh
+              key: Key(controller.refreshData.value.toString()),
+              future: controller.getAllUserAddresses(),
+              builder: (context, snapshot) {
+                final response = ADCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot);
+                if (response != null) return response;
+
+                final addresses = snapshot.data!;
+                return ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: addresses.length,
+                  itemBuilder: (_, index) => SingleAddress(
+                    address: addresses[index],
+                    onTap: () => controller.selectAddress(addresses[index]),
+                  ),
+                );
+              },
+            ),
+          ),
         ),
       ),
     );

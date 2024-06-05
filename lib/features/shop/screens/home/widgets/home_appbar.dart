@@ -20,11 +20,18 @@ class HomeAppBar extends StatelessWidget {
           if (controller.profileLoading.value) {
             return const ADShimmerEffect(width: 80, height: 15);
           } else {
-            return Text(controller.user.value.fullName, style: Theme.of(context).textTheme.headlineSmall!.apply(color: ADColors.white));
+            return Text(controller.user.value.fullName,
+                style: Theme.of(context).textTheme.headlineSmall!.apply(color: ADColors.white));
           }
         }),
       ]),
-      actions: const [CartCounterIcon(isHome: true)],
+      actions: const [
+        CartCounterIcon(
+          iconColor: ADColors.white,
+          counterBgColor: ADColors.black,
+          counterTextColor: ADColors.white,
+        )
+      ],
     );
   }
 }

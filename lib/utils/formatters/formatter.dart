@@ -11,41 +11,12 @@ class Formatter {
   static String formatCurrency(double amount) => NumberFormat.currency(locale: 'en-US', symbol: '\$').format(amount);
 
   static String formatPhoneNumber(String phoneNumber) {
-    if (phoneNumber.length == 10) {
-      return "(${phoneNumber.substring(0, 3)}) ${phoneNumber.substring(3, 6)} ${phoneNumber.substring(6)}";
-    } else if (phoneNumber.length == 11) {
-      return "(${phoneNumber.substring(0, 4)}) ${phoneNumber.substring(4, 7)} ${phoneNumber.substring(7)}";
+    if (phoneNumber.length == 13) {
+      return "${phoneNumber.substring(0, 4)} ${phoneNumber.substring(4, 6)} ${phoneNumber.substring(6, 9)} ${phoneNumber.substring(9, 11)}-${phoneNumber.substring(11)}";
+    } else if (phoneNumber.length == 10) {
+      return "+998 ${phoneNumber.substring(1, 3)} ${phoneNumber.substring(3, 6)} ${phoneNumber.substring(6, 8)} ${phoneNumber.substring(8)}";
     }
 
     return phoneNumber;
-  }
-
-  static String internationalFormatPhoneNumber(String phoneNumber) {
-    var digitsOnly = phoneNumber.replaceAll(RegExp(r'\D'), '');
-
-    String countryCode = '+${digitsOnly.substring(0, 2)}';
-    digitsOnly = digitsOnly.substring(2);
-
-    final formattedNumber = StringBuffer();
-    formattedNumber.write('($countryCode) ');
-
-    int i = 0;
-
-    while (i < digitsOnly.length) {
-      int groupLength = 2;
-      if (i == 0 && countryCode == '+1') {
-        groupLength = 3;
-      }
-      int end = i + groupLength;
-      formattedNumber.write(digitsOnly.substring(i, end));
-
-      if (end < digitsOnly.length) {
-        formattedNumber.write(' ');
-      }
-
-      i = end;
-    }
-
-    return formattedNumber.toString();
   }
 }

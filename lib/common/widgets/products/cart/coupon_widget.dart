@@ -20,12 +20,12 @@ class CouponCode extends StatelessWidget {
         const Flexible(
             child: TextField(
           decoration: InputDecoration(
-            hintText: "Promokod bormi? Bu yerga kiriting",
             border: InputBorder.none,
+            errorBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
+            hintText: "Promokod bormi? Bu yerga kiriting",
           ),
         )),
 

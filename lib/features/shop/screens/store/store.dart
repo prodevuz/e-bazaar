@@ -30,7 +30,9 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: categories.length,
       child: Scaffold(
-        appBar: ADAppBar(title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium), actions: const [CartCounterIcon()]),
+        appBar: ADAppBar(
+            title: Text("Do'kon", style: Theme.of(context).textTheme.headlineMedium),
+            actions: const [CartCounterIcon()]),
         body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
@@ -45,7 +47,8 @@ class StoreScreen extends StatelessWidget {
                   child: ListView(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), children: [
                     /// Search Bar
                     const SizedBox(height: ADSizes.spaceBtwItems),
-                    const SearchContainer(text: "Do'kondan qidiring", showBorder: true, showBackground: false, padding: EdgeInsets.zero),
+                    const SearchContainer(
+                        text: "Do'kondan qidiring", showBorder: true, showBackground: false, padding: EdgeInsets.zero),
                     const SizedBox(height: ADSizes.spaceBtwSections),
 
                     /// Featured Brands Heading
@@ -57,14 +60,18 @@ class StoreScreen extends StatelessWidget {
                       () {
                         if (brandController.isLoading.value) return const ADBrandsShimmer();
 
-                        if (brandController.featuredBrands.isEmpty) return Center(child: Text("Brandlar mavjud emas!", style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
+                        if (brandController.featuredBrands.isEmpty)
+                          return Center(
+                              child: Text("Brandlar mavjud emas!",
+                                  style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white)));
 
                         return GridLayout(
                           mainAxisExtent: 80,
                           itemCount: brandController.featuredBrands.length,
                           itemBuilder: (_, index) {
                             final brand = brandController.featuredBrands[index];
-                            return BrandCard(brand: brand, showBorder: true, onTap: () => Get.to(() => BrandProducts(brand: brand)));
+                            return BrandCard(
+                                brand: brand, showBorder: true, onTap: () => Get.to(() => BrandProducts(brand: brand)));
                           },
                         );
                       },

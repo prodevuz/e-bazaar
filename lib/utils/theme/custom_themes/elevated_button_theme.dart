@@ -1,3 +1,4 @@
+import 'package:ebazaar/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class ADElevatedButtonTheme {
@@ -8,8 +9,8 @@ class ADElevatedButtonTheme {
       elevation: 0,
       foregroundColor: Colors.white,
       backgroundColor: Colors.blue,
-      disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
+      disabledBackgroundColor: ADColors.grey,
+      disabledForegroundColor: ADColors.darkGrey,
       side: const BorderSide(color: Colors.blue),
       padding: const EdgeInsets.symmetric(vertical: 18),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -22,8 +23,8 @@ class ADElevatedButtonTheme {
       elevation: 0,
       foregroundColor: Colors.white,
       backgroundColor: Colors.blue,
-      disabledForegroundColor: Colors.grey,
-      disabledBackgroundColor: Colors.grey,
+      disabledBackgroundColor: ADColors.grey,
+      disabledForegroundColor: ADColors.darkGrey,
       side: const BorderSide(color: Colors.blue),
       padding: const EdgeInsets.symmetric(vertical: 18),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
