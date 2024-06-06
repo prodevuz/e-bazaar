@@ -4,8 +4,8 @@ import 'package:ebazaar/features/authentication/screens/onboarding/widgets/onboa
 import 'package:ebazaar/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 import 'package:ebazaar/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 
-class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

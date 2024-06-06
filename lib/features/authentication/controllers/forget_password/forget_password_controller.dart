@@ -36,7 +36,7 @@ class ForgetPasswordController extends GetxController {
       }
 
       // Send Email to reset Password
-      await AuthenticationRepository.instance.sendPasswordResendEmail(email.text.trim());
+      await AuthenticationRepository.instance.sendPasswordResetEmail(email.text.trim());
 
       // Remove Loader
       FullScreenLoader.stopLoading();
@@ -63,7 +63,7 @@ class ForgetPasswordController extends GetxController {
       }
 
       // Send Email to reset Password
-      await AuthenticationRepository.instance.sendPasswordResendEmail(email);
+      await AuthenticationRepository.instance.sendPasswordResetEmail(email);
 
       // Show success message
       ADLoaders.successSnackBar(title: "Email jo'natildi", message: "Pochtangizni tekshiring va emailingizni tasdiqlang.");

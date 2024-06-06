@@ -1,7 +1,9 @@
-import 'package:flutter/foundation.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart'; // Importing Flutter foundation package
+import 'package:firebase_core/firebase_core.dart'; // Importing Firebase core package
 
+/// Class containing default Firebase options for different platforms
 class DefaultFirebaseOptions {
+  /// Getting Firebase options for the current platform
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return webOptions;
@@ -12,6 +14,7 @@ class DefaultFirebaseOptions {
     }
   }
 
+  /// Firebase options for Android
   static const FirebaseOptions androidOptions = FirebaseOptions(
     apiKey: "AIzaSyAebdxonCIVAx6O7JNxA6cTTkZgVEPQZRk",
     appId: "1:753809253369:android:b0a53bede72b3706395328",
@@ -20,6 +23,7 @@ class DefaultFirebaseOptions {
     storageBucket: "ghausshop.appspot.com",
   );
 
+  /// Firebase options for Web
   static const FirebaseOptions webOptions = FirebaseOptions(
     apiKey: "AIzaSyCOGTsWG9Vjsaj4RgbAnRHG6p-vVq6K-QU",
     authDomain: "ghausshop.firebaseapp.com",

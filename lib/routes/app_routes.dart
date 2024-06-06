@@ -1,21 +1,22 @@
-import 'package:get/get.dart';
-import 'package:ebazaar/routes/routes.dart';
-import 'package:ebazaar/features/shop/screens/home/home.dart';
-import 'package:ebazaar/features/shop/screens/cart/cart.dart';
-import 'package:ebazaar/features/shop/screens/store/store.dart';
-import 'package:ebazaar/features/shop/screens/order/order.dart';
-import 'package:ebazaar/features/shop/screens/wishlist/wishlist.dart';
-import 'package:ebazaar/features/shop/screens/checkout/checkout.dart';
-import 'package:ebazaar/features/authentication/screens/login/login.dart';
-import 'package:ebazaar/features/authentication/screens/signup/signup.dart';
-import 'package:ebazaar/features/personalization/screens/address/address.dart';
-import 'package:ebazaar/features/personalization/screens/profile/profile.dart';
-import 'package:ebazaar/features/personalization/screens/settings/settings.dart';
-import 'package:ebazaar/features/authentication/screens/signup/verify_email.dart';
-import 'package:ebazaar/features/shop/screens/product_reviews/product_reviews.dart';
-import 'package:ebazaar/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:ebazaar/features/authentication/screens/password_configuration/forget_password.dart';
+import 'package:get/get.dart'; // Importing GetX package for routing
+import 'package:ebazaar/routes/routes.dart'; // Importing route names
+import 'package:ebazaar/features/shop/screens/home/home.dart'; // Importing home screen
+import 'package:ebazaar/features/shop/screens/cart/cart.dart'; // Importing cart screen
+import 'package:ebazaar/features/shop/screens/store/store.dart'; // Importing store screen
+import 'package:ebazaar/features/shop/screens/order/order.dart'; // Importing order screen
+import 'package:ebazaar/features/shop/screens/wishlist/wishlist.dart'; // Importing wishlist screen
+import 'package:ebazaar/features/shop/screens/checkout/checkout.dart'; // Importing checkout screen
+import 'package:ebazaar/features/authentication/screens/login/login.dart'; // Importing login screen
+import 'package:ebazaar/features/authentication/screens/signup/signup.dart'; // Importing signup screen
+import 'package:ebazaar/features/personalization/screens/address/address.dart'; // Importing address screen
+import 'package:ebazaar/features/personalization/screens/profile/profile.dart'; // Importing profile screen
+import 'package:ebazaar/features/personalization/screens/settings/settings.dart'; // Importing settings screen
+import 'package:ebazaar/features/authentication/screens/signup/verify_email.dart'; // Importing verify email screen
+import 'package:ebazaar/features/shop/screens/product_reviews/product_reviews.dart'; // Importing product reviews screen
+import 'package:ebazaar/features/authentication/screens/onboarding/onboarding.dart'; // Importing onboarding screen
+import 'package:ebazaar/features/authentication/screens/password_configuration/forget_password.dart'; // Importing forget password screen
 
+/// Class containing all the app routes
 class AppRoutes {
   static final pages = [
     GetPage(name: ADRoutes.home, page: () => const HomeScreen()),
@@ -32,6 +33,6 @@ class AppRoutes {
     GetPage(name: ADRoutes.verifyEmail, page: () => const VerifyEmailScreen()),
     GetPage(name: ADRoutes.signIn, page: () => const LoginScreen()),
     GetPage(name: ADRoutes.forgetPassword, page: () => const ForgetPassword()),
-    GetPage(name: ADRoutes.onBoarding, page: () => const OnBoardingScreen()),
+    GetPage(name: ADRoutes.onBoarding, page: () => const OnboardingScreen()),
   ];
 }
