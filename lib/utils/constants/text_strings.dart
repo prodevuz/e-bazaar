@@ -7,8 +7,7 @@ class ADTexts {
   static const String appName = "E-Bazaar";
   static const String cContinue = "Davom etish";
 
-  // OnBoarding texts
-
+  // Onboarding texts
   static const String onBoardingTitle1 = "Maxsulotingizni tanlang";
   static const String onBoardingTitle2 = "To'lov turini tanlang";
   static const String onBoardingTitle3 = "Eshikkacha yetkazib berish";
@@ -18,12 +17,10 @@ class ADTexts {
   static const String onBoardingSubTitle3 = "Ostonamizdan ostonangizgacha - Tez, xavfsiz va eshikkacha yetkazib berish";
 
   // Home
-
   static const String homeAppbarTitle = "Xarid uchun ajoyib kun";
   static const String homeAppbarSubTitle = "AbdurRohman Davron";
 
   // Authentication Form Text
-
   static const String firstName = "Ism";
   static const String lastName = "Familya";
   static const String email = "E-Mail";
@@ -46,7 +43,6 @@ class ADTexts {
   static const String and = " va";
 
   // Authentication Heading Text
-
   static const String loginTitle = "Xush kelibsiz,";
   static const String loginSubTitle = "Cheksiz tanlovlar va tengsiz ishonchni kashf qiling!";
   static const String signUpTitle = "Hisobingizni yaratamiz";

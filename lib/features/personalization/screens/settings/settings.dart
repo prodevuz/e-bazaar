@@ -118,7 +118,7 @@ class SettingsScreen extends StatelessWidget {
                 icon: Iconsax.document_upload,
                 title: "Ma'lumot yuklang",
                 subTitle: "Cloud Firebasega ma'lumot yuklang",
-                // onTap: () => Get.put(ADDummyUpload()).uploadDummyData(),
+                // onTap: () => ADDummyUpload()).uploadDummyData(),
               ),
               SettingsMenuTile(
                 icon: Iconsax.location,

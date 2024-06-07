@@ -9,7 +9,7 @@ class CategoryController extends GetxController {
   static CategoryController get instance => Get.find();
 
   final isLoading = false.obs;
-  final _categoryRepository = Get.put(CategoryRepository());
+  final _categoryRepository = CategoryRepository.instance;
   RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
   RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
 

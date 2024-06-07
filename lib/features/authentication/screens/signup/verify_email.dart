@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -15,7 +14,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(VerifyEmailController());
+    final controller = VerifyEmailController.instance;
 
     return Scaffold(
       appBar: AppBar(

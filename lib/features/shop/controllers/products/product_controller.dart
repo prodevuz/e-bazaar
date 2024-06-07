@@ -8,7 +8,7 @@ class ProductController extends GetxController {
   static ProductController get instance => Get.find();
 
   final isLoading = false.obs;
-  final productRepository = Get.put(ProductRepository());
+  final productRepository = ProductRepository.instance;
   RxList<ProductModel> featuredProducts = <ProductModel>[].obs;
 
   @override

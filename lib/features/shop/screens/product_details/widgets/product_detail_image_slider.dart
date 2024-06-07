@@ -19,7 +19,7 @@ class ProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
-    final controller = Get.put(ImagesController());
+    final controller = ImagesController.instance;
     final images = controller.getAllProductImages(product);
 
     return CurvedEdgeWidget(

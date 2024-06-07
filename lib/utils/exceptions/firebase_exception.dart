@@ -1,14 +1,17 @@
+/// A custom exception class to handle general Firebase errors.
 class ADFirebaseException implements Exception {
   ADFirebaseException(this.code);
 
+  /// The error code from Firebase.
   final String code;
 
+  /// A human-readable error message based on the Firebase error code.
   String get message {
     switch (code) {
       case 'unknown':
         return "Noma'lum firebase xatosi. Qayta urinib ko'ring.";
       case 'invalid-custom-token':
-        return "Maxsus token formati noto'g'ri. Maxsus tokeningizni tekshirib ko'ring";
+        return "Maxsus token formati noto'g'ri. Maxsus tokeningizni tekshirib ko'ring.";
       case 'custom-token-mismatch':
         return "Bu maxsus token boshqa auditoriyaga mos keladi.";
       case 'user-disabled':
@@ -24,9 +27,9 @@ class ADFirebaseException implements Exception {
       case 'wrong-password':
         return "Noto'g'ri parol. Parolingizni tekshirib qayta urinib ko'ring.";
       case 'provider-already-linked':
-        return "Hisob allaqachon boshqa provayder orqali ulangan";
+        return "Hisob allaqachon boshqa provayder orqali ulangan.";
       case 'operation-not-allowed':
-        return "Bu amalga ruxsat berilmagan. Yordam uchun qo'llab quvvatlash markazi bilan bog'laning";
+        return "Bu amalga ruxsat berilmagan. Yordam uchun qo'llab quvvatlash markazi bilan bog'laning.";
       case 'invalid-verification-code':
         return "Yaroqsiz tasdiqlash kodi. Yaroqli tasdiqlash kodini kiriting.";
       case 'invalid-verification-id':
@@ -39,7 +42,7 @@ class ADFirebaseException implements Exception {
         return "Bu ma'lumotlar boshqa foydalanuvchi hisobiga tegishli.";
       case 'user-mismatch':
         return "Bu ma'lumotlar oldin ro'yxatdan o'tgan foydalanuvchiga mos kelmaydi.";
-      case 'account-excists-with-different-credentials':
+      case 'account-exists-with-different-credentials':
         return "Ushbu emailga bog'langan hisob allaqachon boshqa ma'lumotlar bilan mavjud.";
       case 'network-request-failed':
         return "Tarmoq so'rovi bajarilmadi. Internet ulanishingizni tekshiring.";
@@ -54,7 +57,7 @@ class ADFirebaseException implements Exception {
       case 'missing-verification-code':
         return "Tasdiqlash kodi kiritilmagan. Tasdiqlash kodini kiriting.";
       default:
-        return "Noma'lum server xatoligi. ";
+        return "Noma'lum server xatoligi.";
     }
   }
 }

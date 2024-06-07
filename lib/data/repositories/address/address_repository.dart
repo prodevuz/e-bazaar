@@ -11,9 +11,11 @@ class AddressRepository extends GetxController {
   Future<List<AddressModel>> fetchUserAddresses() async {
     try {
       final userId = AuthenticationRepository.instance.authUser!.uid;
+      // Check if the user ID is empty
       if (userId.isEmpty) throw "Foydalanuvchi ma'lumotlarini topib bo'lmadi. Keyinroq urinib ko'ring!";
 
       final result = await _db.collection("Users").doc(userId).collection("Addresses").get();
+      // Convert Firestore documents to AddressModel list
       return result.docs.map((documentSnapshot) => AddressModel.fromDocumentSnapshot(documentSnapshot)).toList();
     } catch (e) {
       throw "Manzillarni yuklashda nimadir xato ketdi.";
@@ -24,12 +26,8 @@ class AddressRepository extends GetxController {
   Future<void> updateSelectedField(String addressId, bool selected) async {
     try {
       final userId = AuthenticationRepository.instance.authUser!.uid;
-      await _db
-          .collection("Users")
-          .doc(userId)
-          .collection("Addresses")
-          .doc(addressId)
-          .update({"SelectedAddress": selected});
+      // Update the "selectedAddress" field in Firestore
+      await _db.collection("Users").doc(userId).collection("Addresses").doc(addressId).update({"SelectedAddress": selected});
     } catch (e) {
       throw "Manzillarni tanlab bo'lmadi.";
     }
@@ -39,6 +37,7 @@ class AddressRepository extends GetxController {
   Future<String> addAddress(AddressModel address) async {
     try {
       final userId = AuthenticationRepository.instance.authUser!.uid;
+      // Add new address to Firestore
       final currentAddress = await _db.collection("Users").doc(userId).collection("Addresses").add(address.toJson());
       return currentAddress.id;
     } catch (e) {

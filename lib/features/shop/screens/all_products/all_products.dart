@@ -1,5 +1,3 @@
-import 'package:ebazaar/utils/helpers/cloud_helper_functions.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -8,6 +6,7 @@ import 'package:ebazaar/features/shop/models/product_model.dart';
 import 'package:ebazaar/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:ebazaar/features/shop/controllers/all_products_controller.dart';
 import 'package:ebazaar/common/widgets/products/sortable/sortable_products.dart';
+import 'package:ebazaar/utils/helpers/cloud_helper_functions.dart';
 
 class AllProductsScreen extends StatelessWidget {
   const AllProductsScreen({
@@ -23,7 +22,7 @@ class AllProductsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(AllProductsController());
+    final controller = AllProductsController.instance;
 
     return Scaffold(
       appBar: ADAppBar(title: Text(title), showBackArrow: true),

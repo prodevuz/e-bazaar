@@ -27,7 +27,7 @@ class BannerController extends GetxController {
       isLoading.value = true;
 
       // Fetch Banners
-      final bannerRepo = Get.put(BannerRepository());
+      final bannerRepo = BannerRepository.instance;
       final banners = await bannerRepo.fetchBanners();
 
       // Assign Banners

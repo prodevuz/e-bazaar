@@ -24,7 +24,7 @@ class StoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = HelperFunctions.isDarkMode(context);
 
-    final brandController = Get.put(BrandController());
+    final brandController = BrandController.instance;
     final categories = CategoryController.instance.featuredCategories;
 
     return DefaultTabController(

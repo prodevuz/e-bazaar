@@ -12,7 +12,7 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(UserController());
+    final controller = UserController.instance;
     return ADAppBar(
       title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(ADTexts.homeAppbarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: ADColors.grey)),

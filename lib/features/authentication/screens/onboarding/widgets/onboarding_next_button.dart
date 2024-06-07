@@ -16,7 +16,7 @@ class OnBoardingNextButton extends StatelessWidget {
     return Positioned(
       right: ADSizes.defaultSpace,
       bottom: ADDeviceUtils.getBottomNavigationBarHeight(),
-      child: ElevatedButton(onPressed: () => OnBoardingController.instance.nextPage(), style: ElevatedButton.styleFrom(shape: const CircleBorder(), backgroundColor: dark ? ADColors.primary : Colors.black), child: const Icon(Iconsax.arrow_right_3)),
+      child: ElevatedButton(onPressed: () => OnboardingController.instance.nextPage(), style: ElevatedButton.styleFrom(shape: const CircleBorder(), backgroundColor: dark ? ADColors.primary : Colors.black), child: const Icon(Iconsax.arrow_right_3)),
     );
   }
 }

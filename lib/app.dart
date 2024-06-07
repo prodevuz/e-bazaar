@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // GetX theme mode controller
-    final controller = Get.put(ThemeModeController());
+    final controller = ThemeModeController.instance;
 
     return Obx(
       () => GetMaterialApp(

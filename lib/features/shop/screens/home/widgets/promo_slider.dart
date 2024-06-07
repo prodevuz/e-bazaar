@@ -13,7 +13,7 @@ class PromoSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(BannerController());
+    final controller = BannerController.instance;
 
     return Obx(
       () {

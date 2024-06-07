@@ -8,6 +8,7 @@ import 'package:ebazaar/data/repositories/categories/category_repository.dart';
 class ADDummyUpload extends GetxController {
   static ADDummyUpload get instance => Get.find();
 
+  /// Uploads dummy data to respective repositories based on specified flags.
   Future<void> uploadDummyData({
     bool banners = true,
     bool brands = true,
@@ -16,14 +17,18 @@ class ADDummyUpload extends GetxController {
     bool products = true,
     bool productCategories = true,
   }) async {
-    if (banners) BannerRepository().uploadDummyBanners(ADDummyData.banners);
+    // Upload dummy banners if specified
+    if (banners) await BannerRepository.instance.uploadDummyBanners(ADDummyData.banners);
 
-    if (brands) BrandRepository().uploadDummyBrands(ADDummyData.brands);
-    if (brandCategories) BrandRepository().uploadDummyBrandCategory(ADDummyData.brandCategories);
+    // Upload dummy brands and brand categories if specified
+    if (brands) await BrandRepository.instance.uploadDummyBrands(ADDummyData.brands);
+    if (brandCategories) await BrandRepository.instance.uploadDummyBrandCategory(ADDummyData.brandCategories);
 
-    if (categories) CategoryRepository().uploadDummyCategories(ADDummyData.categories);
+    // Upload dummy categories if specified
+    if (categories) await CategoryRepository.instance.uploadDummyCategories(ADDummyData.categories);
 
-    if (products) ProductRepository().uploadDummyProducts(ADDummyData.products);
-    if (productCategories) ProductRepository().uploadDummyProductCategory(ADDummyData.productCategories);
+    // Upload dummy products and product categories if specified
+    if (products) await ProductRepository.instance.uploadDummyProducts(ADDummyData.products);
+    if (productCategories) await ProductRepository.instance.uploadDummyProductCategory(ADDummyData.productCategories);
   }
 }

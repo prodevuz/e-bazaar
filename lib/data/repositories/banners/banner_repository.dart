@@ -9,7 +9,7 @@ class BannerRepository extends GetxController {
   /// Variables
   final _db = FirebaseFirestore.instance;
 
-  /// Get All Order related to current User
+  /// Fetches active banners from Firestore
   Future<List<BannerModel>> fetchBanners() async {
     try {
       final result = await _db.collection("Banners").where('Active', isEqualTo: true).get();
@@ -19,17 +19,19 @@ class BannerRepository extends GetxController {
     }
   }
 
-  /// Upload Banners to the Cloud Firestore
+  /// Uploads banners to Firestore
   Future<void> uploadDummyBanners(List<BannerModel> banners) async {
     try {
-      final storage = Get.put(ADFirebaseStorageService());
+      final storage = ADFirebaseStorageService.instance;
 
       for (var banner in banners) {
+        // Get image data from storage service
         final imageData = await storage.getImageData(banner.imageUrl);
+        // Upload image data to Firebase Storage
         final url = await storage.uploadImageData("Banners/Images", imageData, banner.imageUrl.toString());
-
+        // Update banner model with new image URL
         final updatedBanner = banner.copyWith(imageUrl: url);
-
+        // Add updated banner to Firestore
         await _db.collection("Banners").add(updatedBanner.toJson());
       }
     } catch (e) {

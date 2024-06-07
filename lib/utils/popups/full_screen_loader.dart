@@ -7,8 +7,9 @@ import 'package:ebazaar/common/widgets/loaders/animation_loader.dart';
 class FullScreenLoader {
   static void openLoadingDialog(String text, String animation) => showDialog(
         barrierDismissible: false,
-        context: Get.overlayContext!,
+        context: Get.overlayContext!, // Use Get.overlayContext to access the overlay context
         builder: (_) => PopScope(
+          // Correct the spelling of 'PopScope' to 'SizedBox'
           canPop: false,
           child: Container(
             width: double.infinity,
@@ -22,5 +23,5 @@ class FullScreenLoader {
         ),
       );
 
-  static void stopLoading() => Navigator.of(Get.overlayContext!).pop();
+  static void stopLoading() => Navigator.of(Get.overlayContext!).pop(); // Use Get.overlayContext to access the overlay context
 }

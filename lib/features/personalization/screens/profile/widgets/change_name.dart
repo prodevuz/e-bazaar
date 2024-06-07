@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -11,7 +10,7 @@ class ChangeName extends StatelessWidget {
   const ChangeName({super.key});
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(UpdateNameController());
+    final controller = UpdateNameController.instance;
     return Scaffold(
       appBar: ADAppBar(
         showBackArrow: true,

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:ebazaar/features/authentication/screens/login/login.dart';
 
-class OnBoardingController extends GetxController {
-  static OnBoardingController get instance => Get.find();
+class OnboardingController extends GetxController {
+  static OnboardingController get instance => Get.find();
 
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;

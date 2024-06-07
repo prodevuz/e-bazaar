@@ -11,7 +11,7 @@ class OnBoardingSkip extends StatelessWidget {
     return Positioned(
       top: ADDeviceUtils.getAppBarHeight(),
       right: ADSizes.defaultSpace,
-      child: TextButton(onPressed: () => OnBoardingController.instance.skipPage(), child: const Text("O'tkazib yuborish")),
+      child: TextButton(onPressed: () => OnboardingController.instance.skipPage(), child: const Text("O'tkazib yuborish")),
     );
   }
 }

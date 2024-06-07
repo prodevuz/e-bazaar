@@ -9,13 +9,15 @@ import 'package:ebazaar/features/personalization/controllers/user_controller.dar
 import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart';
 
 class LoginController extends GetxController {
+  static LoginController get instance => Get.find();
+
   /// Variables
   final rememberMe = false.obs;
   final hidePassword = true.obs;
   final localStorage = GetStorage();
   final email = TextEditingController();
   final password = TextEditingController();
-  final userController = Get.put(UserController());
+  final userController = UserController.instance;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
   @override

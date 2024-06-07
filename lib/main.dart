@@ -1,4 +1,3 @@
-import 'package:get/get.dart'; // Importing the GetX package for state management
 import 'package:ebazaar/app.dart'; // Importing the main app widget
 import 'package:flutter/material.dart'; // Importing Flutter's material design package
 import 'package:get_storage/get_storage.dart'; // Importing GetStorage for local storage
@@ -23,7 +22,7 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Putting AuthenticationRepository into GetX dependency injection
-  Get.put(AuthenticationRepository());
+  AuthenticationRepository.instance;
 
   // Listening to authentication state changes
   FirebaseAuth.instance.authStateChanges().listen((User? user) {

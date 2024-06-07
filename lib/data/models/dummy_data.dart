@@ -8,6 +8,7 @@ import 'package:ebazaar/features/shop/models/product_category_model.dart';
 import 'package:ebazaar/features/shop/models/product_attribute_model.dart';
 import 'package:ebazaar/features/shop/models/product_variation_model.dart';
 
+/// Dummy Data
 class ADDummyData {
   static final List<BannerModel> banners = [
     BannerModel(imageUrl: ADImages.promoBanner1, targetScreen: "ADRoutes.order", active: true),
@@ -68,39 +69,13 @@ class ADDummyData {
       description:
           "Structure 25 sizga kerak bo'lgan joyda barqarorlik bilan, sizni xohlagan joyda yostiq bilan qoplaydi, Structure 25 sizni uzoq millarda, qisqa mashg'ulotlarda va hatto kun tugashidan oldin pastga va orqada qo'llab-quvvatlaydi. Bu siz izlayotgan barqarorlik, birinchi bog'lanishdanoq sodiq, sinab ko'rilgan va ishonchli, o'rta oyoq tizimi oldingidan ko'ra to'liq qo'llab-quvvatlovchi va qulayroq tamponlama.",
       brand: BrandModel(id: '4', image: ADImages.nike, name: 'Nike', productsCount: 27, isFeatured: true),
-      images: [
-        ADImages.productImage2,
-        ADImages.productImage3,
-        ADImages.productImage4,
-        ADImages.productImage5,
-        ADImages.productImage6,
-        ADImages.productImage7,
-        ADImages.productImage8
-      ],
+      images: [ADImages.productImage2, ADImages.productImage3, ADImages.productImage4, ADImages.productImage5, ADImages.productImage6, ADImages.productImage7, ADImages.productImage8],
       salePrice: 30,
       sku: 'HF4913',
       categoryId: '17',
       productAttributes: [
         ProductAttributeModel(name: 'Rang', values: ['Green', 'Black', 'Blue']),
-        ProductAttributeModel(name: "O'lchamlar", values: [
-          '6',
-          '6.5',
-          '7',
-          '7.5',
-          '8',
-          '8.5',
-          '9',
-          '9.5',
-          '10',
-          '10.5',
-          '11',
-          '11.5',
-          '12',
-          '12.5',
-          '13',
-          '14',
-          '15'
-        ]),
+        ProductAttributeModel(name: "O'lchamlar", values: ['6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '13', '14', '15']),
       ],
       productVariations: [
         ProductVariationModel(

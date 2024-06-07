@@ -10,8 +10,8 @@ class ADFirebaseStorageService extends GetxController {
 
   final _firebaseStorage = FirebaseStorage.instance;
 
-  /// Upload Local Assets or Image URLs from IDE
-  /// Returns a Uint8List containing image date
+  /// Fetches image data either from a local asset or a URL.
+  /// Returns a Uint8List containing image data.
   Future<Uint8List> getImageData(String pathOrUrl) async {
     try {
       if (pathOrUrl.startsWith('http://') || pathOrUrl.startsWith('https://')) {
@@ -32,8 +32,8 @@ class ADFirebaseStorageService extends GetxController {
     }
   }
 
-  /// Upload image using ImageData on Cloud Firebase Storage
-  /// Returns the download URL of the uploaded image
+  /// Uploads image data to Cloud Firebase Storage.
+  /// Returns the download URL of the uploaded image.
   Future<String> uploadImageData(String path, Uint8List image, String name) async {
     try {
       final ref = _firebaseStorage.ref(path).child(name);
@@ -45,8 +45,8 @@ class ADFirebaseStorageService extends GetxController {
     }
   }
 
-  /// Upload image on Cloud Firebase Storage
-  /// Returns the download URL of the uploaded image
+  /// Uploads image file to Cloud Firebase Storage.
+  /// Returns the download URL of the uploaded image.
   Future<String> uploadImageFile(String path, XFile image) async {
     try {
       final ref = _firebaseStorage.ref(path).child(image.name);

@@ -1,29 +1,45 @@
-import 'package:flutter/material.dart';
-import 'package:ebazaar/utils/constants/sizes.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
+import 'package:flutter/material.dart'; // Importing Flutter material package for UI components.
+import 'package:ebazaar/utils/constants/sizes.dart'; // Importing custom size constants for the app.
+import 'package:ebazaar/utils/constants/colors.dart'; // Importing custom color constants for the app.
 
+/// A custom rounded container widget.
 class RoundedContainer extends StatelessWidget {
-  const RoundedContainer({super.key, this.child, this.width, this.height, this.margin, this.padding, this.showBorder = false, this.radius = ADSizes.cardRadiusLg, this.backgroundColor = ADColors.white, this.borderColor = ADColors.borderPrimary});
+  const RoundedContainer({
+    super.key,
+    this.child,
+    this.width,
+    this.height,
+    this.margin,
+    this.padding,
+    this.showBorder = false,
+    this.radius = ADSizes.cardRadiusLg,
+    this.backgroundColor = ADColors.white,
+    this.borderColor = ADColors.borderPrimary,
+  });
 
-  final double? width;
-  final double? height;
-  final double radius;
-  final Widget? child;
-  final bool showBorder;
-  final Color borderColor;
-  final Color backgroundColor;
-  final EdgeInsetsGeometry? padding;
-  final EdgeInsetsGeometry? margin;
+  final double? width; // The width of the container.
+  final double? height; // The height of the container.
+  final double radius; // The radius of the container's corners.
+  final Widget? child; // The child widget inside the container.
+  final bool showBorder; // Whether to show the border around the container.
+  final Color borderColor; // The color of the container's border.
+  final Color backgroundColor; // The background color of the container.
+  final EdgeInsetsGeometry? padding; // The padding inside the container.
+  final EdgeInsetsGeometry? margin; // The margin around the container.
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
-      height: height,
-      margin: margin,
-      padding: padding,
-      decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(radius), border: showBorder ? Border.all(color: borderColor) : null),
-      child: child,
+      width: width, // Set the width of the container.
+      height: height, // Set the height of the container.
+      margin: margin, // Set the margin around the container.
+      padding: padding, // Set the padding inside the container.
+      decoration: BoxDecoration(
+        color: backgroundColor, // Set the background color of the container.
+        borderRadius: BorderRadius.circular(radius), // Set the radius of the container's corners.
+        border: showBorder ? Border.all(color: borderColor) : null, // Set the container's border if showBorder is true.
+      ),
+      child: child, // Set the child widget inside the container.
     );
   }
 }

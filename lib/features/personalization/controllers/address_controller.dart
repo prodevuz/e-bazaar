@@ -14,7 +14,7 @@ class AddressController extends GetxController {
   /// Variables
   RxBool refreshData = true.obs;
   final Rx<AddressModel> selectedAddress = AddressModel.empty().obs;
-  final AddressRepository repository = Get.put(AddressRepository());
+  final AddressRepository repository = AddressRepository.instance;
 
   final name = TextEditingController();
   final phoneNumber = TextEditingController(text: "+998 ");

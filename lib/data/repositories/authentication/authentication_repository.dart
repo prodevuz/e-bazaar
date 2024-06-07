@@ -13,7 +13,7 @@ import 'package:ebazaar/features/authentication/screens/login/login.dart'; // Im
 import 'package:ebazaar/features/authentication/screens/signup/verify_email.dart'; // Importing verify email screen
 import 'package:ebazaar/features/authentication/screens/onboarding/onboarding.dart'; // Importing onboarding screen
 
-/// Authentication repository class extending GetxController
+/// Authentication repository
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
@@ -43,9 +43,7 @@ class AuthenticationRepository extends GetxController {
       }
     } else {
       deviceStorage.writeIfNull("IsFirstTime", true);
-      deviceStorage.read("IsFirstTime") != true
-          ? Get.offAll(() => const LoginScreen())
-          : Get.offAll(() => const OnboardingScreen());
+      deviceStorage.read("IsFirstTime") != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(() => const OnboardingScreen());
     }
   }
 
@@ -119,8 +117,7 @@ class AuthenticationRepository extends GetxController {
     try {
       final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication? googleAuth = await userAccount?.authentication;
-      final credentials =
-          GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+      final credentials = GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
       return await _auth.signInWithCredential(credentials);
     } catch (e) {
       rethrow;

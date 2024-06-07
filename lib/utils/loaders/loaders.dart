@@ -1,12 +1,14 @@
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:flutter/material.dart';
-import 'package:ebazaar/utils/constants/colors.dart';
-import 'package:ebazaar/utils/helpers/helper_functions.dart';
+import 'package:get/get.dart'; // Import the Get package for state management
+import 'package:iconsax/iconsax.dart'; // Import the Iconsax icon pack
+import 'package:flutter/material.dart'; // Import the Flutter material library
+import 'package:ebazaar/utils/constants/colors.dart'; // Import color constants
+import 'package:ebazaar/utils/helpers/helper_functions.dart'; // Import helper functions
 
 class ADLoaders {
+  // Method to hide the current snackbar
   static hideSnackBar() => ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
 
+  // Method to show a custom toast message
   static customToast({required message}) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
@@ -26,6 +28,7 @@ class ADLoaders {
     );
   }
 
+  // Method to show a success snackbar
   static successSnackBar({required title, message = '', duration = 3}) => Get.snackbar(
         title,
         message,
@@ -39,6 +42,7 @@ class ADLoaders {
         icon: const Icon(Iconsax.check, color: ADColors.white),
       );
 
+  // Method to show a warning snackbar
   static warningSnackBar({required title, message = ''}) => Get.snackbar(
         title,
         message,
@@ -52,6 +56,7 @@ class ADLoaders {
         icon: const Icon(Iconsax.warning_2, color: ADColors.white),
       );
 
+  // Method to show an error snackbar
   static errorSnackBar({required title, message = ''}) => Get.snackbar(
         title,
         message,

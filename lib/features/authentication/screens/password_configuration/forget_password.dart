@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/sizes.dart';
@@ -12,7 +11,7 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ForgetPasswordController());
+    final controller = ForgetPasswordController.instance;
     return Scaffold(
       appBar: const ADAppBar(showBackArrow: true),
       body: Padding(

@@ -10,7 +10,7 @@ class HomeCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoryController = Get.put(CategoryController());
+    final categoryController = CategoryController.instance;
 
     return Obx(() {
       if (categoryController.isLoading.value) return const ADCategoryShimmer();

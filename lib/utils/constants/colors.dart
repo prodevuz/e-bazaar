@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; // Importing Flutter's material design package
+import 'package:flutter/material.dart';
 
 /// Class containing color constants
 class ADColors {

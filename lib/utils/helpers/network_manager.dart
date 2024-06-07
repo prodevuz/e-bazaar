@@ -1,42 +1,51 @@
-import 'dart:async';
-import 'package:get/get.dart';
-import 'package:ebazaar/utils/loaders/loaders.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:async'; // Importing dart:async for asynchronous operations
+import 'package:get/get.dart'; // Importing GetX for state management
+import 'package:ebazaar/utils/loaders/loaders.dart'; // Importing loaders utility for displaying loading indicators
+import 'package:connectivity_plus/connectivity_plus.dart'; // Importing connectivity_plus for checking device connectivity
 
 class NetworkManager extends GetxController {
-  static NetworkManager get instance => Get.find();
+  // NetworkManager class definition
+  static NetworkManager get instance => Get.find(); // Singleton instance of NetworkManager
 
-  final Connectivity _connectivity = Connectivity();
+  final Connectivity _connectivity = Connectivity(); // Connectivity plugin instance
 
   // StreamController to broadcast connectivity changes
   StreamController<ConnectivityResult> connectionStatusController = StreamController<ConnectivityResult>();
+
+  // Observable list to hold the current connectivity status
   final RxList<ConnectivityResult> results = [ConnectivityResult.none].obs;
+
+  // Constructor
   NetworkManager() {
     // Initialize the controller and listen for changes
-
-    _listenChange(results.first);
+    _listenChange(results.first); // Call the _listenChange method with initial connectivity status
   }
+
+  // Method to listen for connectivity changes
   void _listenChange(ConnectivityResult result) {
     _connectivity.onConnectivityChanged.listen((result) async {
+      // Listen for connectivity changes
       if (result.first != results.first) {
-        results.value = result;
-        isConnected();
+        // If the connectivity status changes
+        results.value = result; // Update the current connectivity status
+        isConnected(); // Check if the device is connected to the internet
       }
 
-      connectionStatusController.add(result.first);
-      _listenChange(result.first);
+      connectionStatusController.add(result.first); // Broadcast the updated connectivity status
+      _listenChange(result.first); // Listen for further connectivity changes
     });
   }
 
-  // Check current connectivity status
+  // Method to check if the device is connected to the internet
   Future<bool> isConnected() async {
-    var connectivityResult = await _connectivity.checkConnectivity();
-    _listenChange(results.first);
+    var connectivityResult = await _connectivity.checkConnectivity(); // Check the current connectivity status
+    _listenChange(results.first); // Listen for connectivity changes
     if (connectivityResult.first != ConnectivityResult.none) {
-      return true;
+      // If the device is connected to the internet
+      return true; // Return true
     } else {
-      ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q");
-      return false;
+      ADLoaders.warningSnackBar(title: "Internet aloqasi yo'q"); // Show a warning snackbar if there's no internet connection
+      return false; // Return false
     }
   }
 

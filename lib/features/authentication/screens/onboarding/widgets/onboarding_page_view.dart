@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:ebazaar/utils/constants/text_strings.dart';
 import 'package:ebazaar/utils/constants/image_strings.dart';
@@ -10,7 +9,7 @@ class OnBoardingPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(OnBoardingController());
+    final controller = OnboardingController.instance;
 
     return PageView(controller: controller.pageController, onPageChanged: controller.updatePageIndicator, children: const [
       OnBoardingPage(image: ADImages.onBoardingImage1, title: ADTexts.onBoardingTitle1, subTitle: ADTexts.onBoardingSubTitle1),

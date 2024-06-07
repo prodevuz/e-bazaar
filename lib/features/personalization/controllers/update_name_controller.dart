@@ -15,7 +15,7 @@ class UpdateNameController extends GetxController {
   final firstName = TextEditingController();
   final lastName = TextEditingController();
   final userController = UserController.instance;
-  final userRepository = Get.put(UserRepository());
+  final userRepository = UserRepository.instance;
   GlobalKey<FormState> updateUserNameFormKey = GlobalKey<FormState>();
 
   /// Init user data when home screen appears

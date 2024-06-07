@@ -1,8 +1,12 @@
+/// A custom exception class to handle platform-related errors.
 class ADPlatformException implements Exception {
+  /// Creates an instance of [ADPlatformException] with a specific error code.
   ADPlatformException(this.code);
 
+  /// The error code describing the platform error.
   final String code;
 
+  /// Returns the error message corresponding to the error code.
   String get message {
     switch (code) {
       case 'INVALID_LOGIN_CREDENTIALS':
@@ -26,7 +30,7 @@ class ADPlatformException implements Exception {
       case 'internal_error':
         return "Ichki xatolik yuz berdi.";
       case 'unknown_error':
-        return "Noma'lum platforma xatoligi. Qayta urinib ko'ring";
+        return "Noma'lum platforma xatoligi. Qayta urinib ko'ring.";
       default:
         return "Noma'lum platforma xatoligi. Qayta urinib ko'ring.";
     }
