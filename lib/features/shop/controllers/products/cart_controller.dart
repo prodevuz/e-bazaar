@@ -14,7 +14,7 @@ class CartController extends GetxController {
   RxDouble totalCartPrice = 0.0.obs;
   RxInt productQuantityInCart = 0.obs;
   RxList<CartItemModel> cartItems = <CartItemModel>[].obs;
-  final variationController = VariationController.instance;
+  final variationController = Get.put(VariationController());
 
   /// Constructor
   CartController() {
@@ -30,8 +30,7 @@ class CartController extends GetxController {
     }
 
     // Variation selected?
-    if (product.productType == ProductType.variable.toString() &&
-        variationController.selectedVariation.value.id.isEmpty) {
+    if (product.productType == ProductType.variable.toString() && variationController.selectedVariation.value.id.isEmpty) {
       ADLoaders.customToast(message: "Xususiyatlarni tanlang");
       return;
     }
@@ -53,8 +52,7 @@ class CartController extends GetxController {
     final selectedCartItem = convertToCartItem(product, productQuantityInCart.value);
 
     // Check if already added in the Cart
-    int index = cartItems.indexWhere((cartItem) =>
-        cartItem.productId == selectedCartItem.productId && cartItem.variationId == selectedCartItem.variationId);
+    int index = cartItems.indexWhere((cartItem) => cartItem.productId == selectedCartItem.productId && cartItem.variationId == selectedCartItem.variationId);
 
     if (index >= 0) {
       // This quantity already added or Updated/Removed from the design (Cart)(-)
@@ -69,8 +67,7 @@ class CartController extends GetxController {
 
   /// Add one item to the cart
   void addOneToCart(CartItemModel item) {
-    int index = cartItems
-        .indexWhere((cartItem) => cartItem.productId == item.productId && cartItem.variationId == item.variationId);
+    int index = cartItems.indexWhere((cartItem) => cartItem.productId == item.productId && cartItem.variationId == item.variationId);
 
     if (index >= 0) {
       cartItems[index].quantity += 1;
@@ -83,8 +80,7 @@ class CartController extends GetxController {
 
   /// Remove one item from cart
   void removeOneFromCart(CartItemModel item) {
-    int index = cartItems
-        .indexWhere((cartItem) => cartItem.productId == item.productId && cartItem.variationId == item.variationId);
+    int index = cartItems.indexWhere((cartItem) => cartItem.productId == item.productId && cartItem.variationId == item.variationId);
 
     if (index >= 0) {
       if (cartItems[index].quantity > 1) {
@@ -192,15 +188,12 @@ class CartController extends GetxController {
   }
 
   int getProductQuantityInCart(String productId) {
-    final foundItem = cartItems
-        .where((item) => item.productId == productId)
-        .fold(0, (previousValue, element) => previousValue + element.quantity);
+    final foundItem = cartItems.where((item) => item.productId == productId).fold(0, (previousValue, element) => previousValue + element.quantity);
     return foundItem;
   }
 
   int getVariationQuantityInCart(String productId, String variationId) {
-    final foundItem = cartItems.firstWhere((item) => item.productId == productId && item.variationId == variationId,
-        orElse: () => CartItemModel.empty());
+    final foundItem = cartItems.firstWhere((item) => item.productId == productId && item.variationId == variationId, orElse: () => CartItemModel.empty());
     return foundItem.quantity;
   }
 

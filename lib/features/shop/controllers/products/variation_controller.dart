@@ -1,7 +1,7 @@
-import 'package:ebazaar/features/shop/controllers/products/cart_controller.dart';
 import 'package:get/get.dart';
 import 'package:ebazaar/features/shop/models/product_model.dart';
 import 'package:ebazaar/features/shop/models/product_variation_model.dart';
+import 'package:ebazaar/features/shop/controllers/products/cart_controller.dart';
 import 'package:ebazaar/features/shop/controllers/products/images_controller.dart';
 
 class VariationController extends GetxController {

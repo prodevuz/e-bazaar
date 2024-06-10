@@ -18,9 +18,7 @@ import 'package:ebazaar/features/shop/controllers/products/product_controller.da
 import 'package:ebazaar/features/shop/controllers/products/variation_controller.dart'; // Importing variation controller.
 import 'package:ebazaar/features/shop/controllers/products/favourite_controller.dart'; // Importing favourite controller.
 import 'package:ebazaar/features/personalization/controllers/address_controller.dart'; // Importing address controller.
-import 'package:ebazaar/data/repositories/authentication/authentication_repository.dart'; // Importing authentication repository.
 import 'package:ebazaar/features/authentication/controllers/login/login_controller.dart'; // Importing login controller.
-import 'package:ebazaar/features/personalization/controllers/theme_mode_controller.dart'; // Importing theme mode controller.
 import 'package:ebazaar/features/personalization/controllers/update_name_controller.dart'; // Importing update name controller.
 import 'package:ebazaar/features/authentication/controllers/signup/signup_controller.dart'; // Importing signup controller.
 import 'package:ebazaar/features/authentication/controllers/signup/verify_email_controller.dart'; // Importing verify email controller.
@@ -41,11 +39,9 @@ class GeneralBindings extends Bindings {
     Get.put(ProductRepository()); // Registering ProductRepository as a dependency.
     Get.put(CategoryController()); // Registering CategoryController as a dependency.
     Get.put(CategoryRepository()); // Registering CategoryRepository as a dependency.
-    Get.put(ThemeModeController()); // Registering ThemeModeController as a dependency.
     Get.put(FavouriteController()); // Registering FavouriteController as a dependency.
     Get.put(NavigationController()); // Registering NavigationController as a dependency.
     Get.put(AllProductsController()); // Registering AllProductsController as a dependency.
-    Get.put(AuthenticationRepository()); // Registering AuthenticationRepository as a dependency.
     Get.put(ADFirebaseStorageService()); // Registering FirebaseStorageService as a dependency.
 
     Get.lazyPut(() => NetworkManager()); // Lazily registering NetworkManager as a dependency.
@@ -54,7 +50,7 @@ class GeneralBindings extends Bindings {
     Get.lazyPut(() => ImagesController()); // Lazily registering ImagesController as a dependency.
     Get.lazyPut(() => AddressController()); // Lazily registering AddressController as a dependency.
     Get.lazyPut(() => AddressRepository()); // Lazily registering AddressRepository as a dependency.
-    Get.lazyPut(() => VariationController()); // Lazily registering VariationController as a dependency.
+    Get.put(() => VariationController()); // Lazily registering VariationController as a dependency.
     Get.lazyPut(() => OnboardingController()); // Lazily registering OnboardingController as a dependency.
     Get.lazyPut(() => UpdateNameController()); // Lazily registering UpdateNameController as a dependency.
     Get.lazyPut(() => VerifyEmailController()); // Lazily registering VerifyEmailController as a dependency.

@@ -24,7 +24,7 @@ class UserController extends GetxController {
   final imageUploading = false.obs;
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
-  final userRepository = UserRepository.instance;
+  final userRepository = Get.put(UserRepository());
   GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
 
   @override
